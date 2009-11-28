@@ -1,0 +1,12 @@
+[submodule "bash"]
+	path = bash
+	url = git@github.com:josh/bash.git
+[submodule "zsh"]
+	path = zsh
+	url = git@github.com:josh/zsh.git
+[submodule "vim"]
+	path = vim
+	url = git@github.com:josh/vim.git
+[submodule "emacs.d"]
+	path = emacs.d
+	url = git@github.com:josh/emacs.git
