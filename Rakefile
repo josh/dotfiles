@@ -6,7 +6,8 @@ task :install do
     source, file = file, File.basename(file)
 
     puts "linking ~/.#{file}"
-    system %Q{ln -fs "$PWD/#{source}" "$HOME/.#{file}"}
+    system %Q{rm "$HOME/.#{file}"}
+    system %Q{ln -s "$PWD/#{source}" "$HOME/.#{file}"}
   end
 end
 
