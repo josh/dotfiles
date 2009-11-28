@@ -1,0 +1,27 @@
+[user]
+	name = Joshua Peek
+	email = josh@joshpeek.com
+[core]
+	excludesfile = /Users/josh/.gitignore
+[alias]
+	co = checkout
+	cb = checkout -b
+	ci = commit -v
+	ca = commit -av
+	st = status
+	up = !git-pull-with-hooks
+	track = !git-track
+	prune-all = !git-prune-all
+	fetch-all = !git-fetch-all
+	maintenance = !git-maintenance
+	pull-auto = !git checkout master && git reset --hard && git pull && git maintenance
+[apply]
+	whitespace = nowarn
+[branch]
+	autosetupmerge = true
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+[push]
+	default = tracking
