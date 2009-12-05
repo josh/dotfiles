@@ -1,5 +1,6 @@
+*.rbc
+*.swp
+*~
 .DS_Store
 ._*
-*~
-*.swp
-*.rbc
+tags
