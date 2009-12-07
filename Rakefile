@@ -11,6 +11,11 @@ task :install do
   end
 end
 
+desc "List untracked dot files"
+task :untracked do
+  sh "cd $HOME && find .* ! -type l -maxdepth 0"
+end
+
 
 def manifest
   files = Dir['*']
