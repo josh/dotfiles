@@ -1,7 +1,7 @@
 export PATH=$(defaults read "${HOME}/.MacOSX/environment" PATH)
 
-if [ -d ~/.bash/bin ]; then
-  export PATH=$HOME/.bash/bin:$PATH
+if [ -d ~/.bin ]; then
+  export PATH=$HOME/.bin:$PATH
 fi
 
 if [ -s ~/.rvm/scripts/rvm ]; then
