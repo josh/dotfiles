@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+NAME=$(basename $1 .go)
+
+gofmt -w $NAME.go
+6g $NAME.go
+6l -o $NAME $NAME.6
+rm $NAME.6
+eval "./$NAME"
+rm $NAME

@@ -1,0 +1,28 @@
+export PATH=$(defaults read "${HOME}/.MacOSX/environment" PATH)
+
+if [ -d ~/.bash/bin ]; then
+  export PATH=$HOME/.bash/bin:$PATH
+fi
+
+if [ -s ~/.rvm/scripts/rvm ]; then
+  source ~/.rvm/scripts/rvm
+fi
+
+if [ -d ~/.rip ]; then
+  RIPDIR=$HOME/.rip
+  RUBYLIB="$RUBYLIB:$RIPDIR/active/lib"
+  PATH=$RIPDIR/active/bin:$PATH
+  export RIPDIR RUBYLIB PATH
+  source $RIPDIR/rip-commands/use.sh
+fi
+
+# Move RubyInline cache location
+export INLINEDIR=$HOME/Library/Caches/RubyInline
+
+export GOROOT=/usr/local/Cellar/go/HEAD
+export GOARCH=amd64
+export GOOS=darwin
+
+export CDPATH=~:/Volumes:/Volumes/37signals
+
+export EDITOR="vim"

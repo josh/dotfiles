@@ -1,0 +1,21 @@
+# ls
+alias ls='ls -Fh'
+alias la='ls -A'
+
+# OS X
+alias dsunhook="find . -name .DS_Store -exec rm {} \;"
+
+# Git
+alias g='git'
+alias gst='git status'
+alias gb='git branch'
+alias gba='git branch -a'
+alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+
+# TextMate
+alias e='mate'
+
+# Rails
+alias ss='./script/server'
+alias sc='./script/console'
+alias rst='touch tmp/restart.txt'

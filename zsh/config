@@ -1,0 +1,32 @@
+autoload -U colors
+colors
+
+fpath=(~/.zsh/functions $fpath)
+autoload -U ~/.zsh/functions/*(:t)
+
+autoload -U url-quote-magic
+zle -N self-insert url-quote-magic
+
+REPORTTIME=10 # print elapsed time when more than 10 seconds
+
+setopt NO_BG_NICE # don't nice background tasks
+setopt NO_HUP
+setopt NO_LIST_BEEP
+setopt LOCAL_OPTIONS # allow functions to have local options
+setopt LOCAL_TRAPS # allow functions to have local traps
+setopt PROMPT_SUBST
+setopt AUTO_CD
+setopt CORRECT
+setopt IGNORE_EOF
+
+bindkey -e
+
+# search history with up and down arrow keys
+bindkey '^[[A' history-beginning-search-backward
+bindkey '^[[B' history-beginning-search-forward
+
+if [[ "$TERM" == "screen" ]]; then
+  function preexec() {
+    echo -ne "\ek${1%% *}\e\\"
+  }
+fi

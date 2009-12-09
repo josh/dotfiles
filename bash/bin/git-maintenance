@@ -1,0 +1,5 @@
+#!/bin/bash
+
+git fetch-all
+git gc --aggressive --auto
+git prune-all
