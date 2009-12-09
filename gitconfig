@@ -1,6 +1,8 @@
 [user]
 	name = Joshua Peek
 	email = josh@joshpeek.com
+[github]
+	user = josh
 [core]
 	excludesfile = /Users/josh/.gitignore
 [alias]
