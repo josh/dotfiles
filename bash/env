@@ -22,6 +22,7 @@ export INLINEDIR=$HOME/Library/Caches/RubyInline
 export GOROOT=/usr/local/Cellar/go/HEAD
 export GOARCH=amd64
 export GOOS=darwin
+export GOBIN=$GOROOT/bin
 
 export CDPATH=~:/Volumes:/Volumes/37signals
 
