@@ -26,4 +26,4 @@ export GOBIN=$GOROOT/bin
 
 export CDPATH=~:/Volumes:/Volumes/37signals
 
-export EDITOR="vim"
+export EDITOR="emacs"
