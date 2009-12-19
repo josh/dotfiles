@@ -1,6 +1,7 @@
 *.rbc
 *.swp
 *~
+.#*
 .DS_Store
 ._*
 tags
