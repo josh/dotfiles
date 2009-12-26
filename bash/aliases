@@ -13,8 +13,8 @@ alias gb='git branch'
 alias gba='git branch -a'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 
-# TextMate
-alias e='mate'
+# Emacs
+alias e='open -a Emacs.app'
 
 # Rails
 alias ss='./script/server'
