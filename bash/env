@@ -16,9 +16,6 @@ if [ -d ~/.rip ]; then
   source $RIPDIR/rip-commands/use.sh
 fi
 
-# Move RubyInline cache location
-export INLINEDIR=$HOME/Library/Caches/RubyInline
-
 export GOROOT=/usr/local/Cellar/go/HEAD
 export GOARCH=amd64
 export GOOS=darwin
