@@ -9,10 +9,11 @@ if [ -s ~/.rvm/scripts/rvm ]; then
 fi
 
 if [ -d ~/.rip ]; then
-  RIPDIR=${RIPDIR:-"$HOME/.rip"}
-  RUBYLIB="$RUBYLIB:$RIPDIR/active/lib:$HOME/Dropbox/rip/lib"
-  PATH="$PATH:$RIPDIR/active/bin:$HOME/Dropbox/rip/bin"
-  export RIPDIR RUBYLIB PATH
+  # rip2
+  export RUBYLIB="$RUBYLIB:$HOME/Dropbox/rip/lib"
+  export PATH="$PATH:$HOME/Dropbox/rip/bin"
+
+  eval `rip-shell`
 fi
 
 export GOROOT=/usr/local/Cellar/go/HEAD
