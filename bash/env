@@ -13,6 +13,9 @@ if [ -d ~/.rip ]; then
   RUBYLIB="$RUBYLIB:$RIPDIR/active/lib"
   PATH=$RIPDIR/active/bin:$PATH
   export RIPDIR RUBYLIB PATH
+
+  PATH="$HOME/Dropbox/rip/bin:$PATH"
+  RUBYLIB="$HOME/Dropbox/rip/lib:$RUYBLIB"
 fi
 
 export GOROOT=/usr/local/Cellar/go/HEAD
