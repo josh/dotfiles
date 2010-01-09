@@ -20,3 +20,9 @@ alias e='open -a Emacs.app'
 alias ss='./script/server'
 alias sc='./script/console'
 alias rst='touch tmp/restart.txt'
+
+# rip
+function rip-use {
+  export RIPENV=$1
+  eval `rip-shell`
+}
