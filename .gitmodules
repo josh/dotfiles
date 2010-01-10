@@ -4,6 +4,3 @@
 [submodule "repl"]
 	path = repl
 	url = git://github.com/defunkt/repl-completion.git
-[submodule "vim"]
-	path = vim
-	url = git@github.com:josh/vim.git
