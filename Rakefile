@@ -16,20 +16,8 @@ task :untracked do
   sh "cd $HOME && find .* ! -type l -maxdepth 0"
 end
 
-
 def manifest
   files = Dir['*']
-  files += submanifests
   files -= %w(Rakefile)
   files.sort
-end
-
-def submanifests
-  files = []
-  Dir['*/.dotfiles'].each do |submanifest|
-    subdirectory = File.dirname(submanifest)
-    lines = File.read(submanifest).split("\n")
-    files += lines.map { |file| File.join(subdirectory, file) }
-  end
-  files
 end
