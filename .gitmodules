@@ -1,6 +1,3 @@
 [submodule "emacs.d"]
 	path = emacs.d
 	url = git@github.com:josh/emacs.git
-[submodule "repl"]
-	path = repl
-	url = git://github.com/defunkt/repl-completion.git
