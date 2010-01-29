@@ -6,7 +6,7 @@ alias la='ls -A'
 alias dsunhook="find . -name .DS_Store -exec rm {} \;"
 
 # Git
-alias git='hub'
+#alias git='hub'
 alias g='git'
 alias gst='git status'
 alias gb='git branch'
