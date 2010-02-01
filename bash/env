@@ -8,13 +8,11 @@ if [ -s ~/.rvm/scripts/rvm ]; then
   source ~/.rvm/scripts/rvm
 fi
 
-if [ -d ~/.rip ]; then
-  # rip2
-  export RUBYLIB="$RUBYLIB:$HOME/Dropbox/rip/lib"
-  export PATH="$PATH:$HOME/Dropbox/rip/bin"
-
-  eval `rip-shell`
-fi
+# rip2
+export RUBYLIB="$RUBYLIB:$HOME/Dropbox/rip/lib"
+export PATH="$PATH:$HOME/Dropbox/rip/bin"
+export RIPDIR=/Volumes/37signals/.rip
+eval `rip-shell`
 
 export GOROOT=/usr/local/Cellar/go/HEAD
 export GOARCH=amd64
