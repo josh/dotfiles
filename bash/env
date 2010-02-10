@@ -22,3 +22,4 @@ export GOBIN=$GOROOT/bin
 export CDPATH=~:/Volumes:/Volumes/37signals
 
 export EDITOR="emacs"
+export PAGER="less -R"
