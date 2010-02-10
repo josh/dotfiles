@@ -17,6 +17,9 @@ defscrollback 15000
 # clear screen when exiting a full screen program
 altscreen on
 
+# copy screen clipboard to mac clipboard
+bind b eval "writebuf" "exec sh -c 'pbcopy < /tmp/screen-exchange'"
+
 # bold colors
 attrcolor b ".I"
 
