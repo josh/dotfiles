@@ -26,3 +26,7 @@ if [[ "$TERM" == "screen" ]]; then
     echo -ne "\ek${1%% *}\e\\"
   }
 fi
+
+function git() {
+  hub $@
+}
