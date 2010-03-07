@@ -5,7 +5,7 @@ set fuoptions=maxvert,maxhorz
 set guioptions-=T
 
 " font
-set guifont=Menlo:h13
+set guifont=DejaVu\ Sans\ Mono:h13
 
 " colors
 colorscheme ir_black
