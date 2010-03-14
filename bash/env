@@ -8,6 +8,9 @@ if [ -s ~/.rvm/scripts/rvm ]; then
   source ~/.rvm/scripts/rvm
 fi
 
+# ruby
+export RUBYOPT="-Ilib -Itest"
+
 # rip2
 export RUBYLIB="$RUBYLIB:$HOME/Dropbox/rip/lib"
 export PATH="$PATH:$HOME/Dropbox/rip/bin"
