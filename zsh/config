@@ -14,7 +14,6 @@ REPORTTIME=10 # print elapsed time when more than 10 seconds
 
 setopt AUTO_CD
 setopt CORRECT
-setopt COMPLETE_IN_WORD
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
