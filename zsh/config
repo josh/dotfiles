@@ -1,6 +1,9 @@
 autoload -U colors
 colors
 
+autoload -U compinit
+compinit
+
 fpath=(~/.zsh/functions $fpath)
 autoload -U ~/.zsh/functions/*(:t)
 
@@ -11,6 +14,7 @@ REPORTTIME=10 # print elapsed time when more than 10 seconds
 
 setopt AUTO_CD
 setopt CORRECT
+setopt COMPLETE_IN_WORD
 
 bindkey -e
 

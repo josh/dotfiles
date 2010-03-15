@@ -1,4 +1,0 @@
-setopt COMPLETE_IN_WORD
-
-autoload -U compinit
-compinit
