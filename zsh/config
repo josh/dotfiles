@@ -9,8 +9,6 @@ zle -N self-insert url-quote-magic
 
 REPORTTIME=10 # print elapsed time when more than 10 seconds
 
-setopt NO_BG_NICE # don't nice background tasks
-setopt NO_HUP
 setopt AUTO_CD
 setopt CORRECT
 setopt IGNORE_EOF
