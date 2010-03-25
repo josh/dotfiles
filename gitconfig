@@ -7,7 +7,7 @@
 	excludesfile = /Users/josh/.gitignore
 [alias]
 	co = checkout
-	cb = checkout -b
+	ct = checkout -t
 	ci = commit -v
 	ca = commit -av
 	st = status
