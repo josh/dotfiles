@@ -17,11 +17,6 @@ export PATH="$PATH:$HOME/Dropbox/rip/bin"
 export RIPDIR=/Volumes/37signals/.rip
 eval `rip-shell`
 
-# rpg
-export RPGPATH="$HOME/Dropbox/rpg/work"
-export PATH="$PATH:$HOME/Dropbox/rpg:$RPGPATH/bin"
-export RUBYLIB="$RUBYLIB:$RPGPATH/lib"
-
 export GOROOT=/usr/local/Cellar/go/HEAD
 export GOARCH=amd64
 export GOOS=darwin
