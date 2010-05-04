@@ -15,7 +15,7 @@ export RUBYOPT="-Ilib -Itest"
 export RUBYLIB="$RUBYLIB:$HOME/Dropbox/rip/lib"
 export PATH="$PATH:$HOME/Dropbox/rip/bin"
 export RIPDIR=/Volumes/37signals/.rip
-eval `rip-shell`
+eval `rip-config`
 
 export GOROOT=/usr/local/Cellar/go/HEAD
 export GOARCH=amd64
