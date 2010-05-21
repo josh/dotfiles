@@ -9,14 +9,22 @@ if [ -s ~/.rvm/scripts/rvm ]; then
 fi
 
 # ruby
-export RUBYOPT="-Ilib -Itest"
+export RUBYLIB="$RUBYLIB:./lib:./test"
 
-# rip2
-export RUBYLIB="$RUBYLIB:$HOME/Dropbox/rip/lib"
-export PATH="$PATH:$HOME/Dropbox/rip/bin"
-export RIPDIR=/Volumes/37signals/.rip
-eval `rip-config`
+# rip
+if [ -d $HOME/Dropbox/rip ]; then
+  export RUBYLIB="$RUBYLIB:$HOME/Dropbox/rip/lib"
+  export PATH="$PATH:$HOME/Dropbox/rip/bin"
+  export RIPDIR=/Volumes/37signals/.rip
 
+  eval `rip-config`
+  eval `rip-completion --zsh`
+
+  (rip envs | grep system) > /dev/null 2>&1 &&
+  rip-push system
+fi
+
+# go
 export GOROOT=/usr/local/Cellar/go/HEAD
 export GOARCH=amd64
 export GOOS=darwin
