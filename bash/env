@@ -4,10 +4,6 @@ if [ -d ~/.bin ]; then
   export PATH=$HOME/.bin:$PATH
 fi
 
-if [ -s ~/.rvm/scripts/rvm ]; then
-  source ~/.rvm/scripts/rvm
-fi
-
 # ruby
 export RUBYLIB="$RUBYLIB:./lib:./test"
 
