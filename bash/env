@@ -12,6 +12,7 @@ if [ -d $HOME/Dropbox/rip ]; then
   export RUBYLIB="$RUBYLIB:$HOME/Dropbox/rip/lib"
   export PATH="$PATH:$HOME/Dropbox/rip/bin"
   export RIPDIR=/Volumes/37signals/.rip
+  export RIPPROCESSES=4
 
   eval `rip-config`
   eval `rip-completion --zsh`
