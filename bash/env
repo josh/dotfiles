@@ -4,6 +4,10 @@ if [ -d ~/.bin ]; then
   export PATH=$HOME/.bin:$PATH
 fi
 
+if [ -d /usr/local/Library/Contributions/examples ]; then
+  export PATH=/usr/local/Library/Contributions/examples:$PATH
+fi
+
 # ruby
 export RUBYLIB="$RUBYLIB:./lib:./test"
 
