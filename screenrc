@@ -39,3 +39,6 @@ termcapinfo xterm* ti@:te@
 
 # fix backspace
 termcapinfo xterm* 'bc@:bs@'
+
+# emacs keybindings for navigation in copy mode
+markkeys ^B=Y:^F=V:h=^B:l=^F:0=^A:$=^E
