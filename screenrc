@@ -41,7 +41,7 @@ termcapinfo xterm* ti@:te@
 termcapinfo xterm* 'bc@:bs@'
 
 # emacs keybindings for navigation in copy mode
-markkeys l=^F:h=^B:j=^N:k=^P:0=^A:$=^E:^F=^V
+markkeys l=^F:j=^N:k=^P:0=^A:$=^E:^F=^V
 bindkey -m -t ^[v    stuff ^B
 bindkey -m    ^B     stuff h
 bindkey -m -t ^[f    stuff w
