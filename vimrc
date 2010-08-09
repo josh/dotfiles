@@ -4,6 +4,7 @@ set incsearch
 set smartcase
 set showmatch
 set showcmd
+set ruler
 
 syntax on
 
