@@ -1,0 +1,4 @@
+#!/bin/sh
+find ~/Dropbox -name .dropbox.cache -prune -o -name '*conflicted*' -print |
+  sed -e 's/.*Dropbox\///g' |
+  growlnotify -d 1 --appIcon Dropbox Dropbox Conflict
