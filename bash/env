@@ -9,12 +9,12 @@ if [ -d /usr/local/Library/Contributions/examples ]; then
 fi
 
 # ruby
-export RUBYLIB="$RUBYLIB:./lib:./test"
+export RUBYLIB="lib:test"
 
 # rip
 if [ -d $HOME/Dropbox/rip ]; then
-  export RUBYLIB="$RUBYLIB:$HOME/Dropbox/rip/lib"
-  export PATH="$PATH:$HOME/Dropbox/rip/bin"
+  export RUBYLIB="$HOME/Dropbox/rip/lib:$RUBYLIB"
+  export PATH="$HOME/Dropbox/rip/bin:$PATH"
   export RIPDIR=/Volumes/37signals/.rip
   export RIPPROCESSES=4
 
