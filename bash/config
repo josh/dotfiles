@@ -14,6 +14,9 @@ export CDPATH=~:/Volumes:/Volumes/37signals
 export EDITOR="emacs"
 export PAGER="less -R"
 
+export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
+export CLICOLOR=1
+
 # homebrew
 if [ -d /usr/local/Library/Contributions/examples ]; then
   export PATH=/usr/local/Library/Contributions/examples:$PATH
