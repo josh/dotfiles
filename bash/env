@@ -4,6 +4,7 @@ if [ -d ~/.bin ]; then
   export PATH=$HOME/.bin:$PATH
 fi
 
+# homebrew
 if [ -d /usr/local/Library/Contributions/examples ]; then
   export PATH=/usr/local/Library/Contributions/examples:$PATH
 fi
@@ -18,8 +19,8 @@ if [ -d $HOME/Dropbox/rip ]; then
   export RIPDIR=/Volumes/37signals/.rip
   export RIPPROCESSES=4
 
+  unset RIPHELPERS
   eval `rip-config`
-  eval `rip-completion --zsh`
 
   (rip envs | grep system) > /dev/null 2>&1 &&
   rip-push system
