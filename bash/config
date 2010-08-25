@@ -8,3 +8,16 @@ export HISTCONTROL="ignoredups"
 
 # disable less history file
 export LESSHISTFILE="-"
+
+export CDPATH=~:/Volumes:/Volumes/37signals
+
+export EDITOR="emacs"
+export PAGER="less -R"
+
+# homebrew
+if [ -d /usr/local/Library/Contributions/examples ]; then
+  export PATH=/usr/local/Library/Contributions/examples:$PATH
+fi
+
+# ruby
+export RUBYLIB="lib:test"

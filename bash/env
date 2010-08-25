@@ -1,16 +1,10 @@
-export PATH=$(defaults read "${HOME}/.MacOSX/environment" PATH)
+if [ -d /usr/local ]; then
+  export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+fi
 
 if [ -d ~/.bin ]; then
   export PATH=$HOME/.bin:$PATH
 fi
-
-# homebrew
-if [ -d /usr/local/Library/Contributions/examples ]; then
-  export PATH=/usr/local/Library/Contributions/examples:$PATH
-fi
-
-# ruby
-export RUBYLIB="lib:test"
 
 # rip
 if [ -d $HOME/Dropbox/rip ]; then
@@ -31,8 +25,3 @@ export GOROOT=/usr/local/Cellar/go/HEAD
 export GOARCH=amd64
 export GOOS=darwin
 export GOBIN=$GOROOT/bin
-
-export CDPATH=~:/Volumes:/Volumes/37signals
-
-export EDITOR="emacs"
-export PAGER="less -R"
