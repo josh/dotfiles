@@ -8,7 +8,7 @@ alias dsunhook="find . -name .DS_Store -exec rm {} \;"
 # Git
 #alias git='hub'
 alias g='git'
-alias gst='git status'
+alias gst='git st'
 alias gb='git branch'
 alias gba='git branch -a'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"

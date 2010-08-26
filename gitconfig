@@ -10,7 +10,7 @@
 	ct = checkout -t
 	ci = commit -v
 	ca = commit -av
-	st = status
+	st = status -sb
 	up = !git-pull-with-hooks
 	track = !git-track
 	prune-all = !git-prune-all
