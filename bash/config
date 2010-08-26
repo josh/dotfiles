@@ -4,6 +4,15 @@ else
   export PS1="$ "
 fi
 
+if [ -f ~/Dropbox/.dotfiles/history ]; then
+  export HISTFILE=~/Dropbox/.dotfiles/history
+else
+  export HISTFILE=~/.history
+fi
+
+export HISTSIZE=10000
+export SAVEHIST=10000
+export HISTFILESIZE=10000
 export HISTCONTROL="ignoredups"
 
 # disable less history file

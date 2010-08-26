@@ -15,17 +15,10 @@ REPORTTIME=10 # print elapsed time when more than 10 seconds
 setopt AUTO_CD
 setopt CORRECT
 
-if [ -f ~/Dropbox/.dotfiles/zsh_history ]; then
-  HISTFILE=~/Dropbox/.dotfiles/zsh_history
-else
-  HISTFILE=~/.zsh_history
-fi
-
 HISTSIZE=10000
 SAVEHIST=10000
 
 setopt HIST_VERIFY
-setopt EXTENDED_HISTORY
 setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_REDUCE_BLANKS
