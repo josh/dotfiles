@@ -5,10 +5,10 @@ else
 fi
 
 # history
-if [ -f "~/Dropbox/.dotfiles/history" ]; then
-  HISTFILE="~/Dropbox/.dotfiles/history"
+if [ -f "$HOME/Dropbox/.dotfiles/history" ]; then
+  HISTFILE="$HOME/Dropbox/.dotfiles/history"
 else
-  HISTFILE="~/.history"
+  HISTFILE="$HOME/.history"
 fi
 
 HISTSIZE=10000
