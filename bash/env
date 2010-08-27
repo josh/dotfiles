@@ -21,7 +21,7 @@ if [ -d "$HOME/.bin" ]; then
   PATH="$HOME/.bin:$PATH"
 fi
 
-CDPATH="~:/Volumes:/Volumes/37signals"
+CDPATH="$HOME:/Volumes:/Volumes/37signals"
 
 export PATH CDPATH
 
