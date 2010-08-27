@@ -19,9 +19,3 @@ if [ -d $HOME/Dropbox/rip ]; then
   (rip envs | grep system) > /dev/null 2>&1 &&
   rip-push system
 fi
-
-# go
-export GOROOT=/usr/local/Cellar/go/HEAD
-export GOARCH=amd64
-export GOOS=darwin
-export GOBIN=$GOROOT/bin
