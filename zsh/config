@@ -12,9 +12,6 @@ REPORTTIME=10 # print elapsed time when more than 10 seconds
 setopt AUTO_CD
 setopt CORRECT
 
-HISTSIZE=10000
-SAVEHIST=10000
-
 setopt HIST_VERIFY
 setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
@@ -37,6 +34,6 @@ function git() {
 }
 
 # rip
-if [ -d $HOME/Dropbox/rip ]; then
+if [ -d "$HOME/Dropbox/rip" ]; then
   eval `rip-completion --zsh`
 fi

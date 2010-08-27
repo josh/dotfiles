@@ -1,21 +1,57 @@
-if [ -d /usr/local ]; then
-  export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+# set en_US locale w/ utf-8 encodings
+LANG="en_US.UTF-8"
+LANGUAGE="en"
+LC_CTYPE="en_US.UTF-8"
+LC_ALL="en_US.UTF-8"
+export LANG LANGUAGE LC_CTYPE LC_ALL
+
+# paths
+PATH="/usr/bin:/bin:/usr/sbin:/sbin"
+
+if [ -d "/usr/local" ]; then
+  PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
-if [ -d ~/.bin ]; then
-  export PATH=$HOME/.bin:$PATH
+# homebrew
+if [ -d "/usr/local/Library/Contributions/examples" ]; then
+  PATH="/usr/local/Library/Contributions/examples:$PATH"
 fi
+
+if [ -d "$HOME/.bin" ]; then
+  PATH="$HOME/.bin:$PATH"
+fi
+
+CDPATH="~:/Volumes:/Volumes/37signals"
+
+export PATH CDPATH
+
+# editor/pager
+EDITOR="emacs"
+PAGER="less -R"
+export EDITOR PAGER
+
+# colors
+CLICOLOR=1
+GREP_OPTIONS='--color=auto'
+GREP_COLOR='1;32'
+export CLICOLOR GREP_OPTIONS GREP_COLOR
+
+# ruby
+export RUBYLIB="lib:test"
 
 # rip
-if [ -d $HOME/Dropbox/rip ]; then
-  export RUBYLIB="$HOME/Dropbox/rip/lib:$RUBYLIB"
-  export PATH="$HOME/Dropbox/rip/bin:$PATH"
-  export RIPDIR=/Volumes/37signals/.rip
-  export RIPPROCESSES=4
+if [ -d "$HOME/Dropbox/rip" ]; then
+  RUBYLIB="$HOME/Dropbox/rip/lib:$RUBYLIB"
+  PATH="$HOME/Dropbox/rip/bin:$PATH"
+  RIPDIR="/Volumes/37signals/.rip"
+  RIPPROCESSES=4
+
+  export RUBYLIB PATH RIPDIR RIPPROCESSES
 
   unset RIPHELPERS
   eval `rip-config`
 
-  (rip envs | grep system) > /dev/null 2>&1 &&
-  rip-push system
+  if [[ -n "$(rip envs | grep system)" ]]; then
+    rip-push system
+  fi
 fi
