@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export colors=`osascript -e 'tell front window of application "Terminal" to background color'`
+colors=`osascript -e 'tell front window of application "Terminal" to background color'`
 
 if [[ $colors == '0, 0, 0' ]]; then
   echo "dark"
