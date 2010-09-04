@@ -1,2 +1,0 @@
-#!/bin/sh
-find ~/Dropbox -name .dropbox.cache -prune -o -name '*conflicted*' -exec rm -i {} \;
