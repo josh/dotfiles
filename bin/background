@@ -1,4 +1,13 @@
-#!/bin/sh
+#!/bin/sh -e
+
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+    exit 1;
+fi
+
+if [ -n "$BACKGROUND" ]; then
+    echo "$BACKGROUND"
+    exit 0;
+fi
 
 colors=`osascript -e 'tell front window of application "Terminal" to background color'`
 
