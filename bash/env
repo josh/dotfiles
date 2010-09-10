@@ -22,8 +22,9 @@ if [ -d "$HOME/.bin" ]; then
 fi
 
 CDPATH="$HOME:/Volumes:/Volumes/37signals"
+MANPATH="/usr/share/man:/usr/local/share/man"
 
-export PATH CDPATH
+export PATH CDPATH MANPATH
 
 # editor/pager
 EDITOR="emacs"
