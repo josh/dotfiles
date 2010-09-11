@@ -26,6 +26,11 @@ MANPATH="/usr/share/man:/usr/local/share/man"
 
 export PATH CDPATH MANPATH
 
+# sudo
+if [ -x "$HOME/.bin/keychain_sudo_askpass" ]; then
+  export SUDO_ASKPASS="$HOME/.bin/keychain_sudo_askpass"
+fi
+
 # editor/pager
 EDITOR="emacs"
 PAGER="less -R"
