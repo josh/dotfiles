@@ -52,9 +52,10 @@ export CLICOLOR GREP_OPTIONS GREP_COLOR BACKGROUND
 export RUBYLIB="lib:test"
 
 # rip
-if [ -d "$HOME/Dropbox/rip" ]; then
-  RUBYLIB="$HOME/Dropbox/rip/lib:$RUBYLIB"
-  PATH="$HOME/Dropbox/rip/bin:$PATH"
+RIPDEV="/Volumes/37signals/rip"
+if [ -d $RIPDEV ]; then
+  RUBYLIB="$RIPDEV/lib:$RUBYLIB"
+  PATH="$RIPDEV/bin:$PATH"
   RIPDIR="/Volumes/37signals/.rip"
   RIPPROCESSES=4
 
