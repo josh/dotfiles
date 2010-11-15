@@ -1,4 +1,0 @@
-#!/bin/bash
-
-modules=$(git ls-files --error-unmatch --stage | grep '^160000 ' | awk '{print $4}')
-echo $modules | xargs -n1 -P3 -I {} git-submodule-exec {} $@
