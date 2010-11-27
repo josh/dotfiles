@@ -1,18 +1,21 @@
-#!/bin/sh -e
+#!/usr/bin/env ruby
 
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-    exit 1;
-fi
+if background = ENV['BACKGROUND']
+  puts background
+  exit 0
+end
 
-if [ -n "$BACKGROUND" ]; then
-    echo "$BACKGROUND"
-    exit 0;
-fi
-
-colors=`osascript -e 'tell front window of application "Terminal" to background color'`
-
-if [[ $colors == '0, 0, 0' ]]; then
-  echo "dark"
+script = case ENV['TERM_PROGRAM']
+when "Apple_Terminal"
+  'tell front window of application "Terminal" to background color'
+when "iTerm.app"
+  'tell application "iTerm" to background color of current session of current terminal'
 else
-  echo "light"
-fi
+  exit 1
+end
+
+colors    = `osascript -e #{script.inspect}`
+r, g, b   = colors.split(', ').map(&:to_i)
+luminance = 0.3*r + 0.59*g + 0.11*b
+
+puts luminance > 65535/2 ? :light : :dark
