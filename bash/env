@@ -12,11 +12,6 @@ if [ -d "/usr/local" ]; then
   PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
-# homebrew
-if [ -d "/usr/local/Library/Contributions/examples" ]; then
-  PATH="/usr/local/Library/Contributions/examples:$PATH"
-fi
-
 # npm
 if [ -d "/usr/local/share/npm/bin" ]; then
    PATH="/usr/local/share/npm/bin:$PATH"
