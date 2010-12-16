@@ -46,7 +46,7 @@ export CLICOLOR GREP_OPTIONS GREP_COLOR BACKGROUND
 # rip
 RIPDEV="/Volumes/37signals/rip"
 if [ -d $RIPDEV ]; then
-  RUBYLIB="$RIPDEV/lib:$RUBYLIB"
+  RUBYLIB="$RIPDEV/lib"
   PATH="$RIPDEV/bin:$PATH"
   RIPDIR="/Volumes/37signals/.rip"
   RIPPROCESSES=4
