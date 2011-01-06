@@ -1,2 +1,7 @@
 --type-set
 coffeescript=.coffee
+
+--type-set
+eco=.eco
+
+--ignore-dir=node_modules
