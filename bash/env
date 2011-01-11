@@ -21,10 +21,9 @@ if [ -d "$HOME/.bin" ]; then
   PATH="$HOME/.bin:$PATH"
 fi
 
-CDPATH="$HOME:/Volumes:/Volumes/37signals"
 MANPATH="/usr/share/man:/usr/local/share/man"
 
-export PATH CDPATH MANPATH
+export PATH MANPATH
 
 # sudo
 if [ -x "$HOME/.bin/keychain_sudo_askpass" ]; then
