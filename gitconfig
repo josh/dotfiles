@@ -15,8 +15,6 @@
 	track = !git-track
 	prune-all = !git-prune-all
 	fetch-all = !git-fetch-all
-	maintenance = !git-maintenance
-	pull-auto = !git checkout master && git reset --hard && git pull
 [apply]
 	whitespace = nowarn
 [branch]
