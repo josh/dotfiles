@@ -1,4 +1,0 @@
-#!/bin/sh -e
-
-security find-generic-password -l sudo -g 2>&1 >/dev/null |
-  ruby -e 'puts $1 if STDIN.gets =~ /^password: "(.*)"$/'
