@@ -29,10 +29,6 @@ if [[ "$TERM" == "screen" ]]; then
   }
 fi
 
-function git() {
-  hub $@
-}
-
 # rip
 if [ -d "$HOME/Dropbox/rip" ]; then
   eval `rip-completion --zsh`
