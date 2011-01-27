@@ -27,13 +27,3 @@ alias ri='ri -f ansi'
 alias ss='./script/server'
 alias sc='./script/console'
 alias rst='touch tmp/restart.txt'
-
-# rip
-function cap () {
-  if [[ $@ == "local externals:setup" ]]; then
-    command rip externals
-  else
-    command cap "$@"
-  fi
-}
-export -f cap
