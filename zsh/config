@@ -23,12 +23,6 @@ bindkey '^[[B' history-search-forward
 
 bindkey -e
 
-if [[ "$TERM" == "screen" ]]; then
-  function preexec() {
-    echo -ne "\ek${1%% *}\e\\"
-  }
-fi
-
 # rip
 if [ -d "$HOME/Dropbox/rip" ]; then
   eval `rip-completion --zsh`
