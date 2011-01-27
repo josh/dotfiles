@@ -22,8 +22,3 @@ bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 
 bindkey -e
-
-# rip
-if [ -d "$HOME/Dropbox/rip" ]; then
-  eval `rip-completion --zsh`
-fi
