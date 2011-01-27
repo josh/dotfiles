@@ -1,3 +1,8 @@
+# cd
+function cd () {
+  builtin cd "$@" > /dev/null
+}
+
 # ls
 alias ls='ls -Fh'
 alias la='ls -A'
