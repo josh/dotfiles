@@ -17,6 +17,3 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILESIZE=10000
 HISTCONTROL="ignoreboth"
-
-# disable less history file
-LESSHISTFILE="-"

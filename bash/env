@@ -28,7 +28,8 @@ export PATH MANPATH
 # editor/pager
 EDITOR="emacs"
 PAGER="less -R"
-export EDITOR PAGER
+LESSHISTFILE="-"
+export EDITOR PAGER LESSHISTFILE
 
 # colors
 CLICOLOR=1
