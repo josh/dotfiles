@@ -7,7 +7,7 @@ autoload -U ~/.zsh/functions/*(:t)
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
 
-REPORTTIME=10 # print elapsed time when more than 10 seconds
+REPORTTIME=10
 
 setopt AUTO_CD
 setopt CORRECT
