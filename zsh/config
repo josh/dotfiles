@@ -17,8 +17,4 @@ setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_REDUCE_BLANKS
 
-# search history with up and down arrow keys
-bindkey '^[[A' history-search-backward
-bindkey '^[[B' history-search-forward
-
 bindkey -e
