@@ -17,3 +17,9 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILESIZE=10000
 HISTCONTROL="ignoreboth"
+
+# shell-env
+precmd() {
+  eval `shell-env`
+}
+PROMPT_COMMAND=precmd
