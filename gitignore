@@ -4,5 +4,6 @@
 .#*
 .DS_Store
 ._*
+.envrc
 TAGS
 tags
