@@ -1,0 +1,73 @@
+#!/usr/bin/env ruby
+
+unless (command = ARGV[0]) && %w(install generate).include?(command)
+  abort "brew gem <install|generate> <name>"
+end
+
+unless name = ARGV[1]
+  abort "Please specify a gem name (e.g. brew gem #{command} <name>)"
+end
+
+gems = `gem list --remote "^#{name}$"`.lines
+unless gems.detect { |f| f =~ /^#{name} \(([^\s,]+).*\)/ }
+  abort "Could not find a valid gem '#{name}'"
+end
+version = $1
+
+klass = name.capitalize.gsub(/[-_.\s]([a-zA-Z0-9])/) { $1.upcase }.gsub('+', 'x')
+
+require 'erb'
+template = ERB.new(File.read(__FILE__).split(/^__END__$/, 2)[1].strip)
+
+open("#{`brew --prefix`.chomp}/Library/Formula/#{name}.rb", 'w') do |f|
+  f << template.result(binding)
+end
+
+if command == 'install'
+  exec "brew install #{name}"
+end
+
+__END__
+require 'formula'
+
+class <%= klass %> <Formula
+  class NoopDownloadStrategy <AbstractDownloadStrategy
+    def fetch; end
+    def stage; end
+  end
+
+  def download_strategy
+    NoopDownloadStrategy
+  end
+
+  def initialize(*args)
+    @name = "<%= name %>"
+    @version = "<%= version %>"
+
+    @url = "http://rubygems.org/downloads/#{name}-#{version}.gem"
+    @homepage = "http://rubygems.org/gems/#{name}/#{version}"
+
+    super
+  end
+
+  def install
+    system "gem", "install", name,
+             "--version", version,
+             "--no-rdoc", "--no-ri",
+             "--install-dir", prefix
+
+    bin.rmtree
+    bin.mkpath
+
+    ruby_libs = Dir.glob("#{prefix}/gems/*/lib")
+    Pathname.glob("#{prefix}/gems/#{name}-#{version}/bin/*").each do |file|
+      (bin+file.basename).open('w') do |f|
+        f << <<-RUBY
+#!/usr/bin/env ruby
+$:.unshift(#{ruby_libs.map(&:inspect).join(",")})
+load "#{file}"
+        RUBY
+      end
+    end
+  end
+end
