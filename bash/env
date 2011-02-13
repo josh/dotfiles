@@ -12,9 +12,9 @@ if [ -d "/usr/local" ]; then
   PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
-# npm
-if [ -d "/usr/local/share/npm/bin" ]; then
-   PATH="/usr/local/share/npm/bin:$PATH"
+# node
+if [ -d "/usr/local/lib/node" ]; then
+   export NODE_PATH="/usr/local/lib/node"
 fi
 
 if [ -d "$HOME/.bin" ]; then
