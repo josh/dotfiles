@@ -1,0 +1,4 @@
+#!/bin/sh -e
+
+security find-generic-password -gs "$1" -g 2>&1 >/dev/null |
+  ruby -e 'puts $1 if STDIN.gets =~ /^password: "(.*)"$/'
