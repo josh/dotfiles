@@ -3,6 +3,7 @@
 	email = josh@joshpeek.com
 [github]
 	user = josh
+	token = !keychain 'GitHub API Token'
 [core]
 	excludesfile = /Users/josh/.gitignore
 [alias]
