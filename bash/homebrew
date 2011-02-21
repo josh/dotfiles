@@ -1,0 +1,25 @@
+# homebrew env
+#
+# ideally we wouldn't need to do any of this configuration
+
+# node
+if [ -d "/usr/local/lib/node" ]; then
+   export NODE_PATH="/usr/local/lib/node"
+fi
+
+# python
+if [ -d "/usr/local/Cellar/python/2.7.1/bin" ]; then
+  PATH="/usr/local/Cellar/python/2.7.1/bin:$PATH"
+fi
+
+# ruby 1.8
+if [ -d "/usr/local/Cellar/ruby-enterprise-edition/2011.02/bin" ]; then
+  PATH="/usr/local/Cellar/ruby-enterprise-edition/2011.02/bin:$PATH"
+fi
+
+# ruby 1.9
+if [ -d "/usr/local/Cellar/ruby/1.9.2-p180/bin" ]; then
+  PATH="/usr/local/Cellar/ruby/1.9.2-p180/bin:$PATH"
+fi
+
+export PATH

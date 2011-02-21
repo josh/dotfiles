@@ -12,11 +12,6 @@ if [ -d "/usr/local" ]; then
   PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
-# node
-if [ -d "/usr/local/lib/node" ]; then
-   export NODE_PATH="/usr/local/lib/node"
-fi
-
 if [ -d "$HOME/.bin" ]; then
   PATH="$HOME/.bin:$PATH"
 fi
@@ -24,6 +19,9 @@ fi
 MANPATH="/usr/share/man:/usr/local/share/man"
 
 export PATH MANPATH
+
+# homebrew
+source ~/.bash/homebrew
 
 # editor/pager
 EDITOR="emacs"
