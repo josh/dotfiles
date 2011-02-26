@@ -37,21 +37,15 @@ BACKGROUND=`$HOME/.bin/background`
 export CLICOLOR GREP_OPTIONS GREP_COLOR BACKGROUND
 
 # rip
-RIPDEV="/Volumes/37signals/rip"
-if [ -d $RIPDEV ]; then
-  RUBYLIB="$RIPDEV/lib"
-  PATH="$RIPDEV/bin:$PATH"
-  RIPDIR="/Volumes/37signals/.rip"
-  RIPPROCESSES=4
+RIPDIR="$HOME/.rip"
+if [ -d $RIPDIR ]; then
+  export RIPDIR
+  export RIPPROCESSES=4
 
-  export RUBYLIB PATH RIPDIR RIPPROCESSES
+  export RUBYLIB="$RIPDIR/active/lib:$RIPDIR/system/lib"
+  export PATH="$RIPDIR/active/bin:$RIPDIR/system/bin:$PATH"
 
-  unset RIPHELPERS
   eval `rip-config`
-
-  if [[ -n "$(rip envs | grep system)" ]]; then
-    rip-push system
-  fi
 fi
 
 # bundler
