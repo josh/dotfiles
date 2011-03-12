@@ -4,7 +4,7 @@ else
   PS1="$ "
 fi
 
-CDPATH=".:$HOME:/Volumes:/Volumes/37signals"
+CDPATH=".:$HOME:/Volumes:/Volumes/GitHub"
 
 # history
 if [ -f "$HOME/Dropbox/.dotfiles/history" ]; then
