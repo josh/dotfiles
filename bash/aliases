@@ -12,7 +12,6 @@ alias g='git'
 alias gst='git st'
 alias gb='git branch'
 alias gba='git branch -a'
-alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 
 # Emacs
 alias e='open -a Emacs.app'
