@@ -20,9 +20,6 @@ alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 # Emacs
 alias e='open -a Emacs.app'
 
-# Ruby
-alias ri='ri -f ansi'
-
 # Rails
 alias ss='./script/server'
 alias sc='./script/console'
