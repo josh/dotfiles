@@ -7,9 +7,6 @@ function cd () {
 alias ls='ls -Fh'
 alias la='ls -A'
 
-# OS X
-alias dsunhook="find . -name .DS_Store -exec rm {} \;"
-
 # Git
 alias g='git'
 alias gst='git st'
