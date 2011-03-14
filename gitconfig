@@ -3,7 +3,7 @@
 	email = josh@joshpeek.com
 [github]
 	user = josh
-	token = !keychain 'GitHub API Token'
+	token = !security 2>&1 >/dev/null find-generic-password -gs \"GitHub API Token\" | ruby -e 'print $1 if STDIN.gets =~ /^password: \\\"(.*)\\\"$/'
 [core]
 	excludesfile = /Users/josh/.gitignore
 [alias]
