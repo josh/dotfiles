@@ -15,7 +15,6 @@
 	up = pull
 	track = !git-track
 	prune-all = !git-prune-all
-	fetch-all = !git-fetch-all
 [apply]
 	whitespace = nowarn
 [branch]

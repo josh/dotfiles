@@ -1,2 +1,0 @@
-#!/bin/bash
-git remote | xargs -n1 git fetch
