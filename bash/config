@@ -19,7 +19,9 @@ HISTFILESIZE=10000
 HISTCONTROL="ignoreboth"
 
 # shell-env
-precmd() {
-  eval `shell-env`
-}
-PROMPT_COMMAND=precmd
+if type -P shell-env &>/dev/null; then
+  precmd() {
+    eval `shell-env`
+  }
+  PROMPT_COMMAND=precmd
+fi
