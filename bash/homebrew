@@ -13,8 +13,8 @@ if [ -d "/usr/local/Cellar/python/2.7.1/bin" ]; then
 fi
 
 # ruby 1.8
-if [ -d "/usr/local/Cellar/ruby-enterprise-edition/2011.02/bin" ]; then
-  PATH="/usr/local/Cellar/ruby-enterprise-edition/2011.02/bin:$PATH"
+if [ -d "/usr/local/Cellar/ruby-enterprise-edition/2011.03/bin" ]; then
+  PATH="/usr/local/Cellar/ruby-enterprise-edition/2011.03/bin:$PATH"
 fi
 
 # ruby 1.9
