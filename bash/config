@@ -18,10 +18,7 @@ SAVEHIST=10000
 HISTFILESIZE=10000
 HISTCONTROL="ignoreboth"
 
-# shell-env
-if type -P shell-env &>/dev/null; then
-  precmd() {
-    eval `shell-env`
-  }
-  PROMPT_COMMAND=precmd
+# direnv
+if type -P direnv &>/dev/null; then
+  eval `direnv hook bash`
 fi
