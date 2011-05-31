@@ -1,10 +1,11 @@
+*.pyc
 *.rbc
 *.swp
 *~
 .#*
 .DS_Store
 ._*
-/.envrc
 /.bundle
+/.envrc
 TAGS
 tags
