@@ -36,18 +36,6 @@ GREP_COLOR='1;32'
 BACKGROUND=`$HOME/.bin/background`
 export CLICOLOR GREP_OPTIONS GREP_COLOR BACKGROUND
 
-# rip
-RIPDIR="$HOME/.rip"
-if [ -d $RIPDIR ]; then
-  export RIPDIR
-  export RIPPROCESSES=4
-
-  export RUBYLIB="$RIPDIR/active/lib:$RIPDIR/system/lib"
-  export PATH="$RIPDIR/active/bin:$RIPDIR/system/bin:$PATH"
-
-  eval `rip-config`
-fi
-
 # bundler
 BUNDLE_PATH=".bundle"
 BUNDLE_DISABLE_SHARED_GEMS=1
