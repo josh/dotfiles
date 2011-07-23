@@ -3,8 +3,8 @@
 # ideally we wouldn't need to do any of this configuration
 
 # python
-if [ -d "/usr/local/Cellar/python/2.7.1/bin" ]; then
-  PATH="/usr/local/Cellar/python/2.7.1/bin:$PATH"
+if [ -d "/usr/local/share/python" ]; then
+  PATH="/usr/local/share/python:$PATH"
 fi
 
 # ruby
