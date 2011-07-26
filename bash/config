@@ -20,5 +20,5 @@ HISTCONTROL="ignoreboth"
 
 # direnv
 if type -P direnv &>/dev/null; then
-  eval `direnv hook bash`
+  PROMPT_COMMAND="eval \`direnv export\`; $PROMPT_COMMAND"
 fi
