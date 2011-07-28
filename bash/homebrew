@@ -3,13 +3,13 @@
 # ideally we wouldn't need to do any of this configuration
 
 # python
-if [ -d "/usr/local/share/python" ]; then
-  PATH="/usr/local/share/python:$PATH"
+if [ -d "$(brew --prefix)/share/python" ]; then
+  PATH="$(brew --prefix)/share/python:$PATH"
 fi
 
 # ruby
-if [ -d "/usr/local/Cellar/ruby/1.9.2-p180/bin" ]; then
-  PATH="/usr/local/Cellar/ruby/1.9.2-p180/bin:$PATH"
+if [ -d "$(brew --prefix ruby)/bin" ]; then
+  PATH="$(brew --prefix ruby)/bin:$PATH"
 fi
 
 export PATH
