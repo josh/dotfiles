@@ -22,3 +22,8 @@ HISTCONTROL="ignoreboth"
 if type -P direnv &>/dev/null; then
   PROMPT_COMMAND="eval \`direnv export\`; $PROMPT_COMMAND"
 fi
+
+# rbenv
+if command -v rbenv &>/dev/null; then
+  eval "$(rbenv init)"
+fi
