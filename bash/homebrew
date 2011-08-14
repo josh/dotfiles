@@ -7,9 +7,4 @@ if [ -d "$(brew --prefix)/share/python" ]; then
   PATH="$(brew --prefix)/share/python:$PATH"
 fi
 
-# ruby
-if [ -d "$(brew --prefix ruby)/bin" ]; then
-  PATH="$(brew --prefix ruby)/bin:$PATH"
-fi
-
 export PATH
