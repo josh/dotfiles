@@ -1,2 +1,15 @@
-#!/bin/sh
-sort "$1" -o "$1" -u
+#!/usr/bin/ruby
+
+path, data = ARGF.path, ARGF.read
+sorted = data.lines.sort.join
+
+if path != '-'
+  if data != sorted
+    File.open(path, 'w') { |f| f.write(sorted) }
+    exit 0
+  else
+    exit 1
+  end
+else
+  puts sorted
+end
