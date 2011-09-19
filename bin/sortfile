@@ -1,7 +1,8 @@
 #!/usr/bin/ruby
 
 path, data = ARGF.path, ARGF.read
-sorted = data.lines.sort.join
+lines  = data.lines.map { |l| "#{l.chomp}\n" }
+sorted = lines.sort
 
 if path != '-'
   if data != sorted
