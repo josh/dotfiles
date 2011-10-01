@@ -2,7 +2,7 @@
 
 path, data = ARGF.path, ARGF.read
 lines  = data.lines.map { |l| "#{l.chomp}\n" }
-sorted = lines.sort
+sorted = lines.sort.join
 
 if path != '-'
   if data != sorted
