@@ -25,5 +25,6 @@ fi
 
 # rbenv
 if command -v rbenv &>/dev/null; then
+  export RBENV_ROOT="/usr/local/lib/rbenv"
   eval "$(rbenv init -)"
 fi
