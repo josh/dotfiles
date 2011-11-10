@@ -38,3 +38,4 @@ export CLICOLOR GREP_OPTIONS GREP_COLOR BACKGROUND
 
 # ruby
 export RUBYLIB="lib:test:$RUBYLIB"
+export RBENV_ROOT="/usr/local/lib/rbenv"
