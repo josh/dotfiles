@@ -9,5 +9,6 @@ fi
 
 XML=$(curl -s -F "key=$APIKEY" -F "image=@$1" http://api.imgur.com/2/upload.xml)
 URL=$(echo $XML | sed -E 's/.*<original>(.*)<\/original>.*/\1/' | sed 's/imgur/i.imgur/')
+URL=$(curl -s -I $URL | grep Location | sed -E 's/Location: (.+)/\1/')
 echo $URL | pbcopy
 echo $URL
