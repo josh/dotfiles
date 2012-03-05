@@ -1,5 +1,2 @@
 [ui]
 username = Joshua Peek <josh@joshpeek.com>
-[extensions]
-hgext.bookmarks =
-hggit =
