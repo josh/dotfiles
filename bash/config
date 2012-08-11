@@ -4,15 +4,10 @@ else
   PS1="$ "
 fi
 
-CDPATH=".:$HOME:$HOME/Projects:$HOME/Dropbox:/Volumes"
+CDPATH=".:$HOME:$HOME/Projects:/Volumes"
 
 # history
-if [ -f "$HOME/Dropbox/.dotfiles/history" ]; then
-  HISTFILE="$HOME/Dropbox/.dotfiles/history"
-else
-  HISTFILE="$HOME/.history"
-fi
-
+HISTFILE="$HOME/.history"
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILESIZE=10000
