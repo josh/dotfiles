@@ -8,8 +8,6 @@ end
 script = case ENV['TERM_PROGRAM']
 when "Apple_Terminal"
   'tell front window of application "Terminal" to background color'
-when "iTerm.app"
-  'tell application "iTerm" to background color of current session of current terminal'
 else
   exit 1
 end
