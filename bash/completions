@@ -1,2 +1,5 @@
 complete -C ~/.bash/completion_scripts/rake_completion -o default rake
-source ~/.bash/completion_scripts/git_completion
+
+if [ -e "/usr/local/etc/bash_completion.d/git-completion.bash" ]; then
+  source /usr/local/etc/bash_completion.d/git-completion.bash
+fi
