@@ -35,3 +35,4 @@ export CLICOLOR GREP_OPTIONS GREP_COLOR BACKGROUND
 
 # ruby
 export RUBYLIB="lib:test:$RUBYLIB"
+export POW_HOST_ROOT=~/Projects
