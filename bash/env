@@ -20,9 +20,6 @@ MANPATH="/usr/share/man:/usr/local/share/man"
 
 export PATH MANPATH
 
-# homebrew
-source ~/.bash/homebrew
-
 # editor/pager
 EDITOR="emacs"
 PAGER="less -R"
