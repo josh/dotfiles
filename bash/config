@@ -4,7 +4,7 @@ else
   PS1="$ "
 fi
 
-CDPATH=".:$HOME:$HOME/Projects:/Volumes"
+CDPATH=".:$HOME:$HOME/Projects"
 
 # history
 HISTFILE="$HOME/.history"
