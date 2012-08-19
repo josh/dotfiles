@@ -4,8 +4,9 @@ function cd () {
 }
 
 # ls
-alias ls='ls -Fh'
-alias la='ls -A'
+alias ls='ls -Fh' # show type sigil, human size
+alias la='ls -A'  # show all
+alias ll='ls -Al' # show all in list
 
 # Git
 alias g='git'
