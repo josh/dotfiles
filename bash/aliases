@@ -17,7 +17,5 @@ alias gba='git branch -a'
 # Emacs
 alias e='open -a Emacs.app'
 
-# Rails
-alias ss='./script/server'
-alias sc='./script/console'
+# Ruby
 alias rst='touch tmp/restart.txt'
