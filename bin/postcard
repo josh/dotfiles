@@ -1,0 +1,56 @@
+#!/usr/bin/env ruby
+
+require 'chronic'
+require 'mail'
+require 'tempfile'
+require 'net/imap'
+
+def extract_pdf_text(filename)
+  output = Tempfile.new 'out.txt'
+  system 'pdftotext', '-q', '-layout', filename, output.path
+  if $?.success?
+    File.open(output.path, 'rb') do |f|
+      f.read.encode('UTF-8', :invalid => :replace, :undef => :replace, :replace => "")
+    end
+  else
+    raise 'failed to convert'
+  end
+ensure
+  output.unlink
+end
+
+
+mail = Mail.new
+
+mail.to = "joshpeek@gmail.com"
+
+print "From: "
+mail.from = gets.strip
+
+print "Subject: "
+mail.subject = gets.strip
+
+print "Date: "
+date = gets.strip
+mail.date = date != "" ? Chronic.parse(date) : Time.now
+
+print "File: "
+filename = gets.strip
+
+if filename != ""
+  if File.extname(filename) == '.pdf'
+    mail.body = extract_pdf_text(filename)
+  end
+  mail.add_file(:filename => filename, :content => File.read(filename))
+end
+
+
+password = `security find-internet-password -gs 'imap.gmail.com' 2>&1 >/dev/null`[/^password: "(.*)"$/, 1]
+imap = Net::IMAP.new 'imap.gmail.com', 993, true
+imap.login 'joshpeek@gmail.com', password
+imap.append 'INBOX', mail.to_s, nil, mail.date.to_s
+imap.logout
+
+
+puts "\n\n"
+puts mail.to_s
