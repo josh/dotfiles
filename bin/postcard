@@ -35,13 +35,13 @@ date = gets.strip
 mail.date = date != "" ? Chronic.parse(date) : Time.now
 
 print "File: "
-filename = gets.strip
+filename = gets.strip.gsub("\\", "")
 
 if filename != ""
   if File.extname(filename) == '.pdf'
     mail.body = extract_pdf_text(filename)
   end
-  mail.add_file(:filename => filename, :content => File.read(filename))
+  mail.add_file(:filename => File.basename(filename), :content => File.read(filename))
 end
 
 
