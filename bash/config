@@ -15,7 +15,7 @@ HISTCONTROL="ignoreboth"
 
 # direnv
 if type -P direnv &>/dev/null; then
-  PROMPT_COMMAND="eval \`DIRENV_RUBY=/usr/bin/ruby direnv export\`; $PROMPT_COMMAND"
+  PROMPT_COMMAND="eval \"\$(direnv export bash)\";$PROMPT_COMMAND"
 fi
 
 # rbenv
