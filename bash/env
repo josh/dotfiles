@@ -21,7 +21,7 @@ MANPATH="/usr/share/man:/usr/local/share/man"
 export PATH MANPATH
 
 # editor/pager
-EDITOR="emacs"
+EDITOR="vim"
 PAGER="less -R"
 LESSHISTFILE="-"
 export EDITOR PAGER LESSHISTFILE
