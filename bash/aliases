@@ -13,6 +13,3 @@ alias g='git'
 alias gst='git st'
 alias gb='git branch'
 alias gba='git branch -a'
-
-# Ruby
-alias rst='touch tmp/restart.txt'
