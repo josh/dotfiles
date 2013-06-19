@@ -28,5 +28,3 @@
 	status = auto
 [push]
 	default = tracking
-[rerere]
-	enabled = 1
