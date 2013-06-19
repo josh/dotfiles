@@ -8,6 +8,8 @@
 [core]
 	excludesfile = /Users/josh/.gitignore
 [alias]
+  b  = branch
+  ba = branch -a
 	co = checkout
 	ct = checkout -t
 	ci = commit -v
