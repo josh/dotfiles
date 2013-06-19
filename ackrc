@@ -6,8 +6,5 @@ sass=.sass
 --type-set
 scss=.scss
 
---type-set
-mustache=.mustache
-
 --ignore-dir=node_modules
 --ignore-dir=.bundle
