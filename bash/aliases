@@ -7,3 +7,6 @@ function cd () {
 alias ls='ls -Fh' # show type sigil, human size
 alias la='ls -A'  # show all
 alias ll='ls -Al' # show all in list
+
+# git
+alias g='git'
