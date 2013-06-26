@@ -8,13 +8,13 @@
 [core]
 	excludesfile = /Users/josh/.gitignore
 [alias]
-  b  = branch
-  ba = branch -a
+	b = branch
+	ba = branch --all
 	co = checkout
-	ct = checkout -t
-	ci = commit -v
-	ca = commit -av
-	st = status -sb
+	ct = checkout --track
+	ci = commit --verbose
+	ca = commit --all --verbose
+	st = status --short --branch
 	up = pull
 	track = !git-track
 	prune-all = !git-prune-all
