@@ -18,6 +18,7 @@
 	up = pull
 	track = !git-track
 	prune-all = !git-prune-all
+	branch-prune = !git-branch-prune
 [color]
 	branch = auto
 	diff = auto
