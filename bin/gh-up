@@ -1,0 +1,19 @@
+#!/bin/sh
+set -e
+
+git fetch origin
+git prune-all
+
+git checkout --quiet master
+git pull
+git branch-prune
+
+if [ -f script/bootstrap ]; then
+  script/bootstrap
+fi
+
+task=$(rake --tasks db)
+if [ $? -eq 0 ] && [ -n "$task" ]; then
+  rake db:migrate db:test:prepare
+  git checkout db/schema*
+fi
