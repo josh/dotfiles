@@ -1,0 +1,68 @@
+#!/usr/bin/env ruby
+
+require 'base64'
+require 'openssl'
+require 'optparse'
+require 'shellwords'
+
+options = {}
+optparse = OptionParser.new do |opts|
+  opts.banner = "Usage: senv [-e | -d] <file>"
+
+  opts.on("-e", "--encrypt", "Encrypt file or input") do
+    options[:encrypt] = true
+    options[:file] = ".env"
+  end
+  opts.on("-d", "--decrypt", "Decrypt file or input") do
+    options[:decrypt] = true
+    options[:file] = ".senv"
+  end
+  opts.on("-h", "--help", "Show help") do
+    puts opts
+    exit
+  end
+end
+
+begin
+  optparse.parse!
+rescue OptionParser::InvalidOption
+  abort optparse.to_s
+end
+
+
+ENV['SENV_KEY'] ||= `ssh-add -l`.lines.first.split(" ")[2]
+
+if File.exist?(ENV['SENV_KEY'])
+  result = `#{Shellwords.join(['security', 'find-generic-password', '-ga', ENV['SENV_KEY']])} 2>&1`
+  if $?.success?
+    password = result[/^password: "(.*)"$/, 1]
+  end
+  key = OpenSSL::PKey::RSA.new(File.read(ENV['SENV_KEY']), password)
+else
+  abort "SENV_KEY=#{ENV['SENV_KEY']} does not exist"
+end
+
+if STDIN.tty? && ARGF.path == "-"
+  if options[:file] && File.exist?(options[:file])
+    input = File.open(options[:file], 'r')
+  else
+    abort optparse.to_s
+  end
+else
+  input = ARGF
+end
+
+if options[:encrypt]
+  input.each_line do |line|
+    puts Base64.strict_encode64(key.public_encrypt(line.chomp))
+  end
+elsif options[:decrypt]
+  input.each_line do |line|
+    begin
+      puts key.private_decrypt(Base64.strict_decode64(line.chomp))
+    rescue Exception
+    end
+  end
+else
+  abort optparse.to_s
+end
