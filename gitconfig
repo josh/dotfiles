@@ -19,6 +19,7 @@
 	track = !git-track
 	prune-all = !git-prune-all
 	branch-prune = !git-branch-prune
+	overwritten = !git-overwritten
 [color]
 	branch = auto
 	diff = auto
