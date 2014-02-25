@@ -15,5 +15,5 @@ fi
 task=$(rake --tasks db)
 if [ $? -eq 0 ] && [ -n "$task" ]; then
   rake db:migrate db:test:prepare
-  git checkout db/schema*
+  git checkout db/schema.rb
 fi
