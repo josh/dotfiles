@@ -7,7 +7,6 @@
 	helper = osxkeychain
 [core]
 	excludesfile = /Users/josh/.gitignore
-	editor = atom --wait
 [alias]
 	b = branch
 	ba = branch --all
