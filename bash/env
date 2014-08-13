@@ -33,8 +33,11 @@ GREP_COLOR='1;32'
 export CLICOLOR GREP_OPTIONS GREP_COLOR
 
 # go
-export GOPATH="$HOME/Projects/go"
-export PATH="$PATH:$GOPATH/bin"
+GOPATH="$HOME/Projects/go"
+if [ -d "$GOPATH" ]; then
+  PATH="$PATH:$GOPATH/bin"
+  export GOPATH PATH
+fi
 
 # ruby
 export RUBYLIB="lib:test:$RUBYLIB"
