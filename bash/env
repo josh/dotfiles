@@ -32,6 +32,10 @@ GREP_OPTIONS='--color=auto'
 GREP_COLOR='1;32'
 export CLICOLOR GREP_OPTIONS GREP_COLOR
 
+# go
+export GOPATH="$HOME/Projects/go"
+export PATH="$PATH:$GOPATH/bin"
+
 # ruby
 export RUBYLIB="lib:test:$RUBYLIB"
 export POW_HOST_ROOT=~/Projects
