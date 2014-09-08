@@ -13,14 +13,14 @@ end
 FileUtils.mkdir_p root = "/tmp/chef-solo"
 FileUtils.mkdir_p gemhome = "#{root}/ruby"
 
+ENV['PATH']    = Dir["#{gemhome}/gems/*/bin"].join(':') + ":#{ENV['PATH']}"
+ENV['RUBYLIB'] = Dir["#{gemhome}/gems/*/{ext,lib}"].join(':') + ":#{ENV['RUBYLIB']}"
+
 unless Dir["#{gemhome}/gems/*/bin/chef-solo"].any?
   warn "Installing chef"
   system "/usr/bin/gem install chef --no-rdoc --no-ri --install-dir #{gemhome}"
   abort "Fail installing chef" unless $?.success?
 end
-
-ENV['PATH']    = Dir["#{gemhome}/gems/*/bin"].join(':') + ":#{ENV['PATH']}"
-ENV['RUBYLIB'] = Dir["#{gemhome}/gems/*/{ext,lib}"].join(':') + ":#{ENV['RUBYLIB']}"
 
 File.open(json_attribs = "#{root}/node.json", 'w') do |f|
   open(node) { |r| f.write(r.read) }
@@ -34,10 +34,10 @@ cookbook_path = cookbooks.to_enum(:each_with_index).map do |path, index|
   FileUtils.mkdir_p target
 
   if File.exist? path
-    system 'cp', '-R', "#{path}/", target
+    system 'cp', '-R', "#{path}/.", target
   else
     warn "Downloading #{path}"
-    system "curl -sL #{path.inspect} | tar -xz -C #{target} -m --strip 1"
+    system "curl -sSfL #{path.inspect} | tar -xz -C #{target} -m --strip 1"
   end
   exit 1 unless $?.success?
 
