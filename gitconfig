@@ -18,6 +18,7 @@
 	up = pull
 	track = !git-track
 	prune-all = !git-prune-all
+	changed-files = !git-changed-files
 	branch-prune = !git-branch-prune
 	overwritten = !git-overwritten
 [color]
