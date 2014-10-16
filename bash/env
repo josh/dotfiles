@@ -37,4 +37,3 @@ fi
 
 # ruby
 export RUBYLIB="lib:test:$RUBYLIB"
-export POW_HOST_ROOT=~/Projects
