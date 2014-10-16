@@ -11,8 +11,10 @@ if [ -f script/bootstrap ]; then
   script/bootstrap
 fi
 
-task=$(rake --tasks db)
-if [ $? -eq 0 ] && [ -n "$task" ]; then
-  rake db:migrate db:test:prepare
-  git checkout db/schema.rb
+if [ -f Rakefile ]; then
+  task=$(rake --tasks db)
+  if [ $? -eq 0 ] && [ -n "$task" ]; then
+    rake db:migrate db:test:prepare
+    git checkout db/schema.rb
+  fi
 fi
