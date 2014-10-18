@@ -1,61 +1,72 @@
-#!/usr/bin/ruby
+#!/bin/bash
+set -e
 
-require 'fileutils'
-require 'open-uri'
-require 'yaml'
+if [ -n "$1" ]; then
+  node="$1"
+else
+  node="$HOME/.cook"
+fi
 
-node = ARGV[0] || "#{ENV['HOME']}/.cook"
+if [ ! -f "$node" ]; then
+  echo "cook node.json" >&2
+  exit 1
+fi
 
-unless File.exist? node
-  abort "cook node.json"
-end
+root="/tmp/chef-solo"
+gemhome="$root/ruby"
 
-FileUtils.mkdir_p root = "/tmp/chef-solo"
-FileUtils.mkdir_p gemhome = "#{root}/ruby"
+GEMPATH=($gemhome/gems/*/bin)
+GEMRUBYLIB=($gemhome/gems/*/{ext,lib})
 
-ENV['PATH']    = Dir["#{gemhome}/gems/*/bin"].join(':') + ":#{ENV['PATH']}"
-ENV['RUBYLIB'] = Dir["#{gemhome}/gems/*/{ext,lib}"].join(':') + ":#{ENV['RUBYLIB']}"
+OLDIFS="$IFS"
+IFS=":"
+export PATH="${GEMPATH[*]}:$PATH"
+export RUBYLIB="${GEMRUBYLIB[*]}:$RUBYLIB"
+IFS="$OLDIFS"
 
-unless Dir["#{gemhome}/gems/*/bin/chef-solo"].any?
-  warn "Installing chef"
-  system "/usr/bin/gem install chef --no-rdoc --no-ri --install-dir #{gemhome}"
-  abort "Fail installing chef" unless $?.success?
-end
-
-File.open(json_attribs = "#{root}/node.json", 'w') do |f|
-  open(node) { |r| f.write(r.read) }
-end
-
-cookbooks = YAML.load(open(json_attribs))['cookbooks']
-cookbook_path = cookbooks.to_enum(:each_with_index).map do |path, index|
-  target = "#{root}/cookbooks-#{index}"
-
-  FileUtils.rm_rf target
-  FileUtils.mkdir_p target
-
-  if File.exist? path
-    system 'cp', '-R', "#{path}/.", target
-  else
-    warn "Downloading #{path}"
-    system "curl -sSfL #{path.inspect} | tar -xz -C #{target} -m --strip 1"
-  end
-  exit 1 unless $?.success?
-
-  target
-end
+if [ ! -f /tmp/chef-solo/ruby/bin/chef-solo ]; then
+  echo "Installing chef" >&2
+  /usr/bin/gem install chef --no-rdoc --no-ri --install-dir $gemhome
+fi
 
 
-CONFIG = <<-RUBY
-log_level        :#{$DEBUG ? 'debug' : 'info'}
+cp "$node" "$root/node.json"
+
+download_cookbooks() {
+  local path target i
+  i=0
+
+  ruby -rjson -e "puts JSON.load(open(ARGV[0]))['cookbooks']" "$node" |
+    while read path; do
+      target="$root/cookbooks-$i"
+      echo $target
+
+      rm -rf "$target"
+      mkdir -p "$target"
+
+      if [ -f $path ]; then
+        cp -R "$path/" "$target"
+      else
+        echo "Downloading $path" >&2
+        curl -sSfL "$path" | tar -xz -C "$target" -m --strip 1
+      fi
+
+      i=$[$i+1]
+    done
+}
+
+IFS=" " cookbook_path=($(download_cookbooks))
+
+cat > "$root/solo.rb" <<EOS
+log_level        :info
 verbose_logging   nil
-json_attribs     #{json_attribs.inspect}
-cookbook_path    #{cookbook_path.inspect}
-file_cache_path  "#{root}"
-file_backup_path "#{root}/backup"
-sandbox_path     "#{root}/sandboxes"
-cache_options    :path => "#{root}/cache/checksums", :skip_expires => true
-RUBY
+json_attribs     "$root/node.json"
+cookbook_path    %w($cookbook_path)
+file_cache_path  "$root"
+file_backup_path "$root/backup"
+sandbox_path     "$root/sandboxes"
+cache_options    :path => "$root/cache/checksums", :skip_expires => true
+ssl_verify_mode  :verify_peer
+EOS
 
-File.open(config = "#{root}/solo.rb", 'w') { |f| f.write CONFIG }
-
-exec '/usr/bin/ruby', '-S', 'chef-solo', '-c', config
+exec /usr/bin/ruby -S chef-solo -c "$root/solo.rb"
