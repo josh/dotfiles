@@ -1,0 +1,22 @@
+#!/bin/bash -e
+
+abs_dirname() {
+  local cwd="$(pwd)"
+  local path="$1"
+
+  while [ -n "$path" ]; do
+    cd "${path%/*}"
+    local name="${path##*/}"
+    path="$(readlink "$name")"
+  done
+
+  pwd
+  cd "$cwd"
+}
+
+bin="$(abs_dirname "$0")"
+dotfiles="$(abs_dirname "$bin")"
+
+for src in "$dotfiles"/*; do
+  ln -hfs $src "$HOME/.$(basename "$src")"
+done
