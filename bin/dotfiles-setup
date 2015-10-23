@@ -1,10 +1,4 @@
 #!/bin/bash -e
 
 dotfiles-link
-
-brew install git
-brew install direnv
-brew install rbenv
-brew install rlwrap
-brew install ruby-build
-brew install wget
+brew bundle --global
