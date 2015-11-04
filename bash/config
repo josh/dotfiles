@@ -6,13 +6,6 @@ fi
 
 CDPATH=".:$HOME:$HOME/Projects"
 
-# history
-HISTFILE="$HOME/.history"
-HISTSIZE=10000
-SAVEHIST=10000
-HISTFILESIZE=10000
-HISTCONTROL="ignoreboth"
-
 # direnv
 if type -P direnv &>/dev/null; then
   PROMPT_COMMAND="eval \"\$(direnv export bash)\";$PROMPT_COMMAND"
