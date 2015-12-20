@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -ex
+
+brew update
+brew upgrade
+brew cleanup
+brew prune
