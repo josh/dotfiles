@@ -1,10 +1,13 @@
 [user]
 	name = Joshua Peek
 	email = josh@joshpeek.com
+	signingkey = 729F67DA
 [github]
 	user = josh
 [credential]
 	helper = osxkeychain
+[gpg]
+	program = ghgpg
 [commit]
 	gpgSign = true
 [core]
