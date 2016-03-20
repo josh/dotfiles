@@ -5,6 +5,8 @@
 	user = josh
 [credential]
 	helper = osxkeychain
+[commit]
+	gpgSign = true
 [core]
 	excludesfile = /Users/josh/.gitignore
 [alias]
