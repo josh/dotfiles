@@ -18,5 +18,5 @@ bin="$(abs_dirname "$0")"
 dotfiles="$(abs_dirname "$bin")"
 
 for src in "$dotfiles"/*; do
-  ln -hfs $src "$HOME/.$(basename "$src")"
+  ln -hfs "$src" "$HOME/.$(basename "$src")"
 done
