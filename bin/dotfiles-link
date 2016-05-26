@@ -20,3 +20,12 @@ dotfiles="$(abs_dirname "$bin")"
 for src in "$dotfiles"/*; do
   ln -hfs "$src" "$HOME/.$(basename "$src")"
 done
+
+pushd "$dotfiles"
+
+cachedir="$HOME/Library/Caches"
+while read path; do
+  rm -rf "$dotfiles/$path"
+  mkdir -p "$cachedir/$path"
+  ln -fs "$cachedir/$path" "$dotfiles/$path"
+done < <(shopt -s dotglob; git check-ignore atom/*)
