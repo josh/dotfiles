@@ -21,7 +21,7 @@ for src in "$dotfiles"/*; do
   ln -hfs "$src" "$HOME/.$(basename "$src")"
 done
 
-pushd "$dotfiles"
+pushd "$dotfiles" >/dev/null
 
 cachedir="$HOME/Library/Caches"
 while read path; do
