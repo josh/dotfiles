@@ -1,6 +1,6 @@
-.apm/
-.node-gyp/
-blob-store/
-compile-cache/
-packages/
-storage/
+.apm
+.node-gyp
+blob-store
+compile-cache
+packages
+storage
