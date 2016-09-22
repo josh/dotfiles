@@ -23,9 +23,5 @@ done
 
 pushd "$dotfiles" >/dev/null
 
-cachedir="$HOME/Library/Caches"
-while read path; do
-  rm -rf "$dotfiles/$path"
-  mkdir -p "$cachedir/$path"
-  ln -fs "$cachedir/$path" "$dotfiles/$path"
-done < <(shopt -s dotglob; git check-ignore atom/*)
+cachedir="$HOME/Library/Caches/atom"
+mkdir -p "$cachedir/.apm" "$cachedir/.node-gyp" "$cachedir/blob-store" "$cachedir/compile-cache" "$cachedir/packages" "$cachedir/packages" "$cachedir/storage"
