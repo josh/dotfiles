@@ -37,3 +37,18 @@ fi
 
 # ruby
 export RUBYLIB="lib:test:$RUBYLIB"
+
+abs_dirname() {
+  local cwd="$(pwd)"
+  local path="$1"
+
+  while [ -n "$path" ]; do
+    cd "${path%/*}"
+    local name="${path##*/}"
+    path="$(readlink "$name")"
+  done
+
+  pwd
+  cd "$cwd"
+}
+export DOTFILES="$(abs_dirname "$(abs_dirname "$BASH_SOURCE")")"
