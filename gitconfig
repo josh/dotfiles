@@ -9,7 +9,6 @@
 [gpg]
 	program = ghgpg
 [commit]
-	gpgSign = true
 [core]
 	excludesfile = /Users/josh/.gitignore
 [alias]
