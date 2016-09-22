@@ -24,4 +24,10 @@ done
 pushd "$dotfiles" >/dev/null
 
 cachedir="$HOME/Library/Caches/atom"
-mkdir -p "$cachedir/.apm" "$cachedir/.node-gyp" "$cachedir/blob-store" "$cachedir/compile-cache" "$cachedir/packages" "$cachedir/packages" "$cachedir/storage"
+mkdir -p "$cachedir/.apm" \
+  "$cachedir/.node-gyp" \
+  "$cachedir/blob-store" \
+  "$cachedir/compile-cache" \
+  "$cachedir/packages" \
+  "$cachedir/packages" \
+  "$cachedir/storage"
