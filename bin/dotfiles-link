@@ -18,16 +18,14 @@ bin="$(abs_dirname "$0")"
 dotfiles="$(abs_dirname "$bin")"
 
 for src in "$dotfiles"/*; do
-  ln -hfs "$src" "$HOME/.$(basename "$src")"
+  if [ ! -f "$src/.skip" ]; then
+    ln -hfs "$src" "$HOME/.$(basename "$src")"
+  fi
+done
+
+mkdir -p "$HOME/.atom"
+for src in "$dotfiles/atom"/*; do
+  ln -hfs "$src" "$HOME/.atom/$(basename "$src")"
 done
 
 pushd "$dotfiles" >/dev/null
-
-cachedir="$HOME/Library/Caches/atom"
-mkdir -p "$cachedir/.apm" \
-  "$cachedir/.node-gyp" \
-  "$cachedir/blob-store" \
-  "$cachedir/compile-cache" \
-  "$cachedir/packages" \
-  "$cachedir/packages" \
-  "$cachedir/storage"
