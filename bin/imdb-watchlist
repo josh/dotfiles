@@ -1,0 +1,25 @@
+#!/bin/bash
+
+IMDB_USER_ID="ur28408377"
+
+imdb-watchlist() {
+  set -e
+  set -o pipefail
+
+  reverse() {
+    tac 2> /dev/null || tail -r
+  }
+
+  rss2json() {
+    filter="(.rss.channel.item | arrays) // [.rss.channel.item // empty]"
+    xml2json | jq -r "$filter"
+  }
+
+  url="http://rss.imdb.com/user/$IMDB_USER_ID/watchlist"
+  filter=".[] | \"\(.title)~\(.link[26:35])\""
+  curl -fs "$url" | rss2json | jq -r "$filter" | reverse
+}
+
+imdb-watchlist | while read line; do
+  echo "$line"
+done
