@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require 'json'
+
+begin
+  require 'active_support/core_ext/hash/conversions'
+rescue LoadError
+  system 'gem install activesupport >&2'
+  require 'active_support/core_ext/hash/conversions'
+end
+
+puts Hash.from_xml($stdin).to_json
