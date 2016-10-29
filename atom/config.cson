@@ -1,6 +1,7 @@
 "*":
   core:
     allowPendingPaneItems: false
+    telemetryConsent: "limited"
   "exception-reporting":
     userId: "609704e4-8c8b-6712-5c66-b42f5f9d3508"
   welcome:
