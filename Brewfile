@@ -1,6 +1,8 @@
+# Taps
 tap 'homebrew/bundle'
 tap 'homebrew/services'
 
+# Homebrew
 brew 'ack'
 brew 'direnv'
 brew 'git'
@@ -9,3 +11,10 @@ brew 'rbenv'
 brew 'ruby-build'
 brew 'mas'
 brew 'wget'
+
+# Mac App Store
+mas '1Password', id: 443987910
+mas 'Aware', id: 1082170746
+mas 'iA Writer', id: 775737590
+mas 'OmniFocus', id: 867299399
+mas 'Xcode', id: 497799835
