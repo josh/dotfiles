@@ -25,3 +25,7 @@ mas 'Aware', id: 1082170746
 mas 'iA Writer', id: 775737590
 mas 'OmniFocus', id: 867299399
 mas 'Xcode', id: 497799835
+
+# Cask
+cask 'flux'
+cask 'graphiql'
