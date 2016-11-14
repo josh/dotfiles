@@ -12,7 +12,7 @@ brew 'direnv'
 brew 'git'
 brew 'gpg'
 brew 'jq'
-brew 'launchdns'
+brew 'launchdns', restart_service: true
 brew 'mas'
 brew 'rbenv'
 brew 'ruby-build'
