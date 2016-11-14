@@ -1,6 +1,10 @@
 # Taps
+tap 'caskroom/cask'
 tap 'homebrew/bundle'
+tap 'homebrew/core'
 tap 'homebrew/services'
+tap 'homebrew/services'
+tap 'homebrew/versions'
 
 # Homebrew
 brew 'ack'
