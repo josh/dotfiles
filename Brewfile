@@ -11,9 +11,10 @@ brew 'ack'
 brew 'direnv'
 brew 'git'
 brew 'gpg'
+brew 'jq'
+brew 'mas'
 brew 'rbenv'
 brew 'ruby-build'
-brew 'mas'
 brew 'wget'
 
 # Mac App Store
