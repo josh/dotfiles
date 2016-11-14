@@ -27,5 +27,6 @@ mas 'OmniFocus', id: 867299399
 mas 'Xcode', id: 497799835
 
 # Cask
+cask 'atom'
 cask 'flux'
 cask 'graphiql'
