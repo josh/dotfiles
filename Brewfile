@@ -1,8 +1,8 @@
 # Taps
 tap 'caskroom/cask'
+tap 'caskroom/homebrew-versions'
 tap 'homebrew/bundle'
 tap 'homebrew/core'
-tap 'homebrew/services'
 tap 'homebrew/services'
 tap 'homebrew/versions'
 
@@ -29,5 +29,6 @@ mas 'Xcode', id: 497799835
 # Cask
 cask 'atom'
 cask 'flux'
+cask 'google-chrome-canary'
 cask 'google-chrome'
 cask 'graphiql'
