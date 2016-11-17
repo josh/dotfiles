@@ -29,6 +29,8 @@ mas 'Xcode', id: 497799835
 
 # Cask
 cask 'atom'
+cask 'firefox'
+cask 'firefoxdeveloperedition'
 cask 'flux'
 cask 'google-chrome-canary'
 cask 'google-chrome'
