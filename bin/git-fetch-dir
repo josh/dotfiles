@@ -1,5 +1,10 @@
 #!/bin/sh
 
+fetch() {
+  set -x
+  git --git-dir="$1" fetch --all --prune --quiet
+}
+export -f fetch
+
 find . -name .git -type d -prune | \
-  xargs -n1 -P4 -I '{}' \
-    git --git-dir='{}' fetch --all --prune --quiet
+  xargs -n1 -P4 -I '{}' bash -c 'fetch "$@"' _ {}
