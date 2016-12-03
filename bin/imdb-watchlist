@@ -16,10 +16,13 @@ imdb-watchlist() {
   }
 
   url="http://rss.imdb.com/user/$IMDB_USER_ID/watchlist"
-  filter=".[] | \"\(.title)~\(.link[26:35])\""
+  filter=".[] | \"\(.title)\n\(.link)\""
   curl -fs "$url" | rss2json | jq -r "$filter" | reverse
 }
 
-imdb-watchlist | while read line; do
-  echo "$line"
+echo "IMDb Watchlist:"
+
+imdb-watchlist | while read link; read title; do
+  echo "  - $title"
+  echo "  $link"
 done
