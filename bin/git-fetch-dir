@@ -7,4 +7,5 @@ fetch() {
 export -f fetch
 
 find "${1:-$PWD}" -name .git -type d -prune | \
-  xargs -n1 -P4 -I '{}' bash -c 'fetch "$@"' _ {}
+  tr '\n' '\0' |
+  xargs -0 -n1 -P4 -I '{}' bash -c 'fetch "$@"' _ {}
