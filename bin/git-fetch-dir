@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 fetch() {
   set -x
@@ -6,5 +6,5 @@ fetch() {
 }
 export -f fetch
 
-find . -name .git -type d -prune | \
+find "${1:-$PWD}" -name .git -type d -prune | \
   xargs -n1 -P4 -I '{}' bash -c 'fetch "$@"' _ {}
