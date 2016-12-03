@@ -1,0 +1,14 @@
+#!/bin/sh
+set -x
+
+git-fetch-dir "$DOTFILES"
+git-fetch-dir ~/Projects
+git-fetch-dir /usr/local
+
+brew-up
+
+apm stars --install
+
+pushd ~/Projects/github
+script/bootstrap
+popd
