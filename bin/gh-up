@@ -6,6 +6,7 @@ git fetch --prune
 git checkout --quiet master
 git pull
 git branch-prune
+git quick-prune
 
 if [ -f script/bootstrap ]; then
   script/bootstrap
