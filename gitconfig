@@ -20,11 +20,6 @@
 	ca = commit --all --verbose
 	st = status --short --branch
 	up = pull
-	branch-prune = !git-branch-prune
-	changed-files = !git-changed-files
-	overwritten = !git-overwritten
-	prune-all = !git-prune-all
-	track = !git-track
 [color]
 	branch = auto
 	diff = auto
