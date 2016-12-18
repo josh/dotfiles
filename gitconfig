@@ -24,5 +24,7 @@
 	branch = auto
 	diff = auto
 	status = auto
+[fetch]
+	prune = true
 [push]
 	default = simple
