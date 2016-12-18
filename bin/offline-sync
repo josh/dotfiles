@@ -8,6 +8,5 @@ brew-up
 
 apm stars --install
 
-pushd ~/Projects/github
+cd ~/Projects/github
 script/bootstrap
-popd
