@@ -3,7 +3,6 @@ set -x
 
 git-fetch-dir "$DOTFILES"
 git-fetch-dir ~/Projects
-git-fetch-dir /usr/local
 
 brew-up
 
