@@ -5,3 +5,6 @@ function cd () {
 
 # git
 alias g='git'
+
+# grep colors
+alias grep='grep --color=auto'
