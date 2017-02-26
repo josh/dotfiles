@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'csv'
+require 'json'
+
+CSV(ARGF, headers: true).each do |row|
+  puts JSON.generate(row.to_h)
+end
