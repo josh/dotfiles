@@ -9,5 +9,7 @@
     flowPath: "/usr/local/bin/flow"
   "linter-rubocop":
     disableWhenNoConfigFile: true
+  "linter-ui-default":
+    showPanel: true
   welcome:
     showOnStartup: false
