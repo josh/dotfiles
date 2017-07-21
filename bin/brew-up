@@ -2,6 +2,7 @@
 
 set -ex
 
+git-fetch-dir /usr/local/Homebrew
 brew bundle check --global || brew bundle --global
 brew update
 brew upgrade
