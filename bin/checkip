@@ -1,0 +1,3 @@
+#!/bin/sh
+curl https://domains.google.com/checkip
+echo
