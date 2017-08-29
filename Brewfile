@@ -8,6 +8,7 @@ tap 'homebrew/versions'
 
 # Homebrew
 brew 'ack'
+brew 'awscli'
 brew 'direnv'
 brew 'git'
 brew 'gpg'
