@@ -1,0 +1,24 @@
+#!/bin/bash
+
+pushd ~ >/dev/null
+
+all() {
+  ls -A .
+}
+
+keep() {
+  cat ~/.keep
+  ls -1 .
+  ls -AF . | grep "@" | tr -d "@"
+}
+
+remove() {
+  comm -2 -3 <(all) <(keep | sort | uniq)
+}
+
+for path in $(remove); do
+  read -p "rm $path [y/n] " confirm
+  case $confirm in
+    y ) rm -rf "$path" ;;
+  esac
+done
