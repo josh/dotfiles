@@ -10,6 +10,7 @@ syntax on
 
 set nobackup
 set nowritebackup
+set viminfo=
 set textwidth=79
 set tabstop=2
 set shiftwidth=2
