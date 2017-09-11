@@ -1,0 +1,7 @@
+#!/bin/bash
+
+osascript <<EOT
+  tell application "OmniFocus"
+    parse tasks into default document with transport text "$@"
+  end tell
+EOT
