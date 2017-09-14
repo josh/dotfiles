@@ -7,6 +7,3 @@ git-fetch-dir ~/Projects
 brew-up
 
 apm stars --install
-
-cd ~/Projects/github
-script/bootstrap
