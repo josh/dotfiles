@@ -5,5 +5,3 @@ git-fetch-dir "$DOTFILES"
 git-fetch-dir ~/Projects
 
 brew-up
-
-apm stars --install
