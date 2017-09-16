@@ -28,3 +28,5 @@
 	prune = true
 [push]
 	default = simple
+[gc]
+	auto = 0
