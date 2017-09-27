@@ -26,6 +26,7 @@ mas 'Aware', id: 1082170746
 mas 'iA Writer', id: 775737590
 mas 'Numbers', id: 409203825
 mas 'OmniFocus', id: 867299399
+mas 'Server', id: 883878097 if !`system_profiler SPHardwareDataType | grep iMac`.empty?
 mas 'Xcode', id: 497799835
 
 # Cask
