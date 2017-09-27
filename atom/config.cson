@@ -1,6 +1,7 @@
 "*":
   core:
     allowPendingPaneItems: false
+    projectHome: "/Users/josh/Projects"
     telemetryConsent: "limited"
     themes: [
       "one-light-ui"
