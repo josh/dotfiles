@@ -24,6 +24,7 @@ brew 'wget'
 mas '1Password', id: 443987910
 mas 'Aware', id: 1082170746
 mas 'iA Writer', id: 775737590
+mas 'Numbers', id: 409203825
 mas 'OmniFocus', id: 867299399
 mas 'Xcode', id: 497799835
 
