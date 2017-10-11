@@ -6,8 +6,6 @@
 	user = josh
 [credential]
 	helper = osxkeychain
-[gpg]
-	program = ghgpg
 [commit]
 [core]
 	excludesfile = /Users/josh/.gitignore
