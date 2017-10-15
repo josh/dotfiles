@@ -16,5 +16,10 @@
     disableWhenNoConfigFile: true
   "linter-ui-default":
     showPanel: true
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+      isDisabledIfNoConfigFile: true
+      showInStatusBar: true
   welcome:
     showOnStartup: false
