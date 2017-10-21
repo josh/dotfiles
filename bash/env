@@ -34,9 +34,6 @@ if [ -d "$GOPATH" ]; then
   export GOPATH PATH
 fi
 
-# ruby
-export RUBYLIB="lib:test:$RUBYLIB"
-
 abs_dirname() {
   local cwd="$(pwd)"
   local path="$1"
