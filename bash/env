@@ -27,13 +27,6 @@ CLICOLOR=1
 GREP_COLOR='1;32'
 export CLICOLOR GREP_COLOR
 
-# go
-GOPATH="$HOME/Projects/go"
-if [ -d "$GOPATH" ]; then
-  PATH="$PATH:$GOPATH/bin"
-  export GOPATH PATH
-fi
-
 abs_dirname() {
   local cwd="$(pwd)"
   local path="$1"
