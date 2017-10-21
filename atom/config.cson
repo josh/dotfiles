@@ -23,3 +23,5 @@
       showInStatusBar: true
   welcome:
     showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
