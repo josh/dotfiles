@@ -27,6 +27,9 @@ CLICOLOR=1
 GREP_COLOR='1;32'
 export CLICOLOR GREP_COLOR
 
+# rbenv
+export RBENV_ROOT="/usr/local/var/rbenv"
+
 abs_dirname() {
   local cwd="$(pwd)"
   local path="$1"

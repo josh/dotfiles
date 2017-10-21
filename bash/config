@@ -10,9 +10,3 @@ CDPATH=".:$HOME:$HOME/Projects"
 if type -P direnv &>/dev/null; then
   PROMPT_COMMAND="eval \"\$(direnv export bash)\";$PROMPT_COMMAND"
 fi
-
-# rbenv
-if command -v rbenv &>/dev/null; then
-  export RBENV_ROOT="/usr/local/var/rbenv"
-  eval "$(rbenv init -)"
-fi
