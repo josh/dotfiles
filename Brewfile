@@ -30,6 +30,7 @@ mas "Xcode", id: 497799835
 
 # Cask
 cask "atom"
+cask "bartender"
 cask "firefox"
 cask "firefoxdeveloperedition"
 cask "google-chrome-canary"
