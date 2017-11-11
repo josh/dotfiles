@@ -1,0 +1,67 @@
+#!/bin/bash
+
+abort() {
+  echo "$1" >&2
+  exit 1
+}
+
+[ -n "$AUTHORIZE_URL" ] || abort "AUTHORIZE_URL unset"
+[ -n "$TOKEN_URL" ] || abort "TOKEN_URL unset"
+[ -n "$CLIENT_ID" ] || abort "CLIENT_ID unset"
+[ -n "$CLIENT_SECRET" ] || abort "CLIENT_SECRET unset"
+
+authorize() {
+  open "$AUTHORIZE_URL?response_type=code&client_id=$CLIENT_ID&redirect_uri=$1&scope=$SCOPE"
+}
+
+authorize_oob() {
+  REDIRECT_URI="urn:ietf:wg:oauth:2.0:oob"
+  authorize "$REDIRECT_URI"
+  echo -n "Code: " >&2
+  read CODE
+  token "$REDIRECT_URI" "$CODE"
+}
+
+authorize_redirect() {
+  PORT=3000
+  REDIRECT_URI="http://localhost:$PORT/oauth2callback"
+  authorize "$REDIRECT_URI"
+  CODE="$(wait_token "$PORT")"
+  token "$REDIRECT_URI" "$CODE"
+}
+
+wait_token() {
+  ok() {
+    echo "HTTP/1.1 200 OK"
+    echo "Connection: close"
+    echo "Content-Length: 2"
+    echo ""
+    echo "OK"
+  }
+
+  handle() {
+    cat | grep -o "code=[^ &\r]\+" | cut -d "=" -f2
+  }
+
+  ok | nc -l "$1" > >(handle)
+}
+
+token() {
+  curl --silent -X POST "$TOKEN_URL" \
+    -d "code=$2" \
+    -d "client_id=$CLIENT_ID" \
+    -d "client_secret=$CLIENT_SECRET" \
+    -d "redirect_uri=$1" \
+    -d "grant_type=authorization_code" | jq #--raw-output ".refresh_token"
+}
+
+refresh_token() {
+  curl --silent -X POST "$TOKEN_URL" \
+    -d "refresh_token=$1" \
+    -d "client_id=$CLIENT_ID" \
+    -d "client_secret=$CLIENT_SECRET" \
+    -d "grant_type=refresh_token" | jq #--raw-output ".access_token"
+}
+
+# authorize_oob
+authorize_redirect
