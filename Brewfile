@@ -41,7 +41,6 @@ cask "vmware-fusion"
 
 # iMac only
 if !`system_profiler SPHardwareDataType | grep iMac`.empty?
-  mas "Server", id: 883878097
   cask "adobe-illustrator-cc"
   cask "adobe-photoshop-cc"
 end
