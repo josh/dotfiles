@@ -6,7 +6,7 @@ yaml2json() {
   ruby -rjson -ryaml -e 'puts JSON.generate(YAML.load_file(ARGF.path))' "$1"
 }
 
-SAM="$(yaml2json "$1")"
+TEMPLATE="$(yaml2json "$1")"
 
 pushd "$(dirname $1)" >/dev/null
 
@@ -16,8 +16,8 @@ else
   EVENT_BODY="$(cat)"
 fi
 
-NAME="$(echo "$SAM" | jq --raw-output ".Resources | keys_unsorted | first")"
-HANDLER="$(echo "$SAM" | jq --raw-output '.Resources[$name].Properties.Handler' --arg name "$NAME")"
-RUNTIME="$(echo "$SAM" | jq --raw-output '.Resources[$name].Properties.Runtime' --arg name "$NAME")"
+NAME="$(echo "$TEMPLATE" | jq --raw-output ".Resources | keys_unsorted | first")"
+HANDLER="$(echo "$TEMPLATE" | jq --raw-output '.Resources[$name].Properties.Handler' --arg name "$NAME")"
+RUNTIME="$(echo "$TEMPLATE" | jq --raw-output '.Resources[$name].Properties.Runtime' --arg name "$NAME")"
 
 docker run --rm --volume "$PWD":/var/task "lambci/lambda:$RUNTIME" "$HANDLER" "$EVENT_BODY" | jq
