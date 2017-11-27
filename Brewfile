@@ -43,4 +43,6 @@ cask "vmware-fusion"
 if !`system_profiler SPHardwareDataType | grep iMac`.empty?
   cask "adobe-illustrator-cc"
   cask "adobe-photoshop-cc"
+else
+  cask "encryptme"
 end
