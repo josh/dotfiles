@@ -2,8 +2,6 @@
 
 set -e
 
-# https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-
 configure() {
   FILE="$(detect "$1")"
   pushd "$(dirname $FILE)" >/dev/null
@@ -111,6 +109,7 @@ case "$1" in
 
   *)
     echo "Usage: lambda <command> [<args>]" >&2
+    echo "  https://github.com/awslabs/aws-sam-local" >&2
     exit 1
     ;;
 esac
