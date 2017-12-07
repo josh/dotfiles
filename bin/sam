@@ -13,6 +13,10 @@ configure() {
   FILES="$(echo "$JSON" | jq --raw-output '.Resources[$name].Properties.Code.Files[]' --arg name "$NAME")"
 }
 
+fetchenv() {
+  aws lambda get-function-configuration --function-name "$NAME" | jq --join-output '.Environment.Variables | to_entries[] | "\(.key)=\(.value)\n"'
+}
+
 run() {
   if test -t 0; then
     EVENT_BODY="{}"
@@ -87,6 +91,11 @@ yaml2json() {
 }
 
 case "$1" in
+  env)
+    configure "$2"
+    fetchenv
+    ;;
+
   run)
     configure "$2"
     run
