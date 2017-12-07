@@ -1,0 +1,93 @@
+#!/bin/bash
+
+set -e
+
+# https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+
+configure() {
+  FILE="$(detect "$1")"
+  pushd "$(dirname $FILE)" >/dev/null
+
+  JSON="$(read_json "$FILE")"
+  NAME="$(echo "$JSON" | jq --raw-output ".Resources | keys_unsorted | first")"
+  HANDLER="$(echo "$JSON" | jq --raw-output '.Resources[$name].Properties.Handler' --arg name "$NAME")"
+  RUNTIME="$(echo "$JSON" | jq --raw-output '.Resources[$name].Properties.Runtime' --arg name "$NAME")"
+  FILES="$(echo "$JSON" | jq --raw-output '.Resources[$name].Properties.Code.Files[]' --arg name "$NAME")"
+}
+
+run() {
+  if test -t 0; then
+    EVENT_BODY="{}"
+  else
+    EVENT_BODY="$(cat)"
+  fi
+
+  docker run --rm --volume "$PWD":/var/task "lambci/lambda:$RUNTIME" "$HANDLER" "$EVENT_BODY" | jq
+}
+
+clean() {
+  rm -f function.zip
+}
+
+package() {
+  echo "+ packaging" >&2
+  clean
+  trap clean EXIT
+  zip function.zip $FILES >&2
+}
+
+deploy() {
+  package
+  echo "+ deploying"
+  aws lambda update-function-code --function-name "$NAME" --zip-file "fileb://function.zip"
+}
+
+detect() {
+  if [ -f "$1" ]; then
+    echo "$1"
+  else
+    find . -maxdepth 1 -name '*.yaml' -o -name '*.yml' -o -name '*.json'
+  fi
+}
+
+read_json() {
+  filename=$(basename "$1")
+  case "${filename##*.}" in
+    json)
+      cat "$1"
+      ;;
+    yml|yaml)
+      yaml2json "$1"
+      ;;
+    *)
+      echo "unsupported template format: $1"
+      exit 1
+      ;;
+  esac
+}
+
+yaml2json() {
+  ruby -rjson -ryaml -e 'puts JSON.generate(YAML.load_file(ARGF.path))' "$1"
+}
+
+case "$1" in
+  run)
+    configure "$2"
+    run
+    ;;
+
+  package)
+    configure "$2"
+    package
+    ;;
+
+  deploy)
+    configure "$2"
+    deploy
+    ;;
+
+  *)
+    echo "Usage: lambda <command> [<args>]" >&2
+    exit 1
+    ;;
+esac
