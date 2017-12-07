@@ -64,7 +64,7 @@ detect() {
   if [ -f "$1" ]; then
     echo "$1"
   else
-    find . -maxdepth 1 -name '*.yaml' -o -name '*.yml' -o -name '*.json'
+    find . -maxdepth 1 -name 'template.yaml' -o -name 'template.json'
   fi
 }
 
