@@ -55,7 +55,7 @@ config() {
 
 deploy() {
   package
-  echo "+ deploying"
+  echo "+ deploying" >&2
   aws lambda update-function-code --function-name "$NAME" --zip-file "fileb://function.zip" >/dev/null
   aws lambda update-function-configuration --function-name "$NAME" --cli-input-json "$(config)"
 }
