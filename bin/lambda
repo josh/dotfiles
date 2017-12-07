@@ -22,7 +22,11 @@ run() {
     EVENT_BODY="$(cat)"
   fi
 
-  docker run --rm --volume "$PWD":/var/task "lambci/lambda:$RUNTIME" "$HANDLER" "$EVENT_BODY" | jq
+  if [ -f ".env" ]; then
+    opts='--env-file=.env'
+  fi
+
+  docker run --rm $opts --volume "$PWD":/var/task "lambci/lambda:$RUNTIME" "$HANDLER" "$EVENT_BODY" | jq
 }
 
 clean() {
