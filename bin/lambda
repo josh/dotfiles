@@ -40,10 +40,24 @@ package() {
   zip function.zip $FILES >&2
 }
 
+envconfig() {
+  if [ -f ".env" ]; then
+    cat ".env" | jq --raw-input 'split("=") | {(.[0]): .[1]}' | jq --slurp 'add | {"Environment": {"Variables": .}}'
+  fi
+}
+
+config() {
+  (
+    echo "$JSON" | jq --raw-output '.Resources[$name].Properties | del(.Code)' --arg name "$NAME" ;
+    envconfig
+  ) | jq --slurp 'add'
+}
+
 deploy() {
   package
   echo "+ deploying"
-  aws lambda update-function-code --function-name "$NAME" --zip-file "fileb://function.zip"
+  aws lambda update-function-code --function-name "$NAME" --zip-file "fileb://function.zip" >/dev/null
+  aws lambda update-function-configuration --function-name "$NAME" --cli-input-json "$(config)"
 }
 
 detect() {
@@ -78,6 +92,11 @@ case "$1" in
   run)
     configure "$2"
     run
+    ;;
+
+  config)
+    configure "$2"
+    config
     ;;
 
   package)
