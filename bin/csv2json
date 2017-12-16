@@ -3,6 +3,8 @@
 require 'csv'
 require 'json'
 
+Encoding.default_external = ENV['ENCODING'] if ENV['ENCODING']
+
 CSV(ARGF, headers: true).each do |row|
   puts JSON.generate(row.to_h)
 end
