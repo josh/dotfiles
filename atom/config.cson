@@ -17,6 +17,8 @@
       "go-signature-statusbar"
       "atom-ide-ui"
     ]
+    format:
+      tool: "gofmt"
   "ide-flow":
     flowPath: "/usr/local/bin/flow"
   "linter-rubocop":
