@@ -32,11 +32,8 @@ mas "Xcode", id: 497799835
 cask "atom"
 cask "bartender"
 cask "firefox"
-cask "firefoxdeveloperedition"
-cask "google-chrome-canary"
 cask "google-chrome"
 cask "graphiql"
-cask "safari-technology-preview"
 cask "vmware-fusion"
 
 # iMac only
