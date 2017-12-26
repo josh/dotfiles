@@ -117,8 +117,7 @@ case "$1" in
     ;;
 
   *)
-    echo "Usage: lambda <command> [<args>]" >&2
-    echo "  https://github.com/awslabs/aws-sam-local" >&2
+    echo "Usage: sammy <command> [<args>]" >&2
     exit 1
     ;;
 esac
