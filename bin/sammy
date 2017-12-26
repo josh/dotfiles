@@ -17,7 +17,7 @@ fetchenv() {
   aws lambda get-function-configuration --function-name "$NAME" | jq --join-output '.Environment.Variables | to_entries[] | "\(.key)=\(.value)\n"'
 }
 
-run() {
+invoke() {
   if test -t 0; then
     EVENT_BODY="{}"
   else
@@ -96,9 +96,9 @@ case "$1" in
     fetchenv
     ;;
 
-  run)
+  run|invoke)
     configure "$2"
-    run
+    invoke
     ;;
 
   config)
