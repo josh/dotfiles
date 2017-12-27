@@ -39,7 +39,7 @@ package() {
   echo "+ packaging" >&2
   clean
   trap clean EXIT
-  zip function.zip $FILES >&2
+  zip -r function.zip $FILES >&2
 }
 
 envconfig() {
