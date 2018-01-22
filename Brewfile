@@ -36,7 +36,6 @@ cask "atom"
 cask "bartender"
 cask "firefox"
 cask "google-chrome"
-cask "graphiql"
 cask "vmware-fusion"
 
 # iMac only
