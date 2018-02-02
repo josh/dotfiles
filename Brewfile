@@ -36,6 +36,7 @@ mas "Xcode", id: 497799835
 # Cask
 cask "atom"
 cask "bartender"
+cask "evergreen"
 cask "firefox"
 cask "google-chrome"
 cask "vmware-fusion"
