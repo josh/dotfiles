@@ -39,6 +39,7 @@ cask "bartender"
 cask "evergreen"
 cask "firefox"
 cask "google-chrome"
+cask "microblog"
 cask "vmware-fusion"
 
 # iMac only
