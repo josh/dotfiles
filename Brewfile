@@ -21,6 +21,7 @@ brew "node"
 brew "rbenv"
 brew "ruby-build"
 brew "wget"
+brew "yarn"
 
 # Mac App Store
 mas "1Password", id: 443987910
