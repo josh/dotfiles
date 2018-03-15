@@ -1,0 +1,3 @@
+#!/bin/bash
+SHA=$(git merge-base master HEAD)
+git reset --soft "$SHA"
