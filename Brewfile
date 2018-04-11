@@ -41,9 +41,3 @@ cask "firefox"
 cask "google-chrome"
 cask "microblog"
 cask "vmware-fusion"
-
-# iMac only
-if !`system_profiler SPHardwareDataType | grep iMac`.empty?
-else
-  cask "encryptme"
-end
