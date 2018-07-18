@@ -23,7 +23,7 @@ brew "wget"
 brew "yarn"
 
 # Mac App Store
-mas "1Password", id: 443987910
+mas "1Password 7", id: 1333542190
 mas "Aware", id: 1082170746
 mas "Ka-Block!", id: 1335413823
 mas "Numbers", id: 409203825
