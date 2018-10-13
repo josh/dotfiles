@@ -1,7 +1,0 @@
-#!/bin/sh
-set -x
-
-git-fetch-dir "$DOTFILES"
-git-fetch-dir ~/Projects
-
-brew-up
