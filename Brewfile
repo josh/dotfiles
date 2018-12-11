@@ -4,12 +4,9 @@ tap "caskroom/versions"
 tap "homebrew/bundle"
 tap "homebrew/core"
 tap "homebrew/services"
-tap "josh/321"
 
 # Homebrew
 brew "ack"
-brew "aws-sam-local"
-brew "awscli"
 brew "direnv"
 brew "git"
 brew "gpg"
