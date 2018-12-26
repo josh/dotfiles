@@ -14,8 +14,6 @@ brew "jq"
 brew "launchdns", restart_service: true
 brew "mas"
 brew "node"
-brew "rbenv"
-brew "ruby-build"
 brew "wget"
 brew "yarn"
 
