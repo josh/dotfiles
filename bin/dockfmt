@@ -1,0 +1,6 @@
+#!/bin/bash
+
+DOCKERFILE="${1:-/dev/null}"
+
+exec docker run --rm --volume "$DOCKERFILE:/tmp/Dockerfile" \
+  jessfraz/dockfmt fmt "/tmp/Dockerfile"
