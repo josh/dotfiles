@@ -1,5 +1,5 @@
 #!/bin/sh
 
-exec docker run --rm --privileged --name=ctop \
+exec docker run --rm --privileged --name=docker-gc \
   --volume "/var/run/docker.sock:/var/run/docker.sock" \
   spotify/docker-gc

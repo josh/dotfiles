@@ -1,5 +1,5 @@
 #!/bin/sh
 
-exec docker run --rm --interactive --tty --name=ctop \
+exec docker run --rm --interactive --tty --name=dive \
   --volume "/var/run/docker.sock:/var/run/docker.sock" \
   "wagoodman/dive:latest" $@
