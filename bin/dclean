@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -ex
+
+docker container prune --force
+docker image prune --force
