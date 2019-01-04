@@ -28,13 +28,17 @@ brew "yarn"
 
 # Mac App Store
 mas "1Password 7", id: 1333542190
-mas "Aware", id: 1082170746
-mas "Ka-Block!", id: 1335413823
-mas "Numbers", id: 409203825
+mas "Aware", id: 1082170746 unless server
+mas "Deliveries", id: 924726344 if server
+mas "Ka-Block!", id: 1335413823 unless server
+mas "Numbers", id: 409203825 unless server
 mas "OmniFocus", id: 1346203938
+mas "Server", id: 883878097 if server
 mas "Xcode", id: 497799835
 
 # Cask
-cask "atom"
-cask "bartender"
-cask "firefox"
+cask "atom" unless server
+cask "bartender" unless server
+cask "firefox" unless server
+cask "hazel" if server
+cask "rescuetime" unless server
