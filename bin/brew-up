@@ -12,4 +12,3 @@ brew update
 brew upgrade
 mas upgrade
 brew cleanup
-brew prune
