@@ -15,7 +15,6 @@ tap "homebrew/core"
 tap "homebrew/services"
 
 # Homebrew
-brew "ack"
 brew "direnv"
 brew "git"
 brew "gpg"
@@ -23,6 +22,7 @@ brew "jq"
 brew "launchdns", restart_service: true
 brew "mas"
 brew "node"
+brew "ripgrep"
 brew "wget"
 brew "yarn"
 
