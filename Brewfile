@@ -37,7 +37,7 @@ mas "Server", id: 883878097 if server
 mas "Xcode", id: 497799835
 
 # Cask
-cask "atom" unless server
+cask "bbedit"
 cask "bartender" unless server
 cask "firefox" unless server
 cask "hazel" if server
