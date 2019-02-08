@@ -18,14 +18,7 @@ bin="$(abs_dirname "$0")"
 dotfiles="$(abs_dirname "$bin")"
 
 for src in "$dotfiles"/*; do
-  if [ ! -f "$src/.skip" ]; then
-    ln -hfs "$src" "$HOME/.$(basename "$src")"
-  fi
-done
-
-mkdir -p "$HOME/.atom"
-for src in "$dotfiles/atom"/*; do
-  ln -hfs "$src" "$HOME/.atom/$(basename "$src")"
+  ln -hfs "$src" "$HOME/.$(basename "$src")"
 done
 
 pushd "$dotfiles" >/dev/null
