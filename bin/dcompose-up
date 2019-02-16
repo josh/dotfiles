@@ -2,5 +2,10 @@
 
 set -ex
 
-docker-compose pull
-docker-compose up -d --remove-orphans
+HOSTNAME="$(hostname -s)"
+COMPOSE_FILE="docker-compose.$HOSTNAME.yml"
+[ -f "$COMPOSE_FILE" ] || COMPOSE_FILE="docker-compose.yml"
+
+docker-compose --file "$COMPOSE_FILE" pull
+docker-compose --file "$COMPOSE_FILE" up --detach --remove-orphans
+docker system prune --force
