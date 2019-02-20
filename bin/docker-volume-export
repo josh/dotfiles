@@ -1,0 +1,42 @@
+#!/bin/bash
+# Usage: docker-volume-export --output <path> [--host <hostname>] <volume>
+
+set -e
+
+volume=""
+output=""
+host=""
+
+case "$1" in
+--help | -h )
+  sed -ne '/^#/!q;s/.\{1,2\}//;1d;p' < "$0"
+  exit 0
+  ;;
+'--output'* )
+  output="$2"
+  shift 2
+  ;;
+'--host'* )
+  host="$2"
+  shift 2
+  ;;
+'' )
+  "$0" --help | head -1 >&2
+  exit 1
+  ;;
+esac
+
+volume="$1"
+
+if [ -z "$output" ]; then
+  "$0" --help | head -1 >&2
+  exit 1
+fi
+
+cmd="docker run --rm --volume $volume:/mnt/$volume alpine ash -c 'cd /mnt/$volume ; tar -czf - .'"
+
+if [ -n "$host" ]; then
+  ssh "$host" "$cmd" > "$output"
+else
+  eval "$cmd" > "$output"
+fi
