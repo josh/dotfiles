@@ -1,10 +1,11 @@
 #!/bin/bash
-# Usage: docker-volume-export --output <path> [--host <hostname>] <volume>
+# Usage: docker-volume-export --output <path> [--date-prefix] [--host <hostname>] [--all|<volume>]
 
 set -e
 
 volume=""
 output=""
+output_prefix=""
 host=""
 
 while [ -n "$1" ]; do
@@ -17,9 +18,17 @@ while [ -n "$1" ]; do
     output="$2"
     shift 2
     ;;
+  '--date-prefix'* )
+    output_prefix="$(date +'%Y-%m-%d') "
+    shift 1
+    ;;
   '--host'* )
     host="$2"
     shift 2
+    ;;
+  '--all'* )
+    volume="(ALL)"
+    shift 1
     ;;
   * )
     volume="$1"
@@ -32,15 +41,31 @@ if [ -z "$volume" ] || [ -z "$output" ]; then
   exit 1
 fi
 
-gz=""
-if [[ "$output" == *.gz ]]; then
-  gz="z"
+if [ "$volume" = "(ALL)" ]; then
+  if [ -n "$host" ]; then
+    volume="$(ssh $host 'docker volume list --quiet')"
+  else
+    volume="$(docker volume list --quiet)"
+  fi
 fi
 
-cmd="docker run --rm --volume $volume:/mnt/$volume alpine ash -c 'cd /mnt/$volume ; tar -c${gz}f - .'"
+for v in $volume; do
+  output_filename="$output"
+  if [ -d "$output_filename" ]; then
+    output_filename="${output}/${output_prefix}${v}.tar.gz"
+  fi
 
-if [ -n "$host" ]; then
-  ssh "$host" "$cmd" > "$output"
-else
-  eval "$cmd" > "$output"
-fi
+  gz=""
+  if [[ "$output" == *.gz ]]; then
+    gz="z"
+  fi
+
+  cmd="docker run --rm --volume $v:/mnt/$v alpine ash -c 'cd /mnt/$v ; tar -c${gz}f - .'"
+
+  echo "export $v"
+  if [ -n "$host" ]; then
+    ssh "$host" "$cmd" > "$output_filename"
+  else
+    eval "$cmd" > "$output_filename"
+  fi
+done
