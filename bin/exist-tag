@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e -o pipefail
+
+source ~/.env/exist
+
+curl "https://exist.io/api/1/attributes/custom/append/" \
+    --silent \
+    -X POST \
+    --data "@-" \
+    --header "Authorization: Bearer $TOKEN" \
+    --header "Content-Type: application/json" | \
+  jq '{success: .success | length, failed: .failed | length}'
