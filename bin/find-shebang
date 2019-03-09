@@ -1,0 +1,15 @@
+#!/bin/bash
+# Usage: find-shebang <sh|bash> <path>
+
+if [[ -z "$1" || -z "$2" ]]; then
+  sed -ne '/^#/!q;s/.\{1,2\}//;1d;p' < "$0"
+  exit 1
+fi
+
+for f in $(find "$2" -type f -not -path '*/\.*'); do
+  #head -n1 "$f" | grep '#!'
+  SHEBANG=$(sed -n '1s/^#!//p' "$f" 2>/dev/null | cut -d ' ' -f 1)
+  if [ "$SHEBANG" = "/bin/$1" ]; then
+    echo "$f"
+  fi
+done
