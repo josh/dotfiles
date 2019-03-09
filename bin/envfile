@@ -1,5 +1,5 @@
 #!/bin/bash
 
-VARS=$(cat "$1" | xargs)
+VARS=$(xargs < "$1")
 shift
-env "$VARS" "$@"
+env $VARS "$@"
