@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pushd ~ >/dev/null
+cd "$HOME" || exit 1
 
 all() {
   ls -A .
