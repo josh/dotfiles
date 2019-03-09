@@ -17,7 +17,7 @@ remove() {
 }
 
 for path in $(remove); do
-  read -p "rm $path [y/n] " confirm
+  read -r -p "rm $path [y/n] " confirm
   case $confirm in
     y ) rm -rf "$path" ;;
   esac
