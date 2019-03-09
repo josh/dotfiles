@@ -2,4 +2,4 @@
 
 VARS=$(cat "$1" | xargs)
 shift
-env $VARS $@
+env "$VARS" $@

@@ -43,7 +43,7 @@ fi
 
 if [ "$volume" = "(ALL)" ]; then
   if [ -n "$host" ]; then
-    volume="$(ssh $host 'docker volume list --quiet')"
+    volume="$(ssh "$host" 'docker volume list --quiet')"
   else
     volume="$(docker volume list --quiet)"
   fi
