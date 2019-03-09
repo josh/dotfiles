@@ -9,6 +9,7 @@ all() {
 keep() {
   cat ~/.keep
   ls -1 .
+  # shellcheck disable=SC2010
   ls -AF . | grep "@" | tr -d "@"
 }
 
