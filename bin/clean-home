@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pushd ~ >/dev/null
+cd "$HOME" || exit 1
 
 all() {
   ls -A .
@@ -9,6 +9,7 @@ all() {
 keep() {
   cat ~/.keep
   ls -1 .
+  # shellcheck disable=SC2010
   ls -AF . | grep "@" | tr -d "@"
 }
 
@@ -17,7 +18,7 @@ remove() {
 }
 
 for path in $(remove); do
-  read -p "rm $path [y/n] " confirm
+  read -r -p "rm $path [y/n] " confirm
   case $confirm in
     y ) rm -rf "$path" ;;
   esac

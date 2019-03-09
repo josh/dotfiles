@@ -43,7 +43,7 @@ fi
 
 if [ "$volume" = "(ALL)" ]; then
   if [ -n "$host" ]; then
-    volume="$(ssh $host 'docker volume list --quiet')"
+    volume="$(ssh "$host" 'docker volume list --quiet')"
   else
     volume="$(docker volume list --quiet)"
   fi
@@ -64,6 +64,7 @@ for v in $volume; do
 
   echo "export $v"
   if [ -n "$host" ]; then
+    # shellcheck disable=SC2029
     ssh "$host" "$cmd" > "$output_filename"
   else
     eval "$cmd" > "$output_filename"

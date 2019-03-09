@@ -101,14 +101,14 @@ git diff "${base}...${head}" --diff-filter=DM --no-prefix -w -U0 | grep -v '^+' 
   }
   END { print num_lines, name_length }
 ' | sort -n | {
-  read num_lines name_length
+  read -r num_lines name_length
   if [ "$num_lines" -eq 0 ]; then
     color 31 "Warning: " >&2
     echo "no changed/removed lines found in the $base...$head diff" >&2
   fi
 
-  while IFS=$'\t' read time sha author msg; do
-    date -r $time "+%Y-%m-%d" | tr -d $'\n'
+  while IFS=$'\t' read -r time sha author msg; do
+    date -r "$time" "+%Y-%m-%d" | tr -d $'\n'
     printf ' '
     color 33 "${sha:0:7}"
     printf '  '

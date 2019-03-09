@@ -18,7 +18,7 @@ authorize_oob() {
   REDIRECT_URI="urn:ietf:wg:oauth:2.0:oob"
   authorize "$REDIRECT_URI"
   echo -n "Code: " >&2
-  read CODE
+  read -r CODE
   token "$REDIRECT_URI" "$CODE"
 }
 

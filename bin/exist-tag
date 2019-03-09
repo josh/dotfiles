@@ -2,6 +2,7 @@
 
 set -e -o pipefail
 
+# shellcheck source=/dev/null
 source ~/.env/exist
 
 curl "https://exist.io/api/1/attributes/custom/append/" \

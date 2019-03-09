@@ -1,5 +1,6 @@
 #!/bin/bash
 
-VARS=$(cat "$1" | xargs)
+VARS=$(xargs < "$1")
 shift
-env $VARS $@
+# shellcheck disable=SC2086
+env $VARS "$@"
