@@ -6,3 +6,4 @@
 .docker
 .DS_Store
 .Trash
+.zsh_history
