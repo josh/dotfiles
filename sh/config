@@ -4,4 +4,4 @@ else
   PS1="$ "
 fi
 
-CDPATH=".:$HOME:$HOME/Projects"
+CDPATH=".:$HOME"
