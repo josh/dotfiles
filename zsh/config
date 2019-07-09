@@ -1,6 +1,8 @@
 # shellcheck source=/dev/null
 source ~/.sh/config
 
+autoload -Uz compinit && compinit
+
 # direnv
 if [ -x "$(command -v direnv)" ]; then
   eval "$(direnv hook zsh)"
