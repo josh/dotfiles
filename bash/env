@@ -34,13 +34,13 @@ abs_dirname() {
   path="$1"
 
   while [ -n "$path" ]; do
-    cd "${path%/*}"
+    cd "${path%/*}" || return
     local name="${path##*/}"
     path="$(readlink "$name")"
   done
 
   pwd
-  cd "$cwd"
+  cd "$cwd" || return
 }
 
 if [ -n "${BASH_SOURCE[0]}" ]; then
