@@ -43,7 +43,7 @@ abs_dirname() {
   cd "$cwd"
 }
 
-if [ -n "$BASH_SOURCE" ]; then
-  DOTFILES="$(abs_dirname "$(abs_dirname "$BASH_SOURCE")")"
+if [ -n "${BASH_SOURCE[0]}" ]; then
+  DOTFILES="$(abs_dirname "$(abs_dirname "${BASH_SOURCE[0]}")")"
   export DOTFILES
 fi
