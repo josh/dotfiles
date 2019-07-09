@@ -1,3 +1,4 @@
+# shellcheck source=/dev/null
 source ~/.sh/env
 
 abs_dirname() {
