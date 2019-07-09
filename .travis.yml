@@ -4,3 +4,4 @@ script:
   - shellcheck $(bin/find-shebang sh .) $(bin/find-shebang bash .)
   - shellcheck --shell=sh sh/*
   - shellcheck --shell=bash bash/*
+  - shellcheck --shell=bash zsh/*
