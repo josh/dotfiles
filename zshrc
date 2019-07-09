@@ -1,3 +1,3 @@
 source ~/.sh/env
-source ~/.bash/config
+source ~/.zsh/config
 source ~/.bash/aliases
