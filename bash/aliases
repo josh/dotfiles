@@ -1,5 +1,6 @@
 # cd
 function cd () {
+  # shellcheck disable=SC2164
   builtin cd "$@" > /dev/null
 }
 
