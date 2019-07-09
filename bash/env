@@ -28,8 +28,10 @@ GREP_COLOR='1;32'
 export CLICOLOR GREP_COLOR
 
 abs_dirname() {
-  local cwd="$(pwd)"
-  local path="$1"
+  local cwd
+  local path
+  cwd="$(pwd)"
+  path="$1"
 
   while [ -n "$path" ]; do
     cd "${path%/*}"
