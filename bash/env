@@ -44,5 +44,6 @@ abs_dirname() {
 }
 
 if [ -n "$BASH_SOURCE" ]; then
-  export DOTFILES="$(abs_dirname "$(abs_dirname "$BASH_SOURCE")")"
+  DOTFILES="$(abs_dirname "$(abs_dirname "$BASH_SOURCE")")"
+  export DOTFILES
 fi
