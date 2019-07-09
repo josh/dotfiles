@@ -2,3 +2,4 @@ language: bash
 
 script:
   - shellcheck $(bin/find-shebang sh .) $(bin/find-shebang bash .)
+  - shellcheck --shell=bash bash/*
