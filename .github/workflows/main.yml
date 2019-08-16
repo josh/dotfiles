@@ -3,7 +3,7 @@ name: ShellCheck
 on: [push]
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
 
     steps:
@@ -12,9 +12,14 @@ jobs:
     - name: Install ShellCheck
       run: sudo apt-get install shellcheck
 
-    - name: Check Bash files
-      run: |
-        shellcheck $(bin/find-shebang sh .) $(bin/find-shebang bash .)
-        shellcheck --shell=bash bash/*
-        shellcheck --shell=bash bash/*
-        shellcheck --shell=bash zsh/*
+    - name: Check files
+      run: shellcheck $(bin/find-shebang sh .) $(bin/find-shebang bash .)
+
+    - name: Check sh files
+      run: shellcheck --shell=sh sh/*
+
+    - name: Check bash files
+      run: shellcheck --shell=bash bash/*
+
+    - name: Check zsh files
+      run: shellcheck --shell=bash zsh/*
