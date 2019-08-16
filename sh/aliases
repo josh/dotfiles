@@ -1,6 +1,6 @@
 # cd
 cd () {
-  # shellcheck disable=SC2164
+  # shellcheck disable=SC2039 disable=SC2164
   builtin cd "$@" > /dev/null
 }
 
