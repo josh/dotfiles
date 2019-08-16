@@ -15,7 +15,7 @@ jobs:
     - name: Check files
       run: shellcheck $(bin/find-shebang sh .) $(bin/find-shebang bash .)
 
-    - name: Check sh files
+    - name: Check POSIX sh files
       run: shellcheck --shell=sh sh/*
 
     - name: Check bash files
