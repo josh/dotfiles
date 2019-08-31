@@ -41,5 +41,5 @@ mas "Xcode", id: 497799835
 cask "bartender" unless server
 cask "firefox" unless server
 cask "hazel" if server
-cask "netnewswire"
+cask "netnewswire" unless server
 cask "rescuetime" unless server
