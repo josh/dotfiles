@@ -1,0 +1,14 @@
+#!/bin/bash
+# usage: comm-dirs ./a ./b
+
+set -e
+
+md5sum() {
+  pushd "$1" >/dev/null
+  find . -type f -print0 | while IFS= read -rd '' path; do
+    md5 -r "$path"
+  done
+  popd >/dev/null
+}
+
+comm -3 <(md5sum "$1") <(md5sum "$2")
