@@ -42,4 +42,3 @@ cask "bartender" unless server
 cask "firefox" unless server
 cask "hazel" if server
 cask "netnewswire" unless server
-cask "rescuetime" unless server
