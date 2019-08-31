@@ -1,6 +1,0 @@
-#!/bin/sh
-
-COMMAND="${1:-bash}"
-
-exec docker run --rm --interactive --tty --name=ubuntu \
-  "ubuntu:latest" "$COMMAND"
