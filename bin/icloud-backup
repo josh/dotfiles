@@ -18,10 +18,15 @@ esac
 
 TAR="$DIR/$(date +'%Y-%m-%d') iCloud Backup.tar"
 
+rm -rf /tmp/Backup
+mkdir -p /tmp/Backup/Notes
+export-notes /tmp/Backup/Notes
+
 set -x
 mkdir -p "$DIR"
 tar -v -r -f "$TAR" -C "$HOME" "Desktop"
 tar -v -r -f "$TAR" -C "$HOME" "Documents"
 tar -v -r -f "$TAR" -C "$HOME/Library" "Mobile Documents"
 tar -v -r -f "$TAR" -C "$HOME/Library" "Keychains"
+tar -v -r -f "$TAR" -C "/tmp/Backup" "Notes"
 gzip -f "$TAR"
