@@ -1,7 +1,7 @@
 # shellcheck source=/dev/null
 source ~/.sh/config
 
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -d /tmp/zcompdump
 
 # direnv
 if [ -x "$(command -v direnv)" ]; then
