@@ -4,8 +4,5 @@ cd () {
   builtin cd "$@" > /dev/null
 }
 
-# git
-alias g='git'
-
 # grep colors
 alias grep='grep --color=auto'
