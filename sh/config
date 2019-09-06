@@ -3,5 +3,3 @@ if [ "$(whoami)" = "root" ]; then
 else
   PS1="$ "
 fi
-
-CDPATH=".:$HOME"

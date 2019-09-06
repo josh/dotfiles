@@ -1,9 +1,3 @@
-# cd
-cd () {
-  # shellcheck disable=SC2039 disable=SC2164
-  builtin cd "$@" > /dev/null
-}
-
 # git
 alias g='git'
 
