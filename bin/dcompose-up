@@ -1,7 +1,0 @@
-#!/bin/bash
-
-set -ex
-
-docker-compose pull
-docker-compose up --detach --remove-orphans
-docker system prune --force
