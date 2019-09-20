@@ -8,9 +8,7 @@ end
 
 # Taps
 tap "caskroom/cask"
-tap "caskroom/versions"
 tap "homebrew/bundle"
-tap "homebrew/cask-versions"
 tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
