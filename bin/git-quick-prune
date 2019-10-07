@@ -1,9 +1,0 @@
-#!/bin/sh
-set -e
-
-if [ ! -f .git/gc.log ]; then
-  exit 0
-fi
-
-git prune
-rm -f .git/gc.log

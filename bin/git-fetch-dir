@@ -3,7 +3,6 @@
 fetch() {
   set -ex
   git --git-dir="$1" fetch --all --quiet
-  git --git-dir="$1" quick-prune
 }
 export -f fetch
 
