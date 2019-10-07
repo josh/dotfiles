@@ -1,11 +1,20 @@
 #!/bin/bash
+# usage: git-fetch-dir [path...]
+
+set -e
 
 fetch() {
-  set -ex
+  set -x
   git --git-dir="$1" fetch --all --quiet
 }
 export -f fetch
 
-find "${1:-$PWD}" -name .git -type d -prune | \
+declare -a paths
+paths=("$@")
+if [ ${#paths[@]} -eq 0 ]; then
+  paths+=("$PWD")
+fi
+
+find "${paths[@]}" -name .git -type d -prune | \
   tr '\n' '\0' |
   xargs -0 -n1 -P4 -I '{}' bash -c 'fetch "$@"' _ {}
