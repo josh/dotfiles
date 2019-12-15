@@ -35,3 +35,5 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 set grepprg=ack
 set grepformat=%f:%l:%m
+
+nnoremap gp :silent %!prettier --stdin --stdin-filepath %
