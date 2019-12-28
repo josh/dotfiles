@@ -22,6 +22,7 @@ brew "jq"
 brew "launchdns", restart_service: true
 brew "mas"
 brew "node"
+brew "prettier"
 brew "ripgrep"
 brew "shellcheck"
 brew "wget"
