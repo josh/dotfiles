@@ -6,7 +6,6 @@
 	user = josh
 [credential]
 	helper = osxkeychain
-[commit]
 [core]
 	excludesfile = /Users/josh/.gitignore
 [alias]
@@ -18,13 +17,3 @@
 	ca = commit --all --verbose
 	st = status --short --branch
 	up = pull
-[color]
-	branch = auto
-	diff = auto
-	status = auto
-[fetch]
-	prune = true
-[push]
-	default = simple
-[gc]
-	auto = 0
