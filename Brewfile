@@ -32,7 +32,6 @@ brew "yarn"
 mas "1Password 7", id: 1333542190
 mas "Aware", id: 1082170746
 mas "BBEdit", id: 404009241
-mas "Cardhop", id: 1290358394
 mas "Deliveries", id: 924726344
 mas "Fantastical", id: 975937182
 mas "Ka-Block!", id: 1335413823
