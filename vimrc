@@ -37,3 +37,5 @@ set grepprg=ack
 set grepformat=%f:%l:%m
 
 nnoremap gp :silent %!prettier --stdin --stdin-filepath %
+
+execute pathogen#infect()
