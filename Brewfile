@@ -27,6 +27,11 @@ brew "shellcheck"
 brew "wget"
 brew "yarn"
 
+# Cask
+cask "bartender"
+cask "firefox"
+cask "netnewswire"
+
 # Mac App Store
 mas "1Password 7", id: 1333542190
 mas "Aware", id: 1082170746
@@ -37,8 +42,3 @@ mas "Ka-Block!", id: 1335413823
 mas "Numbers", id: 409203825
 mas "OmniFocus", id: 1346203938
 mas "Xcode", id: 497799835
-
-# Cask
-cask "bartender"
-cask "firefox"
-cask "netnewswire"
