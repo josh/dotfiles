@@ -16,7 +16,7 @@ tap "josh/tap"
 # Homebrew
 brew "direnv"
 brew "git"
-brew "gpg"
+brew "gnupg"
 brew "jq"
 brew "launchdns", restart_service: true
 brew "mas"
