@@ -15,6 +15,7 @@ tap "josh/tap"
 
 # Homebrew
 brew "direnv"
+brew "fzf"
 brew "git"
 brew "gnupg"
 brew "jq"
