@@ -18,6 +18,7 @@ brew "direnv"
 brew "fzf"
 brew "git"
 brew "gnupg"
+brew "josh/tap/swift-completions"
 brew "jq"
 brew "launchdns", restart_service: true
 brew "mas"
