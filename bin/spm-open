@@ -1,0 +1,4 @@
+#!/bin/bash
+
+swift package generate-xcodeproj
+open ./*.xcodeproj
