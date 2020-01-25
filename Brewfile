@@ -34,7 +34,6 @@ brew "yarn"
 cask "bartender"
 cask "firefox"
 cask "netnewswire"
-cask "swiftformat-for-xcode"
 
 # Mac App Store
 mas "1Password 7", id: 1333542190
