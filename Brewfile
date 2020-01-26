@@ -31,6 +31,7 @@ brew "wget"
 brew "yarn"
 
 # Cask
+cask "aerial"
 cask "bartender"
 cask "firefox"
 cask "netnewswire"
