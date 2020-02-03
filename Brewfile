@@ -41,6 +41,7 @@ mas "1Password 7", id: 1333542190
 mas "Aware", id: 1082170746
 mas "BBEdit", id: 404009241
 mas "Deliveries", id: 924726344
+mas "Drafts", id: 1435957248
 mas "Fantastical", id: 975937182
 mas "Ka-Block!", id: 1335413823
 mas "Numbers", id: 409203825
