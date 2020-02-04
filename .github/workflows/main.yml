@@ -27,5 +27,11 @@ jobs:
       - name: ShellCheck bash files
         run: shellcheck --shell=bash bash/*
 
+      - name: shfmt bash files
+        run: shfmt -ln bash -d bash/*
+
       - name: ShellCheck zsh files
         run: shellcheck --shell=bash zsh/*
+
+      - name: shfmt zsh files
+        run: shfmt -ln bash -d zsh/*
