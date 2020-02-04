@@ -1,7 +1,7 @@
 #!/bin/bash
 # Usage: find-shebang <sh|bash> <path>
 
-if [[ -z "$1" || -z "$2" ]]; then
+if [[ -z $1 || -z $2 ]]; then
 	sed -ne '/^#/!q;s/.\{1,2\}//;1d;p' <"$0"
 	exit 1
 fi
