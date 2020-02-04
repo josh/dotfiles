@@ -2,19 +2,19 @@
 source ~/.sh/env
 
 abs_dirname() {
-  local cwd
-  local path
-  cwd="$(pwd)"
-  path="$1"
+	local cwd
+	local path
+	cwd="$(pwd)"
+	path="$1"
 
-  while [ -n "$path" ]; do
-    cd "${path%/*}" || return
-    local name="${path##*/}"
-    path="$(readlink "$name")"
-  done
+	while [ -n "$path" ]; do
+		cd "${path%/*}" || return
+		local name="${path##*/}"
+		path="$(readlink "$name")"
+	done
 
-  pwd
-  cd "$cwd" || return
+	pwd
+	cd "$cwd" || return
 }
 
 DOTFILES="$(abs_dirname "$(abs_dirname "${BASH_SOURCE[0]}")")"

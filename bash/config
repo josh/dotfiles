@@ -3,5 +3,5 @@ source ~/.sh/config
 
 # direnv
 if [ -x "$(command -v direnv)" ]; then
-  eval "$(direnv hook bash)"
+	eval "$(direnv hook bash)"
 fi
