@@ -1,4 +1,4 @@
-name: ShellCheck
+name: Shell
 
 on: [push]
 
@@ -11,6 +11,9 @@ jobs:
 
     - name: Install ShellCheck
       run: sudo apt-get install shellcheck
+
+    - name: Install shfmt
+      run: sudo apt-get install shfmt
 
     - name: Check files
       run: shellcheck $(bin/find-shebang sh .) $(bin/find-shebang bash .)
