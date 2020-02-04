@@ -21,6 +21,9 @@ jobs:
       - name: ShellCheck POSIX sh files
         run: shellcheck --shell=sh sh/*
 
+      - name: shfmt POSIX sh files
+        run: shfmt -ln posix -d sh/*
+
       - name: ShellCheck bash files
         run: shellcheck --shell=bash bash/*
 
