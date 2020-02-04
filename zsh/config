@@ -5,5 +5,5 @@ autoload -Uz compinit && compinit -d /tmp/zcompdump
 
 # direnv
 if [ -x "$(command -v direnv)" ]; then
-  eval "$(direnv hook zsh)"
+	eval "$(direnv hook zsh)"
 fi
