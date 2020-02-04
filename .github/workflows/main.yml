@@ -7,22 +7,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+      - uses: actions/checkout@v1
 
-    - name: Install ShellCheck
-      run: sudo apt-get install shellcheck
+      - name: Install ShellCheck
+        run: sudo apt-get install shellcheck
 
-    - name: Install shfmt
-      run: sudo snap install shfmt
+      - name: Install shfmt
+        run: sudo snap install shfmt
 
-    - name: Check files
-      run: shellcheck $(bin/find-shebang sh .) $(bin/find-shebang bash .)
+      - name: ShellCheck files
+        run: shellcheck $(bin/find-shebang sh .) $(bin/find-shebang bash .)
 
-    - name: Check POSIX sh files
-      run: shellcheck --shell=sh sh/*
+      - name: ShellCheck POSIX sh files
+        run: shellcheck --shell=sh sh/*
 
-    - name: Check bash files
-      run: shellcheck --shell=bash bash/*
+      - name: ShellCheck bash files
+        run: shellcheck --shell=bash bash/*
 
-    - name: Check zsh files
-      run: shellcheck --shell=bash zsh/*
+      - name: ShellCheck zsh files
+        run: shellcheck --shell=bash zsh/*
