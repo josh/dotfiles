@@ -18,15 +18,17 @@ brew "direnv"
 brew "fzf"
 brew "git"
 brew "gnupg"
+brew "josh/tap/brew-unattended-upgrade", restart_service: :changed
 brew "josh/tap/swift-completions"
 brew "jq"
-brew "launchdns", restart_service: true
+brew "launchdns", restart_service: :changed
 brew "mas"
 brew "node"
 brew "prettier"
 brew "ripgrep"
 brew "shellcheck"
 brew "swiftformat"
+brew "terminal-notifier"
 brew "wget"
 brew "yarn"
 
