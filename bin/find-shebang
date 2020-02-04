@@ -2,13 +2,13 @@
 # Usage: find-shebang <sh|bash> <path>
 
 if [[ -z "$1" || -z "$2" ]]; then
-  sed -ne '/^#/!q;s/.\{1,2\}//;1d;p' < "$0"
-  exit 1
+	sed -ne '/^#/!q;s/.\{1,2\}//;1d;p' <"$0"
+	exit 1
 fi
 
 while IFS= read -r -d '' file; do
-  SHEBANG=$(sed -n '1s/^#!//p' "$file" 2>/dev/null | cut -d ' ' -f 1)
-  if [ "$SHEBANG" = "/bin/$1" ]; then
-    echo "$file"
-  fi
-done < <(find "$2" -type f -not -path '*/\.*'  -print0)
+	SHEBANG=$(sed -n '1s/^#!//p' "$file" 2>/dev/null | cut -d ' ' -f 1)
+	if [ "$SHEBANG" = "/bin/$1" ]; then
+		echo "$file"
+	fi
+done < <(find "$2" -type f -not -path '*/\.*' -print0)

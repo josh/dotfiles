@@ -5,10 +5,10 @@ set -euo pipefail
 service_name="$1"
 
 get_config() {
-	launchctl list "$service_name" | \
-		grep "$1" | sed -e "s/^[[:space:]]*\"$1\" = \(.*\);$/\1/" | \
-		sed -e 's/^"//' -e 's/"$//' \
-		|| echo
+	launchctl list "$service_name" |
+		grep "$1" | sed -e "s/^[[:space:]]*\"$1\" = \(.*\);$/\1/" |
+		sed -e 's/^"//' -e 's/"$//' ||
+		echo
 }
 
 stdout_pid=
@@ -25,9 +25,9 @@ if [ -f "$stderr_path" ]; then
 	stderr_pid="$!"
 fi
 
-function finish {
-  [ -z "$stdout_pid" ] || kill "$stdout_pid"
-  [ -z "$stderr_pid" ] || kill "$stderr_pid"
+function finish() {
+	[ -z "$stdout_pid" ] || kill "$stdout_pid"
+	[ -z "$stderr_pid" ] || kill "$stderr_pid"
 }
 trap finish EXIT
 

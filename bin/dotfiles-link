@@ -1,28 +1,28 @@
 #!/bin/bash -e
 
 abs_dirname() {
-  local cwd
-  local path
-  local name
+	local cwd
+	local path
+	local name
 
-  cwd="$(pwd)"
-  path="$1"
+	cwd="$(pwd)"
+	path="$1"
 
-  while [ -n "$path" ]; do
-    cd "${path%/*}"
-    name="${path##*/}"
-    path="$(readlink "$name")"
-  done
+	while [ -n "$path" ]; do
+		cd "${path%/*}"
+		name="${path##*/}"
+		path="$(readlink "$name")"
+	done
 
-  pwd
-  cd "$cwd"
+	pwd
+	cd "$cwd"
 }
 
 bin="$(abs_dirname "$0")"
 dotfiles="$(abs_dirname "$bin")"
 
 for src in "$dotfiles"/*; do
-  ln -hfs "$src" "$HOME/.$(basename "$src")"
+	ln -hfs "$src" "$HOME/.$(basename "$src")"
 done
 
 pushd "$dotfiles" >/dev/null
