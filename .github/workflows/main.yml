@@ -13,7 +13,7 @@ jobs:
       run: sudo apt-get install shellcheck
 
     - name: Install shfmt
-      run: sudo apt-get install shfmt
+      run: sudo snap install shfmt
 
     - name: Check files
       run: shellcheck $(bin/find-shebang sh .) $(bin/find-shebang bash .)
