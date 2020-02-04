@@ -28,6 +28,7 @@ brew "prettier"
 brew "ripgrep"
 brew "shellcheck"
 brew "swiftformat"
+brew "swiftlint"
 brew "terminal-notifier"
 brew "wget"
 brew "yarn"
@@ -35,8 +36,12 @@ brew "yarn"
 # Cask
 cask "aerial"
 cask "bartender"
+cask "docker"
 cask "firefox"
 cask "netnewswire"
+cask "sf-symbols"
+cask "sketch"
+cask "vmware-fusion"
 
 # Mac App Store
 mas "1Password 7", id: 1333542190
