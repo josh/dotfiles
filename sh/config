@@ -1,5 +1,5 @@
 if [ "$(whoami)" = "root" ]; then
-  PS1="# "
+	PS1="# "
 else
-  PS1="$ "
+	PS1="$ "
 fi

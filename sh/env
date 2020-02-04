@@ -9,11 +9,11 @@ export LANG LANGUAGE LC_CTYPE LC_ALL
 PATH="/usr/bin:/bin:/usr/sbin:/sbin"
 
 if [ -d "/usr/local" ]; then
-  PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+	PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
 if [ -d "$HOME/.bin" ]; then
-  PATH="$HOME/.bin:$PATH"
+	PATH="$HOME/.bin:$PATH"
 fi
 
 # editor/pager
