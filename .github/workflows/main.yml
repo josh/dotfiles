@@ -18,6 +18,9 @@ jobs:
       - name: ShellCheck files
         run: shellcheck $(bin/find-shebang sh .) $(bin/find-shebang bash .)
 
+      - name: shfmt files
+        run: shfmt -w $(bin/find-shebang sh .) $(bin/find-shebang bash .)
+
       - name: ShellCheck POSIX sh files
         run: shellcheck --shell=sh sh/*
 
