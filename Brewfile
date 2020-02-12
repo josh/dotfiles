@@ -17,6 +17,7 @@ tap "josh/tap"
 brew "direnv"
 brew "fzf"
 brew "git"
+brew "github/gh/gh"
 brew "gnupg"
 brew "josh/tap/brew-unattended-upgrade", restart_service: :changed
 brew "josh/tap/swift-completions"
