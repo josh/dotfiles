@@ -7,6 +7,7 @@ else fail "missing model_name: #{hardware}"
 end
 
 # Taps
+tap "github/gh"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
