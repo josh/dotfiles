@@ -13,17 +13,15 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "josh/tap"
+tap "mxcl/made"
 
 # Homebrew
 brew "direnv"
 brew "fzf"
 brew "git"
-brew "github/gh/gh"
 brew "gnupg"
-brew "josh/tap/brew-unattended-upgrade", restart_service: :changed
-brew "josh/tap/swift-completions"
 brew "jq"
-brew "launchdns", restart_service: :changed
+brew "launchdns"
 brew "mas"
 brew "node"
 brew "prettier"
@@ -35,6 +33,10 @@ brew "swiftlint"
 brew "terminal-notifier"
 brew "wget"
 brew "yarn"
+brew "github/gh/gh"
+brew "josh/tap/brew-unattended-upgrade"
+brew "josh/tap/swift-completions"
+brew "mxcl/made/swift-sh"
 
 # Cask
 cask "aerial"
@@ -53,7 +55,10 @@ mas "BBEdit", id: 404009241
 mas "Deliveries", id: 924726344
 mas "Drafts", id: 1435957248
 mas "Fantastical", id: 975937182
+mas "iA Writer", id: 775737590
 mas "Ka-Block!", id: 1335413823
 mas "Numbers", id: 409203825
 mas "OmniFocus", id: 1346203938
+mas "Slack", id: 803453959
+mas "TaskPaper", id: 1090940630
 mas "Xcode", id: 497799835
