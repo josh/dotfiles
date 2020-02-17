@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm -f /tmp/Brewfile
+brew bundle dump --file=/tmp/Brewfile
+diff --side-by-side /tmp/Brewfile "${1:-Brewfile}"
