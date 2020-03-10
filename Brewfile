@@ -60,6 +60,8 @@ mas "iA Writer", id: 775737590
 mas "Ka-Block!", id: 1335413823
 mas "Numbers", id: 409203825
 mas "OmniFocus", id: 1346203938
+mas "Scroll", id: 1477273814
 mas "Slack", id: 803453959
 mas "TaskPaper", id: 1090940630
+mas "Tot", id: 1491071483
 mas "Xcode", id: 497799835
