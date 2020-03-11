@@ -6,6 +6,7 @@ else fail "missing model_name: #{hardware}"
 end
 
 # Taps
+tap "exyte/formulae"
 tap "github/gh"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -32,6 +33,7 @@ brew "swiftlint"
 brew "terminal-notifier"
 brew "wget"
 brew "yarn"
+brew "exyte/formulae/swift-format"
 brew "github/gh/gh"
 brew "josh/tap/brew-unattended-upgrade"
 brew "josh/tap/swift-completions"
