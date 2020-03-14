@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -euf -o pipefail
+set -x
+
+FILES=(Package.swift Sources/ Tests/)
+swift-format --in-place --recursive "${FILES[@]}"
+swiftformat "${FILES[@]}"
