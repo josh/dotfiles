@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm -rf *.xcodeproj
+rm -rf ./*.xcodeproj
 swift package generate-xcodeproj
 sleep 1
 open ./*.xcodeproj
