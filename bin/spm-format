@@ -1,8 +1,12 @@
 #!/bin/bash
 
-set -euf -o pipefail
-set -x
+set -e -o pipefail
 
-FILES=(Package.swift Sources/ Tests/)
-swift-format --in-place --recursive "${FILES[@]}"
-swiftformat "${FILES[@]}"
+shopt -s nullglob
+files=(./Package.swift ./Sources/**/*.swift ./Tests/**/*.swift)
+shopt -u nullglob
+
+for path in "${files[@]}"; do
+	echo "$path" >&2
+	swift-format "$path" | swiftformat stdin --config .swiftformat --quiet --output "$path"
+done
