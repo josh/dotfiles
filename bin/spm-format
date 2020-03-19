@@ -8,10 +8,6 @@ format() {
 }
 export -f format
 
-shopt -s nullglob
-files=(./Package.swift ./Sources/**/*.swift ./Tests/**/*.swift)
-shopt -u nullglob
-
-for f in "${files[@]}"; do echo "$f"; done |
+find ./Package.swift ./Sources ./Tests -type f -name "*.swift" |
 	tr '\n' '\0' |
 	xargs -0 -n1 -P6 -I '{}' bash -c 'format "$@"' _ {}
