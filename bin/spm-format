@@ -2,11 +2,16 @@
 
 set -e -o pipefail
 
+format() {
+	echo "$1" >&2
+	swift-format "$1" | swiftformat stdin --config .swiftformat --quiet --output "$1"
+}
+export -f format
+
 shopt -s nullglob
 files=(./Package.swift ./Sources/**/*.swift ./Tests/**/*.swift)
 shopt -u nullglob
 
-for path in "${files[@]}"; do
-	echo "$path" >&2
-	swift-format "$path" | swiftformat stdin --config .swiftformat --quiet --output "$path"
-done
+for f in "${files[@]}"; do echo "$f"; done |
+	tr '\n' '\0' |
+	xargs -0 -n1 -P6 -I '{}' bash -c 'format "$@"' _ {}
