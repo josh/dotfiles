@@ -10,4 +10,4 @@ export -f format
 
 find ./Package.swift ./Sources ./Tests -type f -name "*.swift" |
 	tr '\n' '\0' |
-	xargs -0 -n1 -P6 -I '{}' bash -c 'format "$@"' _ {}
+	xargs -0 -n1 -P10 -I '{}' bash -c 'format "$@"' _ {}
