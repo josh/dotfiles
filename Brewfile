@@ -37,6 +37,7 @@ brew "exyte/formulae/swift-format"
 brew "github/gh/gh"
 brew "josh/tap/brew-unattended-upgrade"
 brew "josh/tap/swift-completions"
+brew "josh/tap/tot"
 brew "mxcl/made/swift-sh"
 
 # Cask
