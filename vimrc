@@ -38,5 +38,5 @@ set grepformat=%f:%l:%m
 
 nnoremap gp :silent %!prettier --stdin --stdin-filepath %
 
-call plug#begin('~/.vim/bundle')
+call plug#begin()
 call plug#end()
