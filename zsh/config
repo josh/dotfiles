@@ -3,6 +3,10 @@ source ~/.sh/config
 
 autoload -Uz compinit && compinit -d /tmp/zcompdump
 
+# bash navigation
+autoload -U select-word-style
+select-word-style bash
+
 # direnv
 if [ -x "$(command -v direnv)" ]; then
 	eval "$(direnv hook zsh)"
