@@ -3,8 +3,18 @@
 set -e -o pipefail
 
 format() {
-	echo "$1" >&2
-	swift-format "$1" | swiftformat stdin --config .swiftformat --quiet --output "$1"
+	tmpfile="$(mktemp)"
+	cleanup() {
+		rm -f "$tmpfile"
+	}
+	trap cleanup EXIT
+
+	swift-format "$1" | swiftformat stdin --config .swiftformat --quiet --output "$tmpfile"
+
+	if ! cmp --silent "$1" "$tmpfile"; then
+		echo "$1" >&2
+		mv "$tmpfile" "$1"
+	fi
 }
 export -f format
 
