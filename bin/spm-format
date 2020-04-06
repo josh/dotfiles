@@ -22,7 +22,7 @@ format() {
 	if [ -f "$tmpfile" ]; then
 		if ! cmp --silent "$1" "$tmpfile"; then
 			echo "$1" >&2
-			mv "$tmpfile" "$1"
+			cat "$tmpfile" >"$1"
 		fi
 	fi
 }
