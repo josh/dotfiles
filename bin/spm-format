@@ -1,9 +1,12 @@
 #!/bin/bash
 
-set -e -o pipefail
+set -euf -o pipefail
 
 format() {
+	set -euf -o pipefail
+
 	tmpfile="$(mktemp)"
+	rm "$tmpfile"
 	cleanup() {
 		rm -f "$tmpfile"
 	}
@@ -11,9 +14,11 @@ format() {
 
 	swift-format "$1" | swiftformat stdin --config .swiftformat --quiet --output "$tmpfile"
 
-	if ! cmp --silent "$1" "$tmpfile"; then
-		echo "$1" >&2
-		mv "$tmpfile" "$1"
+	if [ -f "$tmpfile" ]; then
+		if ! cmp --silent "$1" "$tmpfile"; then
+			echo "$1" >&2
+			mv "$tmpfile" "$1"
+		fi
 	fi
 }
 export -f format
