@@ -8,10 +8,12 @@ run() {
 
 spm_module() {
 	swift package describe --type json |
-		jq --raw-output '.targets[] | select(.type == "library") | .name'
+		jq --raw-output '.targets[] | select(.type == "library") | .name' |
+		head -n1
 }
 
-MODULE="$(spm_module)"
+DEFAULT_MODULE="$(spm_module)"
+MODULE="${1:-$DEFAULT_MODULE}"
 DOC=".build/sourcekitten-doc.json"
 run sourcekitten doc --spm-module "$MODULE" >"$DOC"
 run jazzy --clean --sourcekitten-sourcefile "$DOC"
