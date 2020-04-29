@@ -1,9 +1,0 @@
-#!/bin/bash
-
-set -ex
-
-rm -rf .git/objects .git/refs/remotes .git/refs/tags .git/packed-refs
-git init
-git fetch --all
-git checkout HEAD
-git fsck
