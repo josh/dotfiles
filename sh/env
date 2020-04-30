@@ -26,9 +26,3 @@ export EDITOR PAGER LESSHISTFILE
 CLICOLOR=1
 GREP_COLOR='1;32'
 export CLICOLOR GREP_COLOR
-
-# ssh
-if [ -d "/Applications/Secretive.app" ]; then
-	SSH_AUTH_SOCK="$HOME/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh"
-	export SSH_AUTH_SOCK
-fi
