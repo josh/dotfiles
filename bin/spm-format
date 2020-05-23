@@ -28,10 +28,10 @@ format() {
 }
 export -f format
 
-if [ -f .swiftlint.yml ]; then
-	swiftlint lint --quiet .
-fi
-
 find . -type f -iname "*.swift" ! -path "./.build/*" |
 	tr '\n' '\0' |
 	xargs -0 -n1 -P10 -I '{}' bash -c 'format "$@"' _ {}
+
+if [ -f .swiftlint.yml ]; then
+	swiftlint lint --quiet .
+fi
