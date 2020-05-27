@@ -16,6 +16,7 @@ tap "mxcl/made"
 
 # Homebrew
 brew "cmake"
+brew "deno"
 brew "direnv"
 brew "fzf"
 brew "git"
