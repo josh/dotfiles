@@ -75,3 +75,4 @@ mas "Slack", id: 803453959
 mas "TaskPaper", id: 1090940630
 mas "Tot", id: 1491071483
 mas "Xcode", id: 497799835
+mas "xScope", id: 889428659
