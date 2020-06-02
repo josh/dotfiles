@@ -13,6 +13,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "josh/tap"
 tap "mxcl/made"
+tap "nshipster/formulae"
 
 # Homebrew
 brew "cmake"
