@@ -44,6 +44,7 @@ brew "josh/tap/csv2json"
 brew "josh/tap/swift-completions"
 brew "josh/tap/tot"
 brew "mxcl/made/swift-sh"
+brew "nshipster/formulae/gyb"
 
 # Cask
 cask "aerial"
