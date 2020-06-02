@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Language="en-US" Id="prettier-vscode" Version="4.7.0" Publisher="esbenp"/>
+    <Identity Language="en-US" Id="prettier-vscode" Version="5.0.0" Publisher="esbenp"/>
     <DisplayName>Prettier - Code formatter</DisplayName>
     <Description xml:space="preserve">Code formatter using prettier</Description>
     <Tags>multi-root ready,prettier,formatter,javascript,js,jsx,flow,typescript,ts,json,css,less,scss,styled-components,styled-jsx,markdown,md,commonmark,mdx,php,pug,ruby,swift,html,vue,angular,graphql,yaml,yml,ignore,__ext_graphql,__ext_vue</Tags>
