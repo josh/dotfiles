@@ -8,6 +8,8 @@
 	helper = osxkeychain
 [core]
 	excludesfile = /Users/josh/.gitignore
+[pull]
+	rebase = false
 [alias]
 	b = branch
 	ba = branch --all
