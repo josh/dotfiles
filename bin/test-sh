@@ -1,0 +1,9 @@
+#!/bin/bash
+# usage: test-sh bin/some-sh-script
+
+set -euf -o pipefail
+set -x
+
+shfmt -w "$1"
+shellcheck "$1"
+"$1"
