@@ -1,0 +1,10 @@
+#!/bin/bash
+# usage: echo "new Alert('Hello', 'My message.').show()" | omnifocus-eval-js
+
+exec osascript -l AppleScript - "$(cat)" <<'END'
+on run argv
+	tell application "OmniFocus"
+		evaluate javascript item 1 of argv
+	end tell
+end run
+END
