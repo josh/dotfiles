@@ -6,4 +6,4 @@ set -x
 
 shfmt -w "$1"
 shellcheck "$1"
-"$1"
+"$1" "$@"
