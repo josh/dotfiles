@@ -1,10 +1,19 @@
 #!/bin/bash
-# usage: echo "new Alert('Hello', 'My message.').show()" | omnifocus-eval-js
+# usage: omnifocus-eval-js "new Alert('Hello', 'My message.').show()"
 
-exec osascript -l AppleScript - "$(cat)" <<'END'
-on run argv
+set -euf -o pipefail
+
+OMNIJS="$1"
+[ -z "$OMNIJS" ] && OMNIJS="$(cat)"
+
+OSASCRIPT='on run argv
 	tell application "OmniFocus"
 		evaluate javascript item 1 of argv
 	end tell
-end run
-END
+end run'
+
+RESULT=$(osascript -l AppleScript -e "$OSASCRIPT" "$OMNIJS")
+
+if [ "$RESULT" != "missing value" ]; then
+	echo "$RESULT"
+fi
