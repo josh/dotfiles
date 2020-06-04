@@ -4,6 +4,9 @@
 set -euf -o pipefail
 set -x
 
-shfmt -w "$1"
-shellcheck "$1"
-"$1" "$@"
+SCRIPT="$1"
+shift
+
+shfmt -w "$SCRIPT"
+shellcheck "$SCRIPT"
+"$SCRIPT" "$@"
