@@ -1,0 +1,13 @@
+#!/bin/sh
+
+SCRIPT="#!/bin/bash
+
+set -euf -o pipefail
+set -x"
+
+if [ -n "$1" ]; then
+	echo "$SCRIPT" >"$1"
+	chmod +x "$1"
+else
+	echo "$SCRIPT"
+fi
