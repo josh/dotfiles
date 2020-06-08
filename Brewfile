@@ -13,6 +13,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "josh/tap"
 tap "mxcl/made"
+tap "nektos/tap"
 tap "nshipster/formulae"
 
 # Homebrew
@@ -45,6 +46,7 @@ brew "josh/tap/csv2json"
 brew "josh/tap/swift-completions"
 brew "josh/tap/tot"
 brew "mxcl/made/swift-sh"
+brew "nektos/tap/act"
 brew "nshipster/formulae/gyb"
 
 # Cask
