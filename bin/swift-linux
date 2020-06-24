@@ -1,5 +1,7 @@
 #!/bin/bash
 
+IMAGE=${SWIFT_IMAGE:-swift:latest}
+
 docker run \
 	--rm \
 	--privileged \
@@ -7,5 +9,5 @@ docker run \
 	--tty \
 	--volume "$(pwd):/src" \
 	--workdir "/src" \
-	swift:latest \
+	"$IMAGE" \
 	swift "$@"
