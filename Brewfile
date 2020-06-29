@@ -17,6 +17,7 @@ tap "nektos/tap"
 tap "nshipster/formulae"
 
 # Homebrew
+brew "bloaty"
 brew "cmake"
 brew "deno"
 brew "direnv"
