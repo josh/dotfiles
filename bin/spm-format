@@ -28,7 +28,7 @@ format() {
 }
 export -f format
 
-find . -type f -iname "*.swift" ! -path "./.build/*" |
+find . -type f -iname "*.swift" ! -path "./.build/*" '!' -path './Packages/*' |
 	tr '\n' '\0' |
 	xargs -0 -n1 -P10 -I '{}' bash -c 'format "$@"' _ {}
 
