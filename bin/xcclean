@@ -1,0 +1,4 @@
+#!/bin/bash
+
+rm -rf ./.swiftpm/
+rm -rf ~/Library/Developer/Xcode/DerivedData/
