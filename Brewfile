@@ -1,10 +1,3 @@
-hardware = `system_profiler SPHardwareDataType`
-model_name = case
-when hardware.match(/Mac mini/) then :mac_mini
-when hardware.match(/MacBook Pro/) then :macbook_pro
-else fail "missing model_name: #{hardware}"
-end
-
 # Taps
 tap "github/gh"
 tap "homebrew/bundle"
