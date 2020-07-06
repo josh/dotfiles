@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -euf -o pipefail
+set -x
+
+mkdir -p swift-source
+pushd swift-source/
+
+[ -d swift/ ] || git clone https://github.com/apple/swift.git
+
+brew bundle --file ./swift/Brewfile
+./swift/utils/update-checkout --clone
