@@ -41,6 +41,4 @@ nnoremap gp :silent %!prettier --stdin --stdin-filepath %
 execute pathogen#infect()
 
 call plug#begin()
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
 call plug#end()
