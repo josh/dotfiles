@@ -52,7 +52,6 @@ cask "netnewswire"
 cask "scroll-reverser"
 cask "sf-symbols"
 cask "sketch"
-cask "visual-studio-code"
 cask "vmware-fusion"
 
 # Mac App Store
