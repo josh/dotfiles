@@ -19,3 +19,5 @@
 	ca = commit --all --verbose
 	st = status --short --branch
 	up = pull
+[init]
+	defaultBranch = main
