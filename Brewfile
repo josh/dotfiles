@@ -55,7 +55,6 @@ cask "netnewswire"
 cask "scroll-reverser"
 cask "sf-symbols"
 cask "sketch"
-cask "vmware-fusion"
 
 # Mac App Store
 mas "1Password 7", id: 1333542190
