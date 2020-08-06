@@ -28,3 +28,9 @@ for src in "$dotfiles"/*; do
 done
 
 pushd "$dotfiles" >/dev/null
+
+chmod 600 ssh/id_ed25519
+chmod 644 ssh/id_ed25519.pub
+
+chmod 600 ssh/id_rsa
+chmod 644 ssh/id_rsa.pub
