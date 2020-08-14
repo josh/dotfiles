@@ -12,9 +12,9 @@ format() {
 	}
 	trap cleanup EXIT
 
-	FLAGS=""
+	FLAGS=("--stdinpath" "$1")
 	if [ -f .swiftformat ]; then
-		FLAGS=(--config .swiftformat)
+		FLAGS+=(--config .swiftformat)
 	fi
 
 	swift-format "$1" | swiftformat stdin "${FLAGS[@]}" --quiet --output "$tmpfile"
