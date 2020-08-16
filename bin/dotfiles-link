@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -euf -o pipefail
+set -e
 
 abs_dirname() {
 	local cwd
