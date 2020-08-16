@@ -1,0 +1,30 @@
+set_dock_preferences() {
+	osascript <<EOD
+	tell application "System Events"
+		tell dock preferences
+			set autohide to $1
+			set dock size to $2
+		end tell
+	end tell
+EOD
+}
+
+dock_preferences() {
+	osascript <<EOD
+	tell application "System Events"
+		tell dock preferences to get properties
+	end tell
+EOD
+}
+
+case "$DISPLAY_NAME" in
+"Built-in Retina Display")
+	set_dock_preferences "true" "1.0"
+	;;
+"Pro Display XDR")
+	set_dock_preferences "false" "0.571428596973"
+	;;
+*)
+	dock_preferences
+	;;
+esac
