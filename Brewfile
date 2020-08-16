@@ -40,6 +40,7 @@ brew "yarn"
 brew "github/gh/gh"
 brew "josh/tap/brew-unattended-upgrade"
 brew "josh/tap/csv2json"
+brew "josh/tap/displayrcd", restart_service: :changed
 brew "josh/tap/swift-completions"
 brew "mxcl/made/swift-sh"
 brew "nektos/tap/act"
