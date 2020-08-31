@@ -2,7 +2,6 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
-tap "homebrew/livecheck"
 tap "homebrew/services"
 tap "josh/tap"
 tap "mxcl/made"
