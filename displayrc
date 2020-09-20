@@ -1,10 +1,8 @@
 set_dock_preferences() {
 	osascript <<EOD
 	tell application "System Events"
-		tell dock preferences
-			set autohide to $1
-			set dock size to $2
-		end tell
+		tell dock preferences to set dock size to $2
+		tell dock preferences to set autohide to $1
 	end tell
 EOD
 }
