@@ -15,6 +15,7 @@ dock_preferences() {
 EOD
 }
 
+sleep 3
 case "$DISPLAY_NAME" in
 "Built-in Retina Display")
 	set_dock_preferences "true" "1.0"
