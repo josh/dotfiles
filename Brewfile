@@ -4,7 +4,6 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "josh/tap"
-tap "nektos/tap"
 tap "nshipster/formulae"
 
 # Homebrew
@@ -40,7 +39,6 @@ brew "josh/tap/brew-unattended-upgrade"
 brew "josh/tap/csv2json"
 brew "josh/tap/displayrcd", restart_service: :changed
 brew "josh/tap/swift-completions"
-brew "nektos/tap/act"
 brew "nshipster/formulae/gyb"
 
 # Cask
