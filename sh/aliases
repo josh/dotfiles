@@ -1,5 +1,8 @@
 # git
 alias g='git'
 
+# git
+alias g='git'
+
 # grep colors
 alias grep='grep --color=auto'
