@@ -10,6 +10,8 @@
 	excludesfile = /Users/josh/.gitignore
 [pull]
 	rebase = false
+[fetch]
+	prune = true
 [alias]
 	b = branch
 	ba = branch --all
