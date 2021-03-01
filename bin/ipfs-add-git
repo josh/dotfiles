@@ -36,7 +36,6 @@ unpack_refs() {
 unpack
 unpack_refs
 
-git fsck
 git update-server-info
 
 ipfs add --recursive .
