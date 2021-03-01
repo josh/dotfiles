@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -euf -o pipefail
+set -x
+
+[[ "$(uname)" == 'Darwin' ]]
+grep 'pam_tid.so' /etc/pam.d/sudo --silent && exit 1
+sudo sed -i -e '1s;^;auth       sufficient     pam_tid.so\n;' /etc/pam.d/sudo
