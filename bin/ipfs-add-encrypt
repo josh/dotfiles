@@ -2,7 +2,8 @@
 
 set -euf -o pipefail
 
-pass="$(ipfs add --only-hash --quieter "$1")"
-cid="$(openssl enc -aes-256-cbc -nosalt -in "$1" -pass "pass:$pass" | ipfs add --quieter)"
+cid="$(ipfs add --only-hash --quieter "$1")"
+key="$(ipfs cid format -b base16 -f "%D" "$cid")"
+ecid="$(openssl enc -aes-256-cbc -in "$1" -K "$key" -iv "" | ipfs add --quieter)"
 
-echo "added $cid#$pass"
+echo "$ecid#$cid"

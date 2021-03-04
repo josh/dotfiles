@@ -3,13 +3,15 @@
 set -euf -o pipefail
 
 if [ "$#" -eq 1 ]; then
-	CID="$(echo "$1" | cut -d '#' -f 1)"
-	PASS="$(echo "$1" | cut -d '#' -f 2)"
+	ecid="$(echo "$1" | cut -d '#' -f 1)"
+	cid="$(echo "$1" | cut -d '#' -f 2)"
 elif [ "$#" -eq 2 ]; then
-	CID="$1"
-	PASS="$2"
+	ecid="$1"
+	cid="$2"
 else
 	exit 1
 fi
 
-ipfs cat "$CID" | openssl enc -aes-256-cbc -nosalt -d -pass "pass:$PASS"
+key="$(ipfs cid format -b base16 -f "%D" "$cid")"
+
+ipfs cat "$ecid" | openssl enc -aes-256-cbc -d -K "$key" -iv ""
