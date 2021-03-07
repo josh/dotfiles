@@ -3,6 +3,7 @@
 *.swp
 *~
 .#*
+/.direnv
 .DS_Store
 ._*
 /.bundle
