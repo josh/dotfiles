@@ -53,6 +53,7 @@ cask "nova"
 cask "scroll-reverser"
 cask "sf-symbols"
 cask "sketch"
+cask "syncthing"
 cask "josh/tap/sort-lines"
 
 # Mac App Store
