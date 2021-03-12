@@ -67,6 +67,7 @@ mas "Developer", id: 640199958
 mas "Drafts", id: 1435957248
 mas "Fantastical", id: 975937182
 mas "Hush", id: 1544743900
+mas "iA Writer", id: 775737590
 mas "Ka-Block!", id: 1335413823
 mas "Numbers", id: 409203825
 mas "OmniFocus", id: 1346203938
