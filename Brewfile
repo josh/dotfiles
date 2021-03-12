@@ -7,7 +7,7 @@ tap "josh/tap"
 tap "nshipster/formulae"
 
 # Homebrew
-brew "python@3.8"
+brew "python@3.9"
 brew "black"
 brew "bloaty"
 brew "cmake"
