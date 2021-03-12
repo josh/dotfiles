@@ -34,6 +34,7 @@ brew "swift-format"
 brew "swiftformat"
 brew "swiftgen"
 brew "swiftlint"
+brew "syncthing", restart_service: :changed
 brew "terminal-notifier"
 brew "typescript"
 brew "wget"
@@ -55,7 +56,6 @@ cask "nova"
 cask "scroll-reverser"
 cask "sf-symbols"
 cask "sketch"
-cask "syncthing"
 cask "josh/tap/sort-lines"
 
 # Mac App Store
