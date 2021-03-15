@@ -63,7 +63,7 @@ cask "josh/tap/sort-lines"
 # Mac App Store
 mas "1Password 7", id: 1333542190
 mas "BBEdit", id: 404009241
-mas "Deliveries", id: 924726344
+mas "Deliveries", id: 290986013
 mas "Developer", id: 640199958
 mas "Drafts", id: 1435957248
 mas "Fantastical", id: 975937182
