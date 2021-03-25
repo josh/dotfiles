@@ -2,6 +2,7 @@ set_dock_preferences() {
 	osascript <<EOD
 	tell application "System Events"
 		tell dock preferences to set dock size to $2
+		tell dock preferences to set screen edge to $3
 		tell dock preferences to set autohide to $1
 	end tell
 EOD
@@ -15,13 +16,15 @@ dock_preferences() {
 EOD
 }
 
-sleep 3
-case "$DISPLAY_NAME" in
-"Built-in Retina Display")
-	set_dock_preferences "true" "1.0"
+case "$DISPLAY_NAMES" in
+"Pro Display XDR|Built-in Retina Display")
+	set_dock_preferences "true" "0.571428596973" "left"
 	;;
 "Pro Display XDR")
-	set_dock_preferences "false" "0.571428596973"
+	set_dock_preferences "false" "0.571428596973" "bottom"
+	;;
+"Built-in Retina Display"*)
+	set_dock_preferences "true" "1.0" "bottom"
 	;;
 *)
 	dock_preferences
