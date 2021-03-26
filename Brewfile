@@ -58,9 +58,11 @@ cask "scroll-reverser"
 cask "sf-symbols"
 cask "sketch"
 cask "josh/tap/sort-lines"
+cask "xbar"
 
 # Mac App Store
 mas "1Password 7", id: 1333542190
+mas "Aware", id: 1082170746
 mas "BBEdit", id: 404009241
 mas "Deliveries", id: 290986013
 mas "Developer", id: 640199958
@@ -74,6 +76,7 @@ mas "OmniFocus", id: 1346203938
 mas "Scroll", id: 1477273814
 mas "Slack", id: 803453959
 mas "SQLPro for SQLite", id: 586001240
+mas "SwitchGlass", id: 1498546559
 mas "Tot", id: 1491071483
 mas "Xcode", id: 497799835
 mas "xScope", id: 889428659
