@@ -6,3 +6,6 @@ alias g='git'
 
 # grep colors
 alias grep='grep --color=auto'
+
+# docker
+alias docker='docker-ondemand'
