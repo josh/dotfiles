@@ -1,3 +1,0 @@
-#!/bin/bash
-
-jq '.log.entries[0].response.content.text' --raw-output <"$1" | jq
