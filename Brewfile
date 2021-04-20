@@ -51,6 +51,7 @@ brew "nshipster/formulae/gyb"
 
 # Cask
 cask "aerial"
+cask "bartender"
 cask "docker"
 cask "firefox"
 cask "netnewswire"
