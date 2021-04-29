@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -euf -o pipefail
+
+exec docker-ondemand run \
+	--rm \
+	--interactive \
+	--tty \
+	--volume "$HOME/.config/wikibase-cli:/root/.config/wikibase-cli" \
+	--volume "$HOME/.cache/wikibase-cli:/root/.cache/wikibase-cli" \
+	maxlath/wikibase-cli "$@"
