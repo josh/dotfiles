@@ -36,6 +36,7 @@ brew "syncthing", restart_service: :changed
 brew "terminal-notifier"
 brew "typescript"
 brew "wget"
+brew "xsv"
 brew "yarn"
 brew "youtube-dl"
 brew "josh/tap/brew-unattended-upgrade"
