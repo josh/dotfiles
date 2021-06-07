@@ -72,6 +72,5 @@ mas "Numbers", id: 409203825
 mas "OmniFocus", id: 1346203938
 mas "Scroll", id: 1477273814
 mas "SQLPro for SQLite", id: 586001240
-mas "Tot", id: 1491071483
 mas "Xcode", id: 497799835
 mas "xScope", id: 889428659
