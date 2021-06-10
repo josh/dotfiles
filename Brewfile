@@ -40,7 +40,6 @@ brew "xsv"
 brew "yarn"
 brew "youtube-dl"
 brew "josh/tap/brew-unattended-upgrade"
-brew "josh/tap/csv2json"
 brew "josh/tap/displayrcd", restart_service: :changed
 brew "josh/tap/docker-ondemand", restart_service: :changed
 brew "josh/tap/ipfs-tools"
