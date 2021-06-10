@@ -5,6 +5,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "josh/tap"
 tap "nshipster/formulae"
+tap "wabarc/wayback"
 
 # Homebrew
 brew "python@3.9"
@@ -45,6 +46,7 @@ brew "josh/tap/docker-ondemand", restart_service: :changed
 brew "josh/tap/ipfs-tools"
 brew "josh/tap/swift-completions"
 brew "nshipster/formulae/gyb"
+brew "wabarc/wayback/wayback"
 
 # Cask
 cask "bartender"
