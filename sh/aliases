@@ -8,4 +8,6 @@ alias g='git'
 alias grep='grep --color=auto'
 
 # docker
-alias docker='docker-ondemand'
+if [ -x "$(command -v docker-ondemand)" ]; then
+	alias docker='docker-ondemand'
+fi
