@@ -45,6 +45,7 @@ brew "josh/tap/brew-unattended-upgrade"
 brew "josh/tap/displayrcd", restart_service: :changed
 brew "josh/tap/docker-ondemand", restart_service: :changed
 brew "josh/tap/ipfs-tools"
+brew "josh/tap/itunes-library-export"
 brew "josh/tap/swift-completions"
 brew "nshipster/formulae/gyb"
 brew "wabarc/wayback/wayback"
