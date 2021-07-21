@@ -19,7 +19,6 @@ brew "gnupg"
 brew "go"
 brew "gopls"
 brew "icu4c"
-brew "ipfs", restart_service: :changed
 brew "isort"
 brew "jq"
 brew "launchdns"
@@ -46,7 +45,6 @@ brew "zbar"
 brew "josh/tap/brew-unattended-upgrade"
 brew "josh/tap/displayrcd", restart_service: :changed
 brew "josh/tap/docker-ondemand", restart_service: :changed
-brew "josh/tap/ipfs-tools"
 brew "josh/tap/itunes-library-export"
 brew "josh/tap/swift-completions"
 brew "nshipster/formulae/gyb"

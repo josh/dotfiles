@@ -4,7 +4,6 @@
 .cups
 .docker
 .DS_Store
-.ipfs
 .local
 .Trash
 .zsh_history
