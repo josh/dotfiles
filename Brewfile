@@ -34,7 +34,6 @@ brew "swift-format"
 brew "swiftformat"
 brew "swiftgen"
 brew "swiftlint"
-brew "syncthing", restart_service: :changed
 brew "terminal-notifier"
 brew "typescript"
 brew "wget"
