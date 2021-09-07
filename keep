@@ -5,6 +5,7 @@
 .docker
 .DS_Store
 .local
+.swiftpm
 .Trash
 .zsh_history
 .zsh_sessions
