@@ -47,7 +47,6 @@ brew "josh/tap/itunes-library-export"
 brew "josh/tap/swift-completions"
 
 # Cask
-cask "bartender"
 cask "docker"
 cask "firefox"
 cask "netnewswire"
