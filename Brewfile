@@ -55,6 +55,7 @@ cask "sketch"
 
 # Mac App Store
 mas "BBEdit", id: 404009241
+mas "Data Jar", id: 1453273600
 mas "Deliveries", id: 290986013
 mas "Developer", id: 640199958
 mas "Fantastical", id: 975937182
@@ -63,5 +64,6 @@ mas "Ka-Block!", id: 1335413823
 mas "Numbers", id: 409203825
 mas "OmniFocus", id: 1346203938
 mas "SQLPro for SQLite", id: 586001240
+mas "WireGuard", id: 1451685025
 mas "Xcode", id: 497799835
 mas "xScope", id: 889428659
