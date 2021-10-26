@@ -49,6 +49,7 @@ brew "josh/tap/swift-completions"
 # Cask
 cask "docker"
 cask "firefox"
+cask "mimestream"
 cask "nova"
 cask "scroll-reverser"
 cask "sketch"
