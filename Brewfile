@@ -51,7 +51,6 @@ cask "docker"
 cask "firefox"
 cask "nova"
 cask "scroll-reverser"
-cask "sf-symbols"
 cask "sketch"
 
 # Mac App Store
