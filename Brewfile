@@ -49,7 +49,6 @@ brew "josh/tap/swift-completions"
 # Cask
 cask "docker"
 cask "firefox"
-cask "netnewswire"
 cask "nova"
 cask "scroll-reverser"
 cask "sf-symbols"
