@@ -7,7 +7,7 @@ tap "homebrew/services"
 tap "josh/tap"
 
 # Homebrew
-brew "python@3.9"
+brew "python@3.10"
 brew "black"
 brew "cmake"
 brew "deno"
