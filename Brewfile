@@ -52,7 +52,6 @@ cask "mimestream"
 cask "nova"
 cask "scroll-reverser"
 cask "sketch"
-cask "ksdiff"
 
 # Mac App Store
 mas "BBEdit", id: 404009241
