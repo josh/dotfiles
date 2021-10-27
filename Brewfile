@@ -13,6 +13,7 @@ brew "direnv"
 brew "git"
 brew "gnupg"
 brew "go"
+brew "icu4c"
 brew "isort"
 brew "jq"
 brew "mas"
@@ -54,6 +55,7 @@ mas "Kaleidoscope", id: 1575557335
 mas "Numbers", id: 409203825
 mas "OmniFocus", id: 1346203938
 mas "SQLPro for SQLite", id: 586001240
+mas "Transmit", id: 1436522307
 mas "WireGuard", id: 1451685025
 mas "Xcode", id: 497799835
 mas "xScope", id: 889428659
