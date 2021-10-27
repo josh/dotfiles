@@ -1,5 +1,0 @@
-#!/bin/bash
-
-rm -rf ./.swiftpm/
-rm -rf ~/Library/Developer/Xcode/DerivedData/
-xcrun simctl --set previews delete all
