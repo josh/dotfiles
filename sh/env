@@ -29,3 +29,6 @@ export CLICOLOR GREP_COLOR
 
 # go
 export GOPATH="$HOME/.go"
+
+ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+export ICLOUD

@@ -3,6 +3,3 @@ source ~/.sh/env
 
 DOTFILES=$(cd "$(dirname "${0:A}")/.." && pwd)
 export DOTFILES
-
-ICLOUD=$(cd "$(dirname "${0:A}")/../../.." && pwd)
-export ICLOUD
