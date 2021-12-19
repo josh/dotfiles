@@ -1,4 +1,0 @@
-#!/bin/bash
-# usage: omnifocus-plugin "com.omni-automation.of.packing-list-for-trip"
-
-exec omnifocus-eval-js "PlugIn.find('${1}').actions[0].perform()"
