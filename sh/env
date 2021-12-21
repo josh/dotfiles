@@ -28,7 +28,10 @@ GREP_COLOR='1;32'
 export CLICOLOR GREP_COLOR
 
 # go
-export GOPATH="$HOME/.go"
+if [ -d "$HOME/.go" ]; then
+	export GOPATH="$HOME/.go"
+fi
 
-ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
-export ICLOUD
+if [ -d "$HOME/Library/Mobile Documents/com~apple~CloudDocs" ]; then
+	ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+fi
