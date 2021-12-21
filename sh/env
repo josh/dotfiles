@@ -17,7 +17,11 @@ if [ -d "$HOME/.bin" ]; then
 fi
 
 # editor/pager
-EDITOR="vim"
+if [ -x "$(command -v bbedit)" ]; then
+	EDITOR="bbedit"
+else
+	EDITOR="vim"
+fi
 PAGER="less -R"
 LESSHISTFILE="-"
 export EDITOR PAGER LESSHISTFILE
