@@ -37,5 +37,6 @@ if [ -d "$HOME/.go" ]; then
 fi
 
 if [ -d "$HOME/Library/Mobile Documents/com~apple~CloudDocs" ]; then
+	# shellcheck disable=SC2034
 	ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 fi
