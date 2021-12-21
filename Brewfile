@@ -29,6 +29,7 @@ brew "swiftlint"
 brew "terminal-notifier"
 brew "wget"
 brew "zbar"
+brew "josh/tap/bbedit-cli"
 brew "josh/tap/brew-unattended-upgrade"
 brew "josh/tap/displayrcd", restart_service: :changed
 brew "josh/tap/docker-ondemand", restart_service: :changed
