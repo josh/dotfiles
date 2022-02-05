@@ -44,6 +44,7 @@ cask "mimestream"
 cask "nova"
 cask "scroll-reverser"
 cask "sketch"
+cask "visual-studio-code"
 
 # Mac App Store
 mas "Actions", id: 1586435171
