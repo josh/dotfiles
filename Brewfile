@@ -67,4 +67,3 @@ mas "TestFlight", id: 899247664
 mas "Transmit", id: 1436522307
 mas "WireGuard", id: 1451685025
 mas "Xcode", id: 497799835
-mas "xScope", id: 889428659
