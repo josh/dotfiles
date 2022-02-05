@@ -33,12 +33,12 @@ brew "zbar"
 brew "josh/tap/bbedit-cli"
 brew "josh/tap/brew-unattended-upgrade"
 brew "josh/tap/displayrcd", restart_service: :changed
-brew "josh/tap/docker-ondemand", restart_service: :changed
+# brew "josh/tap/docker-ondemand", restart_service: :changed
 brew "josh/tap/itunes-library-export"
 brew "josh/tap/swift-completions"
 
 # Cask
-cask "docker"
+# cask "docker"
 cask "firefox"
 cask "mimestream"
 cask "nova"
