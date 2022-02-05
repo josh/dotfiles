@@ -61,6 +61,7 @@ mas "Numbers", id: 409203825
 mas "OmniFocus", id: 1346203938
 mas "Playgrounds", id: 1496833156
 mas "SQLPro for SQLite", id: 586001240
+mas "Super Agent", id: 1568262835
 mas "TestFlight", id: 899247664
 mas "Transmit", id: 1436522307
 mas "WireGuard", id: 1451685025
