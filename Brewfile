@@ -42,6 +42,7 @@ cask "mimestream"
 cask "nova"
 cask "scroll-reverser"
 cask "sketch"
+cask "slack"
 cask "visual-studio-code"
 
 # Mac App Store
@@ -58,6 +59,7 @@ mas "Ka-Block!", id: 1335413823
 mas "Kaleidoscope", id: 1575557335
 mas "Noir", id: 1592917505
 mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
 mas "Playgrounds", id: 1496833156
 mas "SQLPro for SQLite", id: 586001240
 mas "Super Agent", id: 1568262835
