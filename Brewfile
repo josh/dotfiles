@@ -62,6 +62,7 @@ mas "Playgrounds", id: 1496833156
 mas "SQLPro for SQLite", id: 586001240
 mas "Super Agent", id: 1568262835
 mas "TestFlight", id: 899247664
+mas "Tot", id: 1491071483
 mas "Transmit", id: 1436522307
 mas "WireGuard", id: 1451685025
 mas "Xcode", id: 497799835
