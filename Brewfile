@@ -52,6 +52,7 @@ mas "Deliveries", id: 290986013
 mas "Developer", id: 640199958
 mas "Fantastical", id: 975937182
 mas "GameTrack", id: 1136800740
+mas "Hidden Bar", id: 1452453066
 mas "Hush", id: 1544743900
 mas "Ka-Block!", id: 1335413823
 mas "Kaleidoscope", id: 1575557335
