@@ -61,9 +61,11 @@ mas "Noir", id: 1592917505
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Playgrounds", id: 1496833156
+mas "Soulver 3", id: 1508732804
 mas "SQLPro for SQLite", id: 586001240
 mas "Super Agent", id: 1568262835
 mas "TestFlight", id: 899247664
+mas "Toggl Track", id: 957734279
 mas "Tot", id: 1491071483
 mas "Transmit", id: 1436522307
 mas "WireGuard", id: 1451685025
