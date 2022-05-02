@@ -37,6 +37,7 @@ brew "josh/tap/itunes-library-export"
 brew "josh/tap/swift-completions"
 
 # Cask
+cask "cleanshot"
 cask "firefox"
 cask "mimestream"
 cask "nova"
