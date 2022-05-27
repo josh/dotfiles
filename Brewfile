@@ -9,6 +9,7 @@ tap "josh/tap"
 # Homebrew
 brew "black"
 brew "direnv"
+brew "gh"
 brew "git"
 brew "python@3.9"
 brew "gnupg"
