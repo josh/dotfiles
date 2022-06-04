@@ -1,6 +1,0 @@
-#!/bin/bash
-
-VARS=$(xargs <"$1")
-shift
-# shellcheck disable=SC2086
-env $VARS "$@"
