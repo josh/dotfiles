@@ -48,6 +48,7 @@ cask "slack"
 cask "visual-studio-code"
 
 # Mac App Store
+mas "1Blocker", id: 1365531024
 mas "Actions", id: 1586435171
 mas "BBEdit", id: 404009241
 mas "Data Jar", id: 1453273600
