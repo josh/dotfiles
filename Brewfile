@@ -33,7 +33,6 @@ brew "wget"
 brew "zbar"
 brew "josh/tap/bbedit-cli"
 brew "josh/tap/brew-unattended-upgrade"
-brew "josh/tap/displayrcd", restart_service: :changed
 brew "josh/tap/itunes-library-export"
 brew "josh/tap/swift-completions"
 
@@ -64,6 +63,7 @@ mas "Noir", id: 1592917505
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Playgrounds", id: 1496833156
+mas "Shortery", id: 1594183810
 mas "Soulver 3", id: 1508732804
 mas "SQLPro for SQLite", id: 586001240
 mas "Super Agent", id: 1568262835
