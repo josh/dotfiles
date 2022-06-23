@@ -63,7 +63,6 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Playgrounds", id: 1496833156
 mas "Shortery", id: 1594183810
-mas "Soulver 3", id: 1508732804
 mas "SQLPro for SQLite", id: 586001240
 mas "Super Agent", id: 1568262835
 mas "TestFlight", id: 899247664
