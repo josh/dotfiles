@@ -66,6 +66,7 @@ mas "Playgrounds", id: 1496833156
 mas "Shortery", id: 1594183810
 mas "SQLPro for SQLite", id: 586001240
 mas "Super Agent", id: 1568262835
+mas "Tailscale", id: 1475387142
 mas "TestFlight", id: 899247664
 mas "Toggl Track", id: 957734279
 mas "Tot", id: 1491071483
