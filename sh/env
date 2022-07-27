@@ -31,11 +31,6 @@ CLICOLOR=1
 GREP_COLOR='1;32'
 export CLICOLOR GREP_COLOR
 
-# go
-if [ -d "$HOME/.go" ]; then
-	export GOPATH="$HOME/.go"
-fi
-
 if [ -d "$HOME/Library/Mobile Documents/com~apple~CloudDocs" ]; then
 	# shellcheck disable=SC2034
 	ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
