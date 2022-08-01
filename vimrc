@@ -25,15 +25,5 @@ filetype indent on
 filetype plugin on
 
 autocmd Filetype gitcommit set textwidth=68 spell
-autocmd FileType ruby set shiftwidth=2
-autocmd FileType c set shiftwidth=8 tabstop=8 noexpandtab
-
-" don't use cindent for javascript
-autocmd FileType javascript setlocal nocindent
 
 autocmd BufWritePre * :%s/\s\+$//e
-
-set grepprg=ack
-set grepformat=%f:%l:%m
-
-nnoremap gp :silent %!prettier --stdin --stdin-filepath %
