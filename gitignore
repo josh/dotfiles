@@ -1,10 +1,1 @@
-*.pyc
-*.rbc
-*.swp
-*~
-.#*
-/.direnv
 .DS_Store
-._*
-/.bundle
-/.envrc
