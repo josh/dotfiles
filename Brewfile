@@ -39,7 +39,6 @@ cask "logi-options-plus"
 cask "mimestream"
 cask "secretive"
 cask "sketch"
-cask "slack"
 cask "visual-studio-code"
 
 # Mac App Store
@@ -58,6 +57,7 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Playgrounds", id: 1496833156
 mas "Shortery", id: 1594183810
+mas "Slack", id: 803453959
 mas "SQLPro for SQLite", id: 586001240
 mas "Super Agent", id: 1568262835
 mas "Tailscale", id: 1475387142
