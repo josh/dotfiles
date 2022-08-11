@@ -28,7 +28,6 @@ brew "swiftlint"
 brew "terminal-notifier"
 brew "wget"
 brew "josh/tap/bbedit-cli"
-brew "josh/tap/brew-unattended-upgrade"
 brew "josh/tap/itunes-library-export"
 brew "josh/tap/swift-completions"
 
