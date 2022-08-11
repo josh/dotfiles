@@ -38,28 +38,3 @@ cask "mimestream"
 cask "secretive"
 cask "sketch"
 cask "visual-studio-code"
-
-# Mac App Store
-mas "1Blocker", id: 1365531024
-mas "Actions", id: 1586435171
-mas "BBEdit", id: 404009241
-mas "Data Jar", id: 1453273600
-mas "Deliveries", id: 290986013
-mas "Developer", id: 640199958
-mas "Fantastical", id: 975937182
-mas "GameTrack", id: 1136800740
-mas "Hidden Bar", id: 1452453066
-mas "Kaleidoscope", id: 1575557335
-mas "Noir", id: 1592917505
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "Playgrounds", id: 1496833156
-mas "Shortery", id: 1594183810
-mas "Slack", id: 803453959
-mas "SQLPro for SQLite", id: 586001240
-mas "Super Agent", id: 1568262835
-mas "Tailscale", id: 1475387142
-mas "TestFlight", id: 899247664
-mas "Tot", id: 1491071483
-mas "Transmit", id: 1436522307
-mas "Xcode", id: 497799835
