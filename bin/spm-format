@@ -2,36 +2,22 @@
 
 set -euf -o pipefail
 
-format() {
-	set -euf -o pipefail
+if [ -f .swiftformat ]; then
+	echo "swiftformat ." >&2
+	swiftformat .
+fi
 
-	tmpfile="$(mktemp)"
-	rm "$tmpfile"
-	cleanup() {
-		rm -f "$tmpfile"
-	}
-	trap cleanup EXIT
+if [ -f .swift-format ]; then
+	echo "swift-format format -ir ." >&2
+	swift-format format --in-place --recursive .
+fi
 
-	FLAGS=("--stdinpath" "$1")
-	if [ -f .swiftformat ]; then
-		FLAGS+=(--config .swiftformat)
-	fi
-
-	swift-format "$1" | swiftformat stdin "${FLAGS[@]}" --quiet --output "$tmpfile"
-
-	if [ -f "$tmpfile" ]; then
-		if ! cmp --silent "$1" "$tmpfile"; then
-			echo "$1" >&2
-			cat "$tmpfile" >"$1"
-		fi
-	fi
-}
-export -f format
-
-find . -type f -iname "*.swift" ! -path "./.build/*" '!' -path './Packages/*' |
-	tr '\n' '\0' |
-	xargs -0 -n1 -P10 -I '{}' bash -c 'format "$@"' _ {}
+if [ -f .swiftformat ]; then
+	echo "swiftformat --lint ." >&2
+	swiftformat --lint .
+fi
 
 if [ -f .swiftlint.yml ]; then
+	echo "swiftlint lint --quiet ." >&2
 	swiftlint lint --quiet .
 fi
