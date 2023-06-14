@@ -28,6 +28,8 @@ for src in "$dotfiles"/!(install.sh); do
 	ln -nfs "$src" "$HOME/.$(basename "$src")"
 done
 
+ln -nfs "$HOME/Library/Caches" "$HOME/.cache"
+
 pushd "$dotfiles" >/dev/null
 
 [ ! -f ssh/id_ed25519 ] || chmod 600 ssh/id_ed25519
