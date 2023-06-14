@@ -1,6 +1,0 @@
-#!/bin/bash
-
-set -euf -o pipefail
-set -x
-
-rm -rf "$HOME/Library/Developer/Xcode/DerivedData"
