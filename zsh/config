@@ -3,6 +3,9 @@ source ~/.sh/config
 
 autoload -Uz compinit && compinit -d /tmp/zcompdump
 
+# force emacs bindings
+bindkey -e
+
 # bash navigation
 autoload -U select-word-style
 select-word-style bash
