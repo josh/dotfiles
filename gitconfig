@@ -4,8 +4,6 @@
 	signingkey = 729F67DA
 [github]
 	user = josh
-[credential]
-	helper = osxkeychain
 [core]
 	excludesfile = /Users/josh/.gitignore
 [pull]
