@@ -35,5 +35,5 @@ cask "logi-options-plus" if `ioreg -p IOUSB` =~ /USB Receiver/
 cask "mimestream"
 cask "raycast"
 cask "secretive"
-cask "sketch"
+cask "sketch" if `system_profiler SPDisplaysDataType` =~ /Pro Display XDR/
 cask "visual-studio-code"
