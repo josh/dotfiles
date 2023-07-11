@@ -31,7 +31,7 @@ brew "josh/tap/swift-completions"
 # Cask
 cask "arc"
 cask "firefox"
-cask "logi-options-plus"
+cask "logi-options-plus" if `ioreg -p IOUSB` =~ /USB Receiver/
 cask "mimestream"
 cask "raycast"
 cask "secretive"
