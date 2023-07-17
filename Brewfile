@@ -24,7 +24,6 @@ brew "watch"
 brew "wget"
 brew "josh/tap/bbedit-cli"
 brew "josh/tap/itunes-library-export"
-brew "josh/tap/swift-completions"
 
 # Cask
 cask "arc"
