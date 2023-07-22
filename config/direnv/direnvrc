@@ -1,0 +1,12 @@
+use_python() {
+	VIRTUAL_ENV="$(expand_path .venv)"
+	VIRTUAL_ENV_PROMPT="(.venv) "
+	IPYTHONDIR="$(expand_path .ipython)"
+	PS1="${VIRTUAL_ENV_PROMPT}${PS1}"
+	export VIRTUAL_ENV IPYTHONDIR VIRTUAL_ENV_PROMPT
+
+	if [[ ! -d "$VIRTUAL_ENV" ]]; then
+		python3 -m venv "$VIRTUAL_ENV"
+	fi
+	PATH_add "$VIRTUAL_ENV/bin"
+}
