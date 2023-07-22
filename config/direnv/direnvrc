@@ -7,6 +7,7 @@ use_python() {
 
 	if [[ ! -d "$VIRTUAL_ENV" ]]; then
 		python3 -m venv "$VIRTUAL_ENV"
+		"$VIRTUAL_ENV/bin/pip3" install --upgrade pip
 	fi
 	PATH_add "$VIRTUAL_ENV/bin"
 }
