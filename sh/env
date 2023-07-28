@@ -36,4 +36,5 @@ if [ -d "$HOME/Library/Mobile Documents/com~apple~CloudDocs" ]; then
 	ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 fi
 
-source ~/.sh/xdg
+# shellcheck source=sh/xdg
+. ~/.sh/xdg
