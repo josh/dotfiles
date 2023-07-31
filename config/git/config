@@ -1,11 +1,8 @@
 [user]
 	name = Joshua Peek
 	email = josh@joshpeek.com
-	signingkey = 729F67DA
 [github]
 	user = josh
-[core]
-	excludesfile = /Users/josh/.gitignore
 [pull]
 	rebase = false
 [fetch]
