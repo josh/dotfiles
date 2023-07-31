@@ -1,7 +1,12 @@
 # shellcheck source=/dev/null
 source ~/.sh/config
 
-autoload -Uz compinit && compinit -d /tmp/zcompdump
+autoload -Uz compinit && compinit -d "$XDG_STATE_HOME/zsh/zcompdump"
+
+HISTFILE="$XDG_STATE_HOME/zsh/history"
+
+# enable terminal history sharing
+setopt SHARE_HISTORY
 
 # force emacs bindings
 bindkey -e

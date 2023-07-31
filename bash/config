@@ -1,6 +1,9 @@
 # shellcheck source=/dev/null
 source ~/.sh/config
 
+HISTFILE="$XDG_STATE_HOME/bash/history"
+mkdir -p "$XDG_STATE_HOME/bash"
+
 # direnv
 if [ -x "$(command -v direnv)" ]; then
 	eval "$(direnv hook bash)"
