@@ -5,4 +5,5 @@ DOTFILES=$(cd "$(dirname "${0:A}")/.." && pwd)
 export DOTFILES
 
 # Disable /etc/zshrc_Apple_Terminal behavior
+# shellcheck disable=SC2034
 SHELL_SESSIONS_DISABLE=1
