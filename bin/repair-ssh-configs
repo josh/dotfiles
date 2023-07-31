@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -euf -o pipefail
+set -x
+
+find -L ~/.ssh -type f -name "id_*" ! -name "*.pub" -exec chmod 600 {} \;
+find -L ~/.ssh -type f -name "id_*.pub" -exec chmod 644 {} \;
