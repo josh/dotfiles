@@ -24,18 +24,19 @@ abs_dirname() {
 bin="$(abs_dirname "$0")"
 dotfiles="$(abs_dirname "$bin")"
 
-for src in "$dotfiles"/!(install.sh); do
+[ -L "$HOME/.config" ] && rm "$HOME/.config"
+[ -L "$HOME/.install.sh" ] && rm "$HOME/.install.sh"
+
+for src in "$dotfiles"/!(config|install.sh); do
 	ln -nfs "$src" "$HOME/.$(basename "$src")"
 done
 
-if [ -d "$HOME/Library/Caches" ]; then
-	ln -nfs "$HOME/Library/Caches" "$HOME/.cache"
-fi
+mkdir -p "$HOME/.config"
+for src in "$dotfiles/config"/*; do
+	ln -nfs "$src" "$HOME/.config/$(basename "$src")"
+done
+
+find "$HOME" -maxdepth 1 -type l ! -exec test -e {} \; -delete
+find "$HOME/.config" -maxdepth 1 -type l ! -exec test -e {} \; -delete
 
 pushd "$dotfiles" >/dev/null
-
-[ ! -f ssh/id_ed25519 ] || chmod 600 ssh/id_ed25519
-[ ! -f ssh/id_ed25519.pub ] || chmod 644 ssh/id_ed25519.pub
-
-[ ! -f ssh/id_rsa ] || chmod 600 ssh/id_rsa
-[ ! -f ssh/id_rsa.pub ] || chmod 644 ssh/id_rsa.pub

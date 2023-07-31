@@ -3,8 +3,8 @@ XDG_CACHE_HOME="$HOME/.cache"
 XDG_DATA_HOME="$HOME/.local/share"
 XDG_STATE_HOME="$HOME/.local/state"
 
-if [ -d "$ICLOUD" ]; then
-	XDG_CONFIG_HOME="$ICLOUD/Terminal/.dotfiles/config"
+if [ -d "$DOTFILES" ]; then
+	XDG_CONFIG_HOME="$DOTFILES/config"
 fi
 if [ -d "$HOME/Library/Caches" ]; then
 	XDG_CACHE_HOME="$HOME/Library/Caches"

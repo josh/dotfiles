@@ -1,0 +1,22 @@
+#!/bin/bash
+
+set -euf -o pipefail
+set -x
+
+# See <https://wiki.archlinux.org/title/XDG_Base_Directory#Supported>
+
+if [ ! -L "$HOME/.cups" ] && [ -d "$HOME/.cups" ]; then
+	if [ -d "$HOME/Library/Application Support" ]; then
+		mv "$HOME/.cups" "$HOME/Library/Application Support/cups"
+		ln -s "$HOME/Library/Application Support/cups" "$HOME/.cups"
+	elif [ -d "$XDG_CONFIG_HOME" ]; then
+		mv "$HOME/.cups" "$XDG_CONFIG_HOME/cups"
+		ln -s "$XDG_CONFIG_HOME/cups" "$HOME/.cups"
+	fi
+fi
+
+if [ ! -L "$HOME/.cache" ] && [ -d "$HOME/.cache" ]; then
+	if [ -d "$HOME/Library/Caches" ]; then
+		ln -s "$HOME/Library/Caches" "$HOME/.cache"
+	fi
+fi
