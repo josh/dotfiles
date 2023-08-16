@@ -22,10 +22,10 @@ jobs:
         run: shfmt -d $(bin/find-shebang sh .) $(bin/find-shebang bash .)
 
       - name: ShellCheck POSIX sh files
-        run: shellcheck --shell=sh sh/*
+        run: shellcheck --shell=sh config/sh/*
 
       - name: shfmt POSIX sh files
-        run: shfmt -ln posix -d sh/*
+        run: shfmt -ln posix -d config/sh/*
 
       - name: ShellCheck bash files
         run: shellcheck --shell=bash config/bash/*

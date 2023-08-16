@@ -1,5 +1,5 @@
 # shellcheck source=/dev/null
-source ~/.sh/config
+source ~/.config/sh/config
 
 if [ -d "$XDG_STATE_HOME/bash" ]; then
 	HISTFILE="$XDG_STATE_HOME/bash/history"

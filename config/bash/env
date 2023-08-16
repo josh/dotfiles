@@ -1,5 +1,5 @@
 # shellcheck source=/dev/null
-source ~/.sh/env
+source ~/.config/sh/env
 
 abs_dirname() {
 	local cwd
