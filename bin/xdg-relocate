@@ -20,3 +20,20 @@ if [ ! -L "$HOME/.cups" ] && [ -d "$HOME/.cups" ]; then
 		ln -s "$XDG_CONFIG_HOME/cups" "$HOME/.cups"
 	fi
 fi
+
+if [ ! -L "$HOME/.bash_history" ] && [ -f "$HOME/.bash_history" ]; then
+	if [ -d "$XDG_STATE_HOME" ]; then
+		mkdir -p "$XDG_STATE_HOME/bash"
+		cat "$HOME/.bash_history" >>"$XDG_STATE_HOME/bash/history"
+		rm "$HOME/.bash_history"
+		ln -s "$XDG_STATE_HOME/bash/history" "$HOME/.bash_history"
+	fi
+fi
+
+if [ ! -L "$HOME/.bash_sessions" ] && [ -d "$HOME/.bash_sessions" ]; then
+	if [ -d "$XDG_STATE_HOME" ]; then
+		mkdir -p "$XDG_STATE_HOME/bash"
+		mv "$HOME/.bash_sessions" "$XDG_STATE_HOME/bash/sessions"
+		ln -s "$XDG_STATE_HOME/bash/sessions" "$HOME/.bash_sessions"
+	fi
+fi
