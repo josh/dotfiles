@@ -5,10 +5,9 @@ autoload -Uz compinit
 mkdir -p "$XDG_CACHE_HOME/zsh"
 compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
 
-HISTFILE="$XDG_STATE_HOME/zsh/history"
-
-# enable terminal history sharing
-setopt SHARE_HISTORY
+if [ -d "$XDG_STATE_HOME/zsh" ]; then
+	HISTFILE="$XDG_STATE_HOME/zsh/history"
+fi
 
 # force emacs bindings
 bindkey -e

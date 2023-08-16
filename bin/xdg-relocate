@@ -37,3 +37,20 @@ if [ ! -L "$HOME/.bash_sessions" ] && [ -d "$HOME/.bash_sessions" ]; then
 		ln -s "$XDG_STATE_HOME/bash/sessions" "$HOME/.bash_sessions"
 	fi
 fi
+
+if [ ! -L "$HOME/.zsh_history" ] && [ -f "$HOME/.zsh_history" ]; then
+	if [ -d "$XDG_STATE_HOME" ]; then
+		mkdir -p "$XDG_STATE_HOME/zsh"
+		cat "$HOME/.zsh_history" >>"$XDG_STATE_HOME/zsh/history"
+		rm "$HOME/.zsh_history"
+		ln -s "$XDG_STATE_HOME/zsh/history" "$HOME/.zsh_history"
+	fi
+fi
+
+if [ ! -L "$HOME/.zsh_sessions" ] && [ -d "$HOME/.zsh_sessions" ]; then
+	if [ -d "$XDG_STATE_HOME" ]; then
+		mkdir -p "$XDG_STATE_HOME/zsh"
+		mv "$HOME/.zsh_sessions" "$XDG_STATE_HOME/zsh/sessions"
+		ln -s "$XDG_STATE_HOME/zsh/sessions" "$HOME/.zsh_sessions"
+	fi
+fi
