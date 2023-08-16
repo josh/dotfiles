@@ -1,7 +1,9 @@
 # shellcheck source=/dev/null
 source ~/.sh/config
 
-autoload -Uz compinit && compinit -d "$XDG_STATE_HOME/zsh/zcompdump"
+autoload -Uz compinit
+mkdir -p "$XDG_CACHE_HOME/zsh"
+compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
 
 HISTFILE="$XDG_STATE_HOME/zsh/history"
 
