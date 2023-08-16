@@ -1,5 +1,5 @@
 # shellcheck source=/dev/null
 source ~/.config/sh/env
 
-DOTFILES=$(cd "$(dirname "${0:A}")/.." && pwd)
+DOTFILES=$(cd "$(dirname "${0:A}")/../.." && pwd)
 export DOTFILES

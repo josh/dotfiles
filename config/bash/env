@@ -17,5 +17,5 @@ abs_dirname() {
 	cd "$cwd" || return
 }
 
-DOTFILES="$(abs_dirname "$(abs_dirname "${BASH_SOURCE[0]}")")"
+DOTFILES="$(abs_dirname "$(abs_dirname "$(abs_dirname "${BASH_SOURCE[0]}")")")"
 export DOTFILES
