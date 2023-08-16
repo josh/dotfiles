@@ -54,3 +54,10 @@ if [ ! -L "$HOME/.zsh_sessions" ] && [ -d "$HOME/.zsh_sessions" ]; then
 		ln -s "$XDG_STATE_HOME/zsh/sessions" "$HOME/.zsh_sessions"
 	fi
 fi
+
+if [ ! -L "$HOME/.vscode/extensions" ] && [ -d "$HOME/.vscode/extensions" ]; then
+	if [ -d "$HOME/Library/Application Support/Code" ]; then
+		mv "$HOME/.vscode/extensions" "$HOME/Library/Application Support/Code/User/extensions"
+		ln -s "$HOME/Library/Application Support/Code/User/extensions" "$HOME/.vscode/extensions"
+	fi
+fi
