@@ -1,3 +1,3 @@
-# source ~/.zsh/env
-source ~/.zsh/config
+# source ~/.config/zsh/env
+source ~/.config/zsh/config
 source ~/.config/sh/aliases

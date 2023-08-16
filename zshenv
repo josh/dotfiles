@@ -1,1 +1,1 @@
-source ~/.zsh/env
+source ~/.config/zsh/env

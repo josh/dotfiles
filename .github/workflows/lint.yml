@@ -34,7 +34,7 @@ jobs:
         run: shfmt -ln bash -d config/bash/*
 
       - name: ShellCheck zsh files
-        run: shellcheck --shell=bash zsh/*
+        run: shellcheck --shell=bash config/zsh/*
 
       - name: shfmt zsh files
-        run: shfmt -ln bash -d zsh/*
+        run: shfmt -ln bash -d config/zsh/*
