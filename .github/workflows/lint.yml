@@ -28,10 +28,10 @@ jobs:
         run: shfmt -ln posix -d sh/*
 
       - name: ShellCheck bash files
-        run: shellcheck --shell=bash bash/*
+        run: shellcheck --shell=bash config/bash/*
 
       - name: shfmt bash files
-        run: shfmt -ln bash -d bash/*
+        run: shfmt -ln bash -d config/bash/*
 
       - name: ShellCheck zsh files
         run: shellcheck --shell=bash zsh/*
