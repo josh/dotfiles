@@ -11,6 +11,7 @@ brew "gron"
 brew "icu4c"
 brew "jq"
 brew "mas"
+brew "md5sha1sum"
 brew "node"
 brew "ollama", restart_service: true
 brew "openssl@1.1"
