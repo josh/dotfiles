@@ -4,6 +4,7 @@ tap "homebrew/services"
 tap "josh/tap"
 
 # Homebrew
+brew "awscli"
 brew "direnv"
 brew "gh"
 brew "git"
