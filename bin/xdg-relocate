@@ -11,6 +11,13 @@ if [ ! -L "$HOME/.cache" ] && [ -d "$HOME/.cache" ]; then
 	fi
 fi
 
+if [ ! -L "$HOME/.ollama" ] && [ -d "$HOME/.ollama" ]; then
+	if [ -d "$HOME/Library/Caches" ]; then
+		mv "$HOME/.ollama" "$HOME/Library/Caches/ollama"
+		ln -s "$HOME/Library/Caches/ollama" "$HOME/.ollama"
+	fi
+fi
+
 if [ ! -L "$HOME/.cups" ] && [ -d "$HOME/.cups" ]; then
 	if [ -d "$HOME/Library/Application Support" ]; then
 		mv "$HOME/.cups" "$HOME/Library/Application Support/cups"
