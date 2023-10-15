@@ -11,6 +11,14 @@ if [ ! -L "$HOME/.cache" ] && [ -d "$HOME/.cache" ]; then
 	fi
 fi
 
+if [ ! -f "$HOME/.cache/CACHEDIR.TAG" ]; then
+	echo "Signature: 8a477f597d28d172789f06886806bc55" >"$HOME/.cache/CACHEDIR.TAG"
+fi
+
+if [ ! -f "$HOME/Library/Caches/CACHEDIR.TAG" ]; then
+	echo "Signature: 8a477f597d28d172789f06886806bc55" >"$HOME/Library/Caches/CACHEDIR.TAG"
+fi
+
 if [ ! -L "$HOME/.ollama" ] && [ -d "$HOME/.ollama" ]; then
 	if [ -d "$HOME/Library/Caches" ]; then
 		mv "$HOME/.ollama" "$HOME/Library/Caches/ollama"
