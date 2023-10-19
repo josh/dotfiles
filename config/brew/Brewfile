@@ -17,10 +17,11 @@ brew "md5sha1sum"
 brew "node"
 brew "ollama", restart_service: true
 brew "openssl@1.1"
-brew "python@3.11"
 brew "prettier"
 brew "pstree"
 brew "pv"
+brew "python@3.11"
+brew "restic"
 brew "ripgrep"
 brew "shellcheck"
 brew "shfmt"
@@ -33,7 +34,6 @@ brew "josh/tap/bbedit-cli"
 brew "josh/tap/itunes-library-export"
 
 # Cask
-cask "arc"
 cask "firefox"
 cask "logi-options-plus" if `ioreg -p IOUSB` =~ /USB Receiver/
 cask "mimestream"
