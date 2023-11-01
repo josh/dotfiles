@@ -12,8 +12,8 @@ if [ -d "/usr/local" ]; then
 	PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
-if [ -d "$HOME/.bin" ]; then
-	PATH="$HOME/.bin:$PATH"
+if [ -d "$HOME/.local/bin" ]; then
+	PATH="$HOME/.local/bin:$PATH"
 fi
 
 # editor/pager

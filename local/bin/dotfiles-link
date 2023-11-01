@@ -22,12 +22,13 @@ abs_dirname() {
 }
 
 bin="$(abs_dirname "$0")"
-dotfiles="$(abs_dirname "$bin")"
+local="$(abs_dirname "$bin")"
+dotfiles="$(abs_dirname "$local")"
 
 [ -L "$HOME/.config" ] && rm "$HOME/.config"
 [ -L "$HOME/.install.sh" ] && rm "$HOME/.install.sh"
 
-for src in "$dotfiles"/!(config|install.sh); do
+for src in "$dotfiles"/!(config|local|install.sh); do
 	ln -nfs "$src" "$HOME/.$(basename "$src")"
 done
 
@@ -36,7 +37,8 @@ for src in "$dotfiles/config"/*; do
 	ln -nfs "$src" "$HOME/.config/$(basename "$src")"
 done
 
+mkdir -p "$HOME/.local"
+ln -nfs "$dotfiles/local/bin" "$HOME/.local/bin"
+
 find "$HOME" -maxdepth 1 -type l ! -exec test -e {} \; -delete
 find "$HOME/.config" -maxdepth 1 -type l ! -exec test -e {} \; -delete
-
-pushd "$dotfiles" >/dev/null
