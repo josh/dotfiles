@@ -70,6 +70,12 @@ if [ ! -L "$HOME/.zsh_sessions" ] && [ -d "$HOME/.zsh_sessions" ]; then
 	fi
 fi
 
+if [ ! -L "$HOME/Library/Application Support/go/env" ]; then
+	mkdir -p "$HOME/Library/Application Support/go"
+	rm -f "$HOME/Library/Application Support/go/env"
+	ln -s "$HOME/.config/go/env" "$HOME/Library/Application Support/go/env"
+fi
+
 if [ ! -L "$HOME/.config/raycast" ] && [ -d "$HOME/.config/raycast" ]; then
 	if [ -d "$HOME/Library/Application Support/com.raycast.macos" ]; then
 		mv "$HOME/.config/raycast" "$HOME/Library/Application Support/com.raycast.macos/config"
