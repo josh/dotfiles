@@ -36,10 +36,13 @@ if [ -d "$HOME/Library/Mobile Documents/com~apple~CloudDocs" ]; then
 	ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 fi
 
-if [ -d "$HOME/.config/restic" ]; then
-	RESTIC_REPOSITORY_FILE="$HOME/.config/restic/repository"
+if [ -d "/opt/homebrew/var/restic" ]; then
+	RESTIC_REPOSITORY="/opt/homebrew/var/restic"
+	export RESTIC_REPOSITORY
+fi
+if [ -f "$HOME/.config/restic/password" ]; then
 	RESTIC_PASSWORD_FILE="$HOME/.config/restic/password"
-	export RESTIC_REPOSITORY_FILE RESTIC_PASSWORD_FILE
+	export RESTIC_PASSWORD_FILE
 fi
 
 # shellcheck source=config/sh/xdg
