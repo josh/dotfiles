@@ -2,7 +2,7 @@
 
 SCRIPT="#!/bin/bash
 
-set -euf -o pipefail
+set -euo pipefail
 set -x"
 
 if [ -n "$1" ]; then
