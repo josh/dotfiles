@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -euf -o pipefail
+set -euo pipefail
 set -x
 
 # See <https://wiki.archlinux.org/title/XDG_Base_Directory#Supported>
