@@ -16,6 +16,13 @@ if [ -d "$HOME/.local/bin" ]; then
 	PATH="$HOME/.local/bin:$PATH"
 fi
 
+# homebrew
+if [ -x "/opt/homebrew/bin/brew" ]; then
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -x "/usr/local/bin/brew" ]; then
+	eval "$(/usr/local/bin/brew shellenv)"
+fi
+
 # editor/pager
 if [ -x "$(command -v bbedit)" ]; then
 	EDITOR="bbedit"
