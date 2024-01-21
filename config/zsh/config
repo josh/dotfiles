@@ -16,6 +16,9 @@ bindkey -e
 autoload -U select-word-style
 select-word-style bash
 
+# reload path after path_helper nonsense
+source ~/.config/sh/path
+
 # direnv
 if [ -x "$(command -v direnv)" ]; then
 	eval "$(direnv hook zsh)"
