@@ -10,7 +10,7 @@ export LANG LANGUAGE LC_CTYPE LC_ALL
 
 # editor/pager
 if [ -x "$(command -v bbedit)" ]; then
-	EDITOR="bbedit"
+	EDITOR="bbedit --wait --resume"
 else
 	EDITOR="vim"
 fi
