@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+def tap(name, *args); $brewfile[:tap].push(name); end
+def brew(name, *args); $brewfile[:brew].push(name); end
+def cask(name, *args); $brewfile[:cask].push(name); end
+def mas(name, *args); $brewfile[:mas].push(name); end
+
+brewfile_global = $brewfile = { tap: [], brew: [], cask: [], mas: [] }
+load ENV["HOMEBREW_BUNDLE_FILE"]
+
+brewfile_dump = $brewfile = { tap: [], brew: [], cask: [] }
+command = ["brew", "bundle", "dump", "--file=/tmp/brew-bundle-dump"]
+command.push "--formula" if brewfile_dump.key?(:brew)
+command.push "--cask" if brewfile_dump.key?(:cask)
+command.push "--tap" if brewfile_dump.key?(:tap)
+command.push "--mas" if brewfile_dump.key?(:mas)
+system *command
+
+load "/tmp/brew-bundle-dump"
+File.unlink "/tmp/brew-bundle-dump"
+
+brewfile_dump.keys.each do |type|
+  added = brewfile_dump[type] - brewfile_global[type]
+  removed = brewfile_global[type] - brewfile_dump[type]
+  added.each { |name| puts "+ #{type} \"#{name}\"" }
+  removed.each { |name| puts "- #{type} \"#{name}\"" }
+end
+
