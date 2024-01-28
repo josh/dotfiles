@@ -2,6 +2,7 @@
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "josh/tap"
+tap "oven-sh/bun"
 
 # Homebrew
 brew "awscli"
@@ -11,12 +12,15 @@ brew "git"
 brew "go"
 brew "gron"
 brew "icu4c"
+brew "josh/tap/bbedit-cli"
+brew "josh/tap/itunes-library-export"
 brew "jq"
 brew "mas"
 brew "md5sha1sum"
 brew "node"
 brew "ollama", restart_service: true
 brew "openssl@1.1"
+brew "oven-sh/bun/bun"
 brew "prettier"
 brew "pstree"
 brew "pv"
@@ -30,8 +34,6 @@ brew "swiftlint"
 brew "terminal-notifier"
 brew "watch"
 brew "wget"
-brew "josh/tap/bbedit-cli"
-brew "josh/tap/itunes-library-export"
 
 # Cask
 cask "firefox"
