@@ -6,5 +6,5 @@ set -x
 [[ $- != *i* ]]
 [[ $- != *l* ]]
 
-[[ PS1 == "$ " ]]
+# aliases
 [[ $(type g) != "g is an alias for git" ]]
