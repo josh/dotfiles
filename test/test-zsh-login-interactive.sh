@@ -1,4 +1,4 @@
-#!/bin/zsh -l -i
+#!/bin/zsh
 
 set -euo pipefail
 set -x
