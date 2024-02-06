@@ -5,10 +5,9 @@ LC_CTYPE="en_US.UTF-8"
 LC_ALL="en_US.UTF-8"
 export LANG LANGUAGE LC_CTYPE LC_ALL
 
-if [ -d "/usr/local/bin" ] && [ ":$PATH:" != *":/usr/local/bin:"* ]; then
-	export PATH="/usr/local/bin:$PATH"
+if ! echo "$PATH" | grep -q -E "(^|:)/usr/local/bin($|:)"; then
+    export PATH="/usr/local/bin:$PATH"
 fi
-
 # homebrew
 if [ -x "/opt/homebrew/bin/brew" ]; then
 	eval "$(/opt/homebrew/bin/brew shellenv)"
