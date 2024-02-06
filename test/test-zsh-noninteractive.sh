@@ -5,8 +5,8 @@ set -x
 
 env
 
-[[ $- == *i* ]]
+[[ $- != *i* ]]
 [[ $- != *l* ]]
 
 # aliases
-[[ $(type g) == "g is an alias for git" ]]
+[[ $(type g) != "g is an alias for git" ]]

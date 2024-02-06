@@ -24,3 +24,7 @@ jobs:
       - name: ZSH Non-Login / Interactive
         run: |
           env -i HOME="$HOME" zsh -i ./test/test-zsh-nonlogin-interactive.sh
+
+      - name: ZSH Non-Interactive
+        run: |
+          env -i HOME="$HOME" zsh ./test/test-zsh-noninteractive.sh
