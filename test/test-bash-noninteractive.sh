@@ -9,5 +9,4 @@ if shopt -q login_shell; then
 	exit 1
 fi
 
-[[ $PATH == "$HOME/.local/bin"* ]]
 [[ $(type -t g) != "alias" ]]
