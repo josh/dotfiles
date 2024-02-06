@@ -6,7 +6,7 @@ LC_ALL="en_US.UTF-8"
 export LANG LANGUAGE LC_CTYPE LC_ALL
 
 if ! echo "$PATH" | grep -q -E "(^|:)/usr/local/bin($|:)"; then
-    export PATH="/usr/local/bin:$PATH"
+	export PATH="/usr/local/bin:$PATH"
 fi
 # homebrew
 if [ -x "/opt/homebrew/bin/brew" ]; then
