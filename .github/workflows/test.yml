@@ -9,6 +9,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install zsh
+        run: |
+          sudo apt-get update
+          sudo apt-get install zsh
+
       - name: Install dotfiles
         run: ./install.sh
 
