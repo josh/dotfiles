@@ -21,6 +21,14 @@ jobs:
         run: |
           env -i HOME="$HOME" bash -l -i ./test/test-bash-login-interactive.sh
 
+      - name: Bash Non-Login / Interactive
+        run: |
+          env -i HOME="$HOME" bash -i ./test/test-bash-nonlogin-interactive.sh
+
+      - name: Bash Non-Interactive
+        run: |
+          env -i HOME="$HOME" bash ./test/test-bash-noninteractive.sh
+
       - name: ZSH Login / Interactive
         run: |
           env -i HOME="$HOME" zsh -l -i ./test/test-zsh-login-interactive.sh
