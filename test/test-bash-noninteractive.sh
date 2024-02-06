@@ -4,7 +4,10 @@ set -euo pipefail
 set -x
 
 [[ $- != *i* ]]
-! shopt -q login_shell
+if shopt -q login_shell; then
+	echo "login shell"
+	exit 1
+fi
 
 # aliases
 [[ $(type -t g) != "alias" ]]
