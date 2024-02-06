@@ -18,7 +18,7 @@ jobs:
         run: ./install.sh
 
       - name: ZSH Login / Interactive
-        run: ./test/test-zsh-login-interactive.sh
+        run: zsh -l -i ./test/test-zsh-login-interactive.sh
 
       - name: ZSH Non-Login / Interactive
-        run: ./test/test-zsh-nonlogin-interactive.sh
+        run: zsh -i ./test/test-zsh-nonlogin-interactive.sh
