@@ -14,6 +14,12 @@ jobs:
           sudo apt-get update
           sudo apt-get install zsh
 
+      - name: Ensure PATH directories exist
+        run: |
+          mkdir -p "$HOME/.local/bin"
+          sudo mkdir -p "/usr/local/bin"
+          sudo mkdir -p "/usr/local/sbin"
+
       - name: Install dotfiles
         run: ./install.sh
 
