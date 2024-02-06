@@ -6,5 +6,5 @@ set -x
 [[ $- == *i* ]]
 ! shopt -q login_shell
 
-# aliases
+[[ PS1 == "$ " ]]
 [[ $(type -t g) == "alias" ]]
