@@ -6,5 +6,5 @@ set -x
 [[ $- == *i* ]]
 [[ $- == *l* ]]
 
-# aliases
+[[ $PATH == "$HOME/.local/bin"* ]]
 [[ $(type g) == "g is an alias for git" ]]

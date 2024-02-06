@@ -6,5 +6,5 @@ set -x
 [[ $- == *i* ]]
 shopt -q login_shell
 
-# aliases
+[[ $PATH == "$HOME/.local/bin"* ]]
 [[ $(type -t g) == "alias" ]]

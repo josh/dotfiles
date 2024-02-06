@@ -9,5 +9,5 @@ if shopt -q login_shell; then
 	exit 1
 fi
 
-# aliases
+[[ $PATH == "$HOME/.local/bin"* ]]
 [[ $(type -t g) == "alias" ]]
