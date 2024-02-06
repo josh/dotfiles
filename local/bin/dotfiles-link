@@ -28,7 +28,7 @@ dotfiles="$(abs_dirname "$local")"
 [ -L "$HOME/.config" ] && rm "$HOME/.config"
 [ -L "$HOME/.install.sh" ] && rm "$HOME/.install.sh"
 
-for src in "$dotfiles"/!(config|local|install.sh); do
+for src in "$dotfiles"/!(config|local|test|install.sh); do
 	ln -nfs "$src" "$HOME/.$(basename "$src")"
 done
 
