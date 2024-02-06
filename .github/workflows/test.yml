@@ -17,6 +17,10 @@ jobs:
       - name: Install dotfiles
         run: ./install.sh
 
+      - name: Bash Login / Interactive
+        run: |
+          env -i HOME="$HOME" bash -l -i ./test/test-bash-login-interactive.sh
+
       - name: ZSH Login / Interactive
         run: |
           env -i HOME="$HOME" zsh -l -i ./test/test-zsh-login-interactive.sh
