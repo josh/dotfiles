@@ -5,8 +5,18 @@ LC_CTYPE="en_US.UTF-8"
 LC_ALL="en_US.UTF-8"
 export LANG LANGUAGE LC_CTYPE LC_ALL
 
-# shellcheck source=config/sh/path
-. ~/.config/sh/path
+if [ -d "/usr/local/bin" ] && [[ ":$PATH:" != *":/usr/local/bin:"* ]]; then
+	export PATH="/usr/local/bin:$PATH"
+fi
+
+# homebrew
+if [ -x "/opt/homebrew/bin/brew" ]; then
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+if [ -d "$HOME/.local/bin" ]; then
+	export PATH="$HOME/.local/bin:$PATH"
+fi
 
 # editor/pager
 if [ -x "$(command -v bbedit)" ]; then
@@ -22,14 +32,6 @@ export EDITOR PAGER LESSHISTFILE
 CLICOLOR=1
 GREP_COLOR='1;32'
 export CLICOLOR GREP_COLOR
-
-# homebrew
-if [ -d "/opt/homebrew" ]; then
-	HOMEBREW_PREFIX="/opt/homebrew"
-	HOMEBREW_CELLAR="/opt/homebrew/Cellar"
-	HOMEBREW_REPOSITORY="/opt/homebrew"
-	export HOMEBREW_PREFIX HOMEBREW_CELLAR HOMEBREW_REPOSITORY
-fi
 
 if [ -d "$HOME/Library/Mobile Documents/com~apple~CloudDocs" ]; then
 	# shellcheck disable=SC2034
