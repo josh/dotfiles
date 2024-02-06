@@ -7,4 +7,4 @@ set -x
 ! shopt -q login_shell
 
 # aliases
-[[ $(type -t g) != "alias" ]]
+[[ $(type -t g) == "alias" ]]
