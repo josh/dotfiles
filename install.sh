@@ -1,2 +1,2 @@
 #!/bin/sh
-exec bin/dotfiles-link
+exec local/bin/dotfiles-link
