@@ -9,4 +9,6 @@ if shopt -q login_shell; then
 	exit 1
 fi
 
+[[ $(echo $PATH | tr ':' '\n' | sort | uniq | wc -l) == $(echo $PATH | tr ':' '\n' | wc -l) ]]
+
 # [[ $(type -t g) == "alias" ]]
