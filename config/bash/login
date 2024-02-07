@@ -1,5 +1,5 @@
 # shellcheck source=/dev/null
-source ~/.config/sh/env
+source ~/.config/sh/login
 
 abs_dirname() {
 	local cwd
@@ -19,5 +19,4 @@ abs_dirname() {
 
 config_bash_dir="$(abs_dirname "${BASH_SOURCE[0]}")"
 config_dir="$(abs_dirname "$config_bash_dir")"
-DOTFILES="$(abs_dirname "$config_dir")"
-export DOTFILES
+export DOTFILES="$(abs_dirname "$config_dir")"

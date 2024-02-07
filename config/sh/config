@@ -1,5 +1,0 @@
-if [ "$(whoami)" = "root" ]; then
-	PS1="# "
-else
-	PS1="$ "
-fi

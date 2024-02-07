@@ -1,9 +1,11 @@
 # shellcheck source=/dev/null
-source ~/.config/sh/config
+source ~/.config/sh/interactive
 
-autoload -Uz compinit
-mkdir -p "$XDG_CACHE_HOME/zsh"
-compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
+if [ -d "$XDG_CACHE_HOME" ]; then
+	autoload -Uz compinit
+	mkdir -p "$XDG_CACHE_HOME/zsh"
+	compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
+fi
 
 if [ -d "$XDG_STATE_HOME/zsh" ]; then
 	HISTFILE="$XDG_STATE_HOME/zsh/history"

@@ -1,4 +1,0 @@
-if [ -e "/usr/local/etc/bash_completion.d/git-completion.bash" ]; then
-	# shellcheck source=/dev/null
-	source /usr/local/etc/bash_completion.d/git-completion.bash
-fi

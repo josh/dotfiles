@@ -1,0 +1,77 @@
+# set en_US locale w/ utf-8 encodings
+export LANG="en_US.UTF-8"
+export LANGUAGE="en"
+export LC_CTYPE="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+if ! echo "$PATH" | grep -q -E "(^|:)/usr/local/bin($|:)"; then
+	export PATH="/usr/local/bin:$PATH"
+fi
+
+# homebrew
+if [ -x "/opt/homebrew/bin/brew" ]; then
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+if [ -d "$HOME/.local/bin" ]; then
+	export PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -n "$ZED_TERM" ]; then
+	export EDITOR="zed"
+elif [ -x "$(command -v bbedit)" ]; then
+	export EDITOR="bbedit --wait --resume"
+else
+	export EDITOR="vim"
+fi
+export PAGER="less -R"
+export LESSHISTFILE="-"
+
+# colors
+export CLICOLOR=1
+export GREP_COLOR='1;32'
+
+if [ -d "$HOME/Library/Mobile Documents/com~apple~CloudDocs" ]; then
+	# shellcheck disable=SC2034
+	ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+fi
+
+if [ -d "/opt/homebrew/var/restic" ]; then
+	export RESTIC_REPOSITORY="/opt/homebrew/var/restic"
+fi
+if [ -f "$HOME/.config/restic/password" ]; then
+	export RESTIC_PASSWORD_FILE="$HOME/.config/restic/password"
+fi
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+if [ -d "$DOTFILES" ]; then
+	export XDG_CONFIG_HOME="$DOTFILES/config"
+fi
+if [ -d "$HOME/Library/Caches" ]; then
+	export XDG_CACHE_HOME="$HOME/Library/Caches"
+fi
+
+# XDG Base Directory overrides
+# https://wiki.archlinux.org/title/XDG_Base_Directory#Support
+
+export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
+export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
+
+export GOENV="$XDG_CONFIG_HOME/go/env"
+
+export HOMEBREW_BUNDLE_FILE="$XDG_CONFIG_HOME/brew/Brewfile"
+
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
+export JUPYTER_PLATFORM_DIRS="1"
+
+export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+
+export VIMINIT="source \$VIMRC"
+export VIMRC="$XDG_CONFIG_HOME/vim/vimrc"
