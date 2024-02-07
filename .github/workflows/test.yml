@@ -28,6 +28,9 @@ jobs:
       - name: Install dotfiles
         run: ./install.sh
 
+      - name: Bash version
+        run: bash --version
+
       - name: Bash Login / Interactive
         run: |
           env -i HOME="$HOME" bash -l -i ./test/test-bash-login-interactive.sh
@@ -39,6 +42,9 @@ jobs:
       - name: Bash Non-Interactive
         run: |
           env -i HOME="$HOME" bash ./test/test-bash-noninteractive.sh
+
+      - name: ZSH version
+        run: zsh --version
 
       - name: ZSH Login / Interactive
         run: |
