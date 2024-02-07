@@ -19,4 +19,5 @@ abs_dirname() {
 
 config_bash_dir="$(abs_dirname "${BASH_SOURCE[0]}")"
 config_dir="$(abs_dirname "$config_bash_dir")"
-export DOTFILES="$(abs_dirname "$config_dir")"
+DOTFILES="$(abs_dirname "$config_dir")"
+export DOTFILES
