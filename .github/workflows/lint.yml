@@ -28,13 +28,13 @@ jobs:
         run: shfmt -ln posix -d config/sh/*
 
       - name: ShellCheck bash files
-        run: shellcheck --shell=bash config/bash/*
+        run: shellcheck --shell=bash config/bash/* test/bash/*
 
       - name: shfmt bash files
-        run: shfmt -ln bash -d config/bash/*
+        run: shfmt -ln bash -d config/bash/* test/bash/*
 
       - name: ShellCheck zsh files
-        run: shellcheck --shell=bash config/zsh/*
+        run: shellcheck --shell=bash config/zsh/* test/zsh/*
 
       - name: shfmt zsh files
-        run: shfmt -ln bash -d config/zsh/*
+        run: shfmt -ln bash -d config/zsh/* test/zsh/*
