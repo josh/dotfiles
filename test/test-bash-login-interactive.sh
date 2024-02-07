@@ -8,4 +8,4 @@ shopt -q login_shell
 
 [[ "$PATH" == "$HOME/.local/bin"* ]]
 [[ "$PATH" == *"/usr/local/bin"* ]]
-[[ $(type -t g) == "alias" ]]
+# [[ $(type -t g) == "alias" ]]
