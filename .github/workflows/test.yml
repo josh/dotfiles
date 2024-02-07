@@ -6,6 +6,7 @@ jobs:
   test:
     strategy:
       matrix:
+        shell: [bash, zsh]
         os: [ubuntu-latest, macos-latest]
 
     runs-on: ${{ matrix.os }}
@@ -14,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install zsh
-        if: matrix.os == 'ubuntu-latest'
+        if: matrix.shell == 'zsh' && matrix.os == 'ubuntu-latest'
         run: |
           sudo apt-get update
           sudo apt-get install zsh
@@ -28,36 +29,21 @@ jobs:
       - name: Install dotfiles
         run: ./install.sh
 
-      - name: Bash version
-        run: bash --version
+      - name: Print version
+        run: ${{ matrix.shell }} --version
 
-      - name: Bash Login / Interactive
+      - name: Script
         run: |
-          env -i HOME="$HOME" bash -l -i ./test/test-bash-login-interactive.sh
+          env -i HOME="$HOME" ${{ matrix.shell }} ./test/${{ matrix.shell }}/nonlogin-noninteractive.sh
 
-      - name: Bash Non-Login / Interactive
+      - name: Interactive
         run: |
-          env -i HOME="$HOME" bash -i ./test/test-bash-nonlogin-interactive.sh
+          env -i HOME="$HOME" ${{ matrix.shell }} -i ./test/${{ matrix.shell }}/nonlogin-interactive.sh
 
-      - name: Bash Non-Interactive
+      - name: Login
         run: |
-          env -i HOME="$HOME" bash ./test/test-bash-noninteractive.sh
+          env -i HOME="$HOME" ${{ matrix.shell }} -l ./test/${{ matrix.shell }}/login-noninteractive.sh
 
-      - name: ZSH version
-        run: zsh --version
-
-      - name: ZSH Login / Interactive
+      - name: Login / Interactive
         run: |
-          env -i HOME="$HOME" zsh -l -i ./test/test-zsh-login-interactive.sh
-
-      - name: ZSH Non-Login / Interactive
-        run: |
-          env -i HOME="$HOME" zsh -i ./test/test-zsh-nonlogin-interactive.sh
-
-      - name: ZSH Login / Non-Interactive
-        run: |
-          env -i HOME="$HOME" zsh -l ./test/test-zsh-login-noninteractive.sh
-
-      - name: ZSH Non-Login / Non-Interactive
-        run: |
-          env -i HOME="$HOME" zsh ./test/test-zsh-nonlogin-noninteractive.sh
+          env -i HOME="$HOME" ${{ matrix.shell }} -l -i ./test/${{ matrix.shell }}/login-interactive.sh
