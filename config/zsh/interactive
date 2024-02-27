@@ -18,6 +18,10 @@ bindkey -e
 autoload -U select-word-style
 select-word-style bash
 
+if [ -d "$HOMEBREW_PREFIX/share/zsh-autosuggestions" ]; then
+	source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+fi
+
 # fzf
 if [ -d "$HOMEBREW_PREFIX/opt/fzf" ]; then
 	source "$HOMEBREW_PREFIX/opt/fzf/shell/completion.zsh"

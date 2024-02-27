@@ -37,6 +37,7 @@ brew "tailscale"
 brew "terminal-notifier"
 brew "watch"
 brew "wget"
+brew "zsh-autosuggestions"
 
 # Cask
 cask "firefox"
