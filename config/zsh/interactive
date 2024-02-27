@@ -21,6 +21,9 @@ select-word-style bash
 if [ -d "$HOMEBREW_PREFIX/share/zsh-autosuggestions" ]; then
 	source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
+if [ -d "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting" ]; then
+	source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
 
 # fzf
 if [ -d "$HOMEBREW_PREFIX/opt/fzf" ]; then
