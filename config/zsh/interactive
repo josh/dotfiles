@@ -18,6 +18,12 @@ bindkey -e
 autoload -U select-word-style
 select-word-style bash
 
+# fzf
+if [ -d "$HOMEBREW_PREFIX/opt/fzf" ]; then
+	source "$HOMEBREW_PREFIX/opt/fzf/shell/completion.zsh"
+	source "$HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh"
+fi
+
 # direnv
 if [ -n "$ZED_TERM" ]; then
 	# force direnv reload
