@@ -11,9 +11,15 @@ if [ -d "$XDG_CACHE_HOME" ]; then
 	compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
 fi
 
-if [ -d "$XDG_STATE_HOME/zsh" ]; then
-	HISTFILE="$XDG_STATE_HOME/zsh/history"
-fi
+HISTSIZE=50000
+# shellcheck disable=SC2034
+SAVEHIST=50000
+
+setopt EXTENDED_HISTORY
+setopt APPEND_HISTORY
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
 
 # force emacs bindings
 bindkey -e
