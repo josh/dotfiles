@@ -21,6 +21,13 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 
+__sync_history() {
+	echo "...syncing history"
+	zsh-session-prune
+	zsh-history-sync
+}
+add-zsh-hook zshexit __sync_history
+
 # force emacs bindings
 bindkey -e
 
