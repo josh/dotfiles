@@ -7,16 +7,26 @@ import sys
 
 def read_history_lines(histfile: Path) -> Iterator[bytes]:
     with open(histfile, "rb") as f:
-        buf = f.readline()
-        assert buf.startswith(b": "), f"{histfile} not extended history format"
+        buf: bytes | None = None
+
         for line in f:
             if line.startswith(b": "):
+                assert buf is None
+                buf = line
+            else:
                 assert buf.startswith(b": ")
-                yield buf
-                buf = b""
-            buf += line
-        assert buf.startswith(b": ")
-        yield buf
+                assert buf.endswith(b"\\\n")
+                buf += line
+
+            if line.endswith(b"\\\n"):
+                continue
+
+            assert buf.startswith(b": ")
+            assert not buf.endswith(b"\\\n")
+            yield buf
+            buf = None
+
+        assert buf is None
 
 
 def merge_history_files(histfiles: Iterable[Path]) -> list[bytes]:
