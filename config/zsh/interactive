@@ -1,6 +1,10 @@
 # shellcheck source=/dev/null
 source ~/.config/sh/interactive
 
+if [ -x "$(command -v starship)" ]; then
+	eval "$(starship init zsh)"
+fi
+
 if [ -d "$XDG_CACHE_HOME" ]; then
 	autoload -Uz compinit
 	mkdir -p "$XDG_CACHE_HOME/zsh"
