@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+
+from pathlib import Path
+from typing import Iterator, Iterable
+import sys
+
+
+def read_history_lines(histfile: Path) -> Iterator[bytes]:
+    with open(histfile, "rb") as f:
+        buf = f.readline()
+        for line in f:
+            if line.startswith(b": "):
+                assert buf.startswith(b": ")
+                yield buf
+                buf = b""
+            buf += line
+        assert buf.startswith(b": ")
+        yield buf
+
+
+def merge_history_files(histfiles: Iterable[Path]) -> list[bytes]:
+    lines: set[bytes] = set()
+    for histfile in histfiles:
+        lines.update(read_history_lines(histfile))
+    return sorted(lines)
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        sys.exit("Usage: zsh-history-merge <file1> <file2> ...")
+    for line in merge_history_files(Path(fn) for fn in sys.argv[1:]):
+        sys.stdout.buffer.write(line)
