@@ -1,44 +1,46 @@
 #!/bin/bash
 
-shopt -s extglob
-set -ex
+set -euo pipefail
 
-abs_dirname() {
-	local cwd
-	local path
-	local name
+realpath="$(readlink -f "$0")"
+bin="$(dirname "$realpath")"
+local="$(dirname "$bin")"
+dotfiles="$(dirname "$local")"
 
-	cwd="$(pwd)"
-	path="$1"
-
-	while [ -n "$path" ]; do
-		cd "${path%/*}"
-		name="${path##*/}"
-		path="$(readlink "$name")"
-	done
-
-	pwd
-	cd "$cwd"
+dotlink() {
+	src="$dotfiles/$1"
+	dst="$HOME/.$1"
+	if [ ! -L "$dst" ]; then
+		echo ln -nfs "$src" "$dst"
+		ln -nfs "$src" "$dst"
+	fi
 }
 
-bin="$(abs_dirname "$0")"
-local="$(abs_dirname "$bin")"
-dotfiles="$(abs_dirname "$local")"
-
-[ -L "$HOME/.config" ] && rm "$HOME/.config"
-[ -L "$HOME/.install.sh" ] && rm "$HOME/.install.sh"
-
-for src in "$dotfiles"/!(config|local|test|install.sh); do
-	ln -nfs "$src" "$HOME/.$(basename "$src")"
-done
+check_link() {
+	if [ -L "$1" ] && ! [ -e "$1" ]; then
+		echo "rm $1"
+		rm "$fn"
+	fi
+}
 
 mkdir -p "$HOME/.config"
+mkdir -p "$HOME/.local"
+
+dotlink "bash_profile"
+dotlink "bashrc"
+dotlink "local/bin"
+dotlink "ssh"
+dotlink "zprofile"
+dotlink "zshrc"
+
 for src in "$dotfiles/config"/*; do
-	ln -nfs "$src" "$HOME/.config/$(basename "$src")"
+	dotlink "config/$(basename "$src")"
 done
 
-mkdir -p "$HOME/.local"
-ln -nfs "$dotfiles/local/bin" "$HOME/.local/bin"
+for fn in "$HOME"/*; do
+	check_link "$fn"
+done
 
-find "$HOME" -maxdepth 1 -type l ! -exec test -e {} \; -delete
-find "$HOME/.config" -maxdepth 1 -type l ! -exec test -e {} \; -delete
+for fn in "$HOME/.config"/*; do
+	check_link "$fn"
+done
