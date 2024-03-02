@@ -12,7 +12,7 @@
     "enabled": true
   },
   "collaboration_panel": {
-    "button": false
+    "button": true
   },
   "chat_panel": {
     "button": false
