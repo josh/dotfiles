@@ -26,6 +26,7 @@ __sync_history() {
 	zsh-session-prune
 	zsh-history-sync
 }
+autoload -Uz add-zsh-hook
 add-zsh-hook zshexit __sync_history
 
 # force emacs bindings
