@@ -5,6 +5,9 @@ if [ -x "$(command -v starship)" ]; then
 	eval "$(starship init zsh)"
 fi
 
+if [ -d "$HOMEBREW_PREFIX/share/zsh/site-functions" ]; then
+	FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH"
+fi
 if [ -d "$XDG_CACHE_HOME" ]; then
 	autoload -Uz compinit
 	mkdir -p "$XDG_CACHE_HOME/zsh"
