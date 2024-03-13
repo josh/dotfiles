@@ -5,8 +5,9 @@ set -x
 
 # See <https://wiki.archlinux.org/title/XDG_Base_Directory#Supported>
 
-if [ ! -L "$HOME/.cache" ] && [ -d "$HOME/.cache" ]; then
+if [ ! -L "$HOME/.cache" ]; then
 	if [ -d "$HOME/Library/Caches" ]; then
+		rm -rf "$HOME/.cache"
 		ln -s "$HOME/Library/Caches" "$HOME/.cache"
 	fi
 fi
