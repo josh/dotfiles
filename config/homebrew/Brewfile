@@ -21,7 +21,7 @@ brew "ollama", restart_service: true
 brew "openssl@1.1"
 brew "oven-sh/bun/bun"
 brew "prettier"
-brew "python@3.11"
+brew "python@3.12"
 brew "restic"
 brew "ripgrep"
 brew "ruff"
