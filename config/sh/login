@@ -63,7 +63,7 @@ export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
 
 export GOENV="$XDG_CONFIG_HOME/go/env"
 
-export HOMEBREW_BUNDLE_FILE="$XDG_CONFIG_HOME/brew/Brewfile"
+export HOMEBREW_BUNDLE_FILE="$XDG_CONFIG_HOME/homebrew/Brewfile"
 
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
 export JUPYTER_PLATFORM_DIRS="1"
