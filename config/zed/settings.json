@@ -7,7 +7,11 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "One Light",
+  "theme": {
+    "mode": "system",
+    "light": "Atelier Savanna Light",
+    "dark": "Atelier Savanna Dark"
+  },
   "inlay_hints": {
     "enabled": true
   },
