@@ -11,7 +11,7 @@ brew "gh"
 brew "git"
 brew "go"
 brew "icu4c"
-brew "josh/tap/bbedit-cli"
+brew "josh/tap/bbedit-cli" if File.exist?("/Applications/BBEdit.app/Contents/_MASReceipt/receipt")
 brew "josh/tap/itunes-library-export"
 brew "jq"
 brew "mas"
