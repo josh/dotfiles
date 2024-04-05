@@ -61,3 +61,8 @@ fi
 if [ -x "$(command -v direnv)" ]; then
 	eval "$(direnv hook zsh)"
 fi
+
+# gh copilot
+if [ -x "$(command -v gh)" ] && gh extension list | grep -q gh-copilot; then
+	eval "$(gh copilot alias -- zsh)"
+fi
