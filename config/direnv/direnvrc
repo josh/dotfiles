@@ -6,8 +6,7 @@ use_python() {
 	export VIRTUAL_ENV IPYTHONDIR VIRTUAL_ENV_PROMPT
 
 	if [[ ! -d "$VIRTUAL_ENV" ]]; then
-		python3 -m venv "$VIRTUAL_ENV"
-		"$VIRTUAL_ENV/bin/pip3" install --upgrade pip
+		uv venv "$VIRTUAL_ENV"
 	fi
 	PATH_add "$VIRTUAL_ENV/bin"
 }
