@@ -39,7 +39,6 @@ brew "zsh-syntax-highlighting"
 
 # Cask
 cask "firefox"
-cask "logi-options-plus" if `ioreg -p IOUSB` =~ /USB Receiver/
 cask "mimestream"
 cask "raycast"
 cask "secretive"
