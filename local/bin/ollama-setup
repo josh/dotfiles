@@ -1,0 +1,31 @@
+#!/bin/bash
+
+set -euo pipefail
+
+models=(
+	"llama3:latest"
+	"phi3:medium"
+	"mistral:latest"
+	"gemma:2b"
+	"gemma:7b"
+)
+
+_models() {
+	for element in "${models[@]}"; do
+		echo "$element"
+	done | sort
+}
+
+_installed() {
+	ollama list | awk 'NR>1 {print $1}' | sort
+}
+
+comm -23 <(_models) <(_installed) | while read -r model; do
+	echo "+" ollama pull "$model"
+	ollama pull "$model"
+done
+
+comm -13 <(_models) <(_installed) | while read -r model; do
+	echo "+" ollama rm "$model"
+	ollama rm "$model"
+done
