@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -euo pipefail
+set -x
+
+ollama list | awk 'NR>1 {print $1}' | while read -r name; do
+	ollama pull "$name"
+done
