@@ -8,5 +8,5 @@ use_python() {
 	if [[ ! -d "$VIRTUAL_ENV" ]]; then
 		uv venv "$VIRTUAL_ENV"
 	fi
-	PATH_add "$VIRTUAL_ENV/bin"
+	source "${VIRTUAL_ENV}/bin/activate"
 }
