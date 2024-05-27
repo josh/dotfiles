@@ -9,4 +9,5 @@ use_python() {
 		uv venv "$VIRTUAL_ENV"
 	fi
 	source "${VIRTUAL_ENV}/bin/activate"
+	PATH_add "$VIRTUAL_ENV/bin"
 }
