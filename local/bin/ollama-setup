@@ -6,8 +6,10 @@ models=(
 	"llama3:latest"
 	"phi3:medium"
 	"mistral:latest"
+	"codestral:22b"
 	"gemma:2b"
 	"gemma:7b"
+	"codegemma:7b"
 )
 
 _models() {
