@@ -14,6 +14,7 @@ def read_history_lines(histfile: Path) -> Iterator[bytes]:
                 assert buf is None
                 buf = line
             else:
+                assert buf
                 assert buf.startswith(b": ")
                 assert buf.endswith(b"\\\n")
                 buf += line
