@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -euo pipefail
+set -x
+
+llm install --upgrade \
+	llm-claude \
+	llm-claude-3 \
+	llm-cmd \
+	llm-gemini \
+	llm-ollama \
+	llm-perplexity \
+	llm-sentence-transformers
+
+llm plugins | jq --raw-output '.[] | .name'
