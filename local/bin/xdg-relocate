@@ -56,3 +56,8 @@ if [ ! -L "$HOME/.vscode/extensions" ] && [ -d "$HOME/.vscode/extensions" ]; the
 		ln -s "$HOME/Library/Application Support/Code/User/extensions" "$HOME/.vscode/extensions"
 	fi
 fi
+
+if [ ! -L "$HOME/Library/Application Support/io.datasette.llm" ] && [ -d "$HOME/.config/io.datasette.llm" ]; then
+	rm -rf "$HOME/Library/Application Support/io.datasette.llm"
+	ln -s "$HOME/.config/io.datasette.llm" "$HOME/Library/Application Support/io.datasette.llm"
+fi
