@@ -20,6 +20,7 @@ brew "ollama", restart_service: true
 brew "oven-sh/bun/bun"
 brew "prettier"
 brew "python@3.12"
+brew "rclone"
 brew "restic"
 brew "ripgrep"
 brew "ruff"
