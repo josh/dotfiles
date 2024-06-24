@@ -13,6 +13,7 @@ brew "go"
 brew "josh/tap/bbedit-cli" if File.exist?("/Applications/BBEdit.app/Contents/_MASReceipt/receipt")
 brew "josh/tap/itunes-library-export"
 brew "jq"
+brew "llm"
 brew "mas"
 brew "md5sha1sum"
 brew "node"
