@@ -75,5 +75,6 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 
-export VIMINIT="source \$VIMRC"
+export VIMINIT="if has(\"nvim\")|source \$NVIMINIT|else|source \$VIMRC|end"
 export VIMRC="$XDG_CONFIG_HOME/vim/vimrc"
+export NVIMINIT="$XDG_CONFIG_HOME/nvim/init.lua"
