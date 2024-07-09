@@ -3,13 +3,15 @@
 set -euo pipefail
 
 models=(
-	"llama3:latest"
-	"phi3:medium"
-	"mistral:latest"
-	"codestral:22b"
-	"gemma:2b"
-	"gemma:7b"
 	"codegemma:7b"
+	"codestral:22b"
+	"gemma2:9b"
+	"gemma2:27b"
+	"llama3:8b"
+	"llama3:70b"
+	"mistral:7b"
+	"phi3:3b"
+	"phi3:14b"
 )
 
 _models() {
