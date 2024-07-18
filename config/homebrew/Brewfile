@@ -5,6 +5,8 @@ tap "josh/tap"
 tap "oven-sh/bun"
 
 # Homebrew
+brew "age"
+brew "age-plugin-se"
 brew "direnv"
 brew "fzf"
 brew "gh"
