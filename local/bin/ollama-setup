@@ -10,8 +10,8 @@ models=(
 	"llama3.1:8b"
 	"llama3.1:70b"
 	"mistral:7b"
-	"phi3:3b"
-	"phi3:14b"
+	"phi3:mini"
+	"phi3:medium"
 )
 
 _models() {
