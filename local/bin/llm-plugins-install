@@ -4,6 +4,7 @@ set -euo pipefail
 set -x
 
 llm install --upgrade \
+	pip \
 	llm-claude \
 	llm-claude-3 \
 	llm-cmd \
