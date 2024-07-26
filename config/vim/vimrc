@@ -1,29 +1,36 @@
+" Even with XDG compat, ~/.viminfo still gets written
+set viminfofile=$XDG_STATE_HOME/vim/viminfo
+
+" Disable vi compat mode
 set nocompatible
+
+" Improve search functionality
 set ignorecase
-set incsearch
 set smartcase
-set showmatch
+set incsearch
+
+" Show commands and cursor position in the status line
 set showcmd
 set ruler
+set laststatus=2
 
-syntax on
-
-set nobackup
-set nowritebackup
-set viminfo=
+" Set text formatting and indentation
 set textwidth=79
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set cindent
 set autoindent
 set smarttab
-set expandtab
 set backspace=indent,eol,start
 
-filetype on
-filetype indent on
-filetype plugin on
+syntax on
 
+filetype on
+filetype plugin on
+filetype indent on
+
+" git commit style
 autocmd Filetype gitcommit set textwidth=68 spell
 
+" Strip trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
