@@ -1,8 +1,13 @@
+" Disable vi compat mode
+set nocompatible
+
 " Even with XDG compat, ~/.viminfo still gets written
 set viminfofile=$XDG_STATE_HOME/vim/viminfo
 
-" Disable vi compat mode
-set nocompatible
+" Write without backups
+set nobackup
+set nowritebackup
+set noswapfile
 
 " Improve search functionality
 set ignorecase
