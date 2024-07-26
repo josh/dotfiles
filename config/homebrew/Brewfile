@@ -39,6 +39,7 @@ brew "swiftlint"
 brew "tailscale"
 brew "tree"
 brew "uv"
+brew "vim" # >= 9.1
 brew "watch"
 brew "wget"
 brew "zsh-autosuggestions"
