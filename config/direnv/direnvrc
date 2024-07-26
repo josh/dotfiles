@@ -1,4 +1,4 @@
-use_python() {
+use_uv() {
 	VIRTUAL_ENV="$(expand_path .venv)"
 	VIRTUAL_ENV_PROMPT="(.venv) "
 	IPYTHONDIR="$(expand_path .ipython)"
