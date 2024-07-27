@@ -1,15 +1,23 @@
 return {
-	"stevearc/conform.nvim",
-	config = function()
-		require("conform").setup({
+	-- conform.nvim
+	-- https://github.com/stevearc/conform.nvim#installation
+	-- https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#lazy-loading-with-lazynvim
+	{
+		"stevearc/conform.nvim",
+		lazy = true,
+		event = { "BufWritePre" },
+		cmd = { "ConformInfo" },
+		opts = {
 			formatters_by_ft = {
+				json = { "prettier" },
 				lua = { "stylua" },
-				python = { "ruff" },
+				markdown = { "prettier" },
+				python = { "ruff_format", "ruff_fix" },
+				yaml = { "prettier" },
 			},
 			format_on_save = {
 				timeout_ms = 500,
-				lsp_format = "fallback",
 			},
-		})
-	end,
+		},
+	},
 }
