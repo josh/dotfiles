@@ -61,4 +61,19 @@ return {
     },
     opts = {},
   },
+
+  -- which-key.nvim
+  -- https://github.com/folke/which-key.nvim#lazynvim
+  {
+    "folke/which-key.nvim",
+    lazy = true,
+    event = "VeryLazy",
+    dependencies = {
+      "echasnovski/mini.icons",
+      "nvim-tree/nvim-web-devicons",
+    },
+    opts = {
+      preset = "modern",
+    },
+  },
 }
