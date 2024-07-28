@@ -45,6 +45,10 @@ return {
   -- https://github.com/folke/noice.nvim#-installation
   {
     "folke/noice.nvim",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
     event = "VeryLazy",
     opts = {
       lsp = {
