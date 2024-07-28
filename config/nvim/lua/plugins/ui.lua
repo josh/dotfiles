@@ -15,6 +15,10 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     lazy = false,
     opts = {},
+    init = function()
+      -- Hide command-line area while not using
+      vim.opt.cmdheight = 0
+    end,
   },
 
   -- neo-tree.nvim
