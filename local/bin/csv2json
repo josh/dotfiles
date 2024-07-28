@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec yq --input-format=csv --output-format=json
