@@ -15,10 +15,6 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     lazy = false,
     opts = {},
-    init = function()
-      -- Hide command-line area while not using
-      vim.opt.cmdheight = 0
-    end,
   },
 
   -- neo-tree.nvim
@@ -41,6 +37,29 @@ return {
         follow_current_file = {
           enabled = true,
         },
+      },
+    },
+  },
+
+  -- noice.nvim
+  -- https://github.com/folke/noice.nvim#-installation
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      lsp = {
+        override = {
+          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+          ["vim.lsp.util.stylize_markdown"] = true,
+          ["cmp.entry.get_documentation"] = true,
+        },
+      },
+      presets = {
+        bottom_search = true,
+        command_palette = true,
+        long_message_to_split = true,
+        inc_rename = false,
+        lsp_doc_border = false,
       },
     },
   },
