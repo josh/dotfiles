@@ -40,6 +40,7 @@ brew "swift-format"
 brew "swiftformat"
 brew "swiftlint"
 brew "tailscale"
+brew "topgrade"
 brew "tree"
 brew "uv"
 brew "vim" # >= 9.1
