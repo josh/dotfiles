@@ -42,6 +42,7 @@ brew "uv"
 brew "vim" # >= 9.1
 brew "watch"
 brew "wget"
+brew "yq"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 
