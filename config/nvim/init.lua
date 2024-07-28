@@ -35,7 +35,7 @@ end
 -- Setup lazy.nvim
 require("lazy").setup("plugins", {
   rocks = { hererocks = false },
-  install = { colorscheme = { "tokyonight" } },
+  install = { colorscheme = { "tokyonight", "habamax" } },
   checker = { enabled = true },
   change_detection = { notify = false },
 })
