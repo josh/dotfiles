@@ -1,12 +1,6 @@
 return {
-  -- conform.nvim
-  -- https://github.com/stevearc/conform.nvim#installation
-  -- https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#lazy-loading-with-lazynvim
   {
     "stevearc/conform.nvim",
-    lazy = true,
-    event = { "BufWritePre" },
-    cmd = { "ConformInfo" },
     opts = {
       formatters_by_ft = {
         json = { "prettier" },
@@ -15,8 +9,29 @@ return {
         python = { "ruff_format", "ruff_fix" },
         yaml = { "prettier" },
       },
-      format_on_save = {
-        timeout_ms = 500,
+    },
+  },
+
+  {
+    "mfussenegger/nvim-lint",
+    opts = {
+      linters_by_ft = {
+        bash = { "shellcheck" },
+        python = { "ruff", "mypy" },
+      },
+    },
+  },
+
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "actionlint",
+        "prettier",
+        "ruff",
+        "shellcheck",
+        "shfmt",
+        "stylua",
       },
     },
   },
