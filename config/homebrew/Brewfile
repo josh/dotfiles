@@ -55,6 +55,7 @@ brew "zsh-syntax-highlighting"
 # Cask
 cask "firefox"
 cask "mimestream"
+cask "obsidian"
 cask "raycast"
 cask "secretive"
 cask "visual-studio-code"
