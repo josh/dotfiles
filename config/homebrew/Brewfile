@@ -46,6 +46,7 @@ brew "tree"
 brew "uv"
 brew "vim" # >= 9.1
 brew "watch"
+brew "yt-dlp"
 brew "wget"
 brew "yq"
 brew "zsh-autosuggestions"
