@@ -54,10 +54,6 @@ if [ -d "$HOMEBREW_PREFIX/opt/fzf" ]; then
 fi
 
 # direnv
-if [ -n "$ZED_TERM" ]; then
-	# force direnv reload
-	unset DIRENV_WATCHES
-fi
 if [ -x "$(command -v direnv)" ]; then
 	eval "$(direnv hook zsh)"
 fi

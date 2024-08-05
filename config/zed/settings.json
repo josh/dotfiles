@@ -23,5 +23,6 @@
   },
   "terminal": {
     "option_as_meta": true
-  }
+  },
+  "load_direnv": "shell_hook"
 }
