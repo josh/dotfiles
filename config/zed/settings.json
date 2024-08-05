@@ -9,8 +9,8 @@
 {
   "theme": {
     "mode": "system",
-    "light": "Atelier Savanna Light",
-    "dark": "Atelier Savanna Dark"
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha"
   },
   "inlay_hints": {
     "enabled": true
