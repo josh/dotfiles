@@ -56,3 +56,9 @@ if [ ! -L "$HOME/.vscode/extensions" ] && [ -d "$HOME/.vscode/extensions" ]; the
 		ln -s "$HOME/Library/Application Support/Code/User/extensions" "$HOME/.vscode/extensions"
 	fi
 fi
+
+if [ ! -d "$XDG_STATE_HOME/zed" ]; then
+	mkdir -p "$XDG_STATE_HOME/zed/conversations"
+	mkdir -p "$XDG_STATE_HOME/zed/embeddings"
+	mkdir -p "$XDG_STATE_HOME/zed/prompts"
+fi
