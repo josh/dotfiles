@@ -53,6 +53,7 @@ brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 
 # Cask
+cask "alacritty"
 cask "firefox"
 cask "mimestream"
 cask "obsidian"
