@@ -5,8 +5,8 @@ tap "josh/tap"
 tap "oven-sh/bun"
 
 # Homebrew
-brew "age"
 brew "age-plugin-se"
+brew "age"
 brew "bat"
 brew "direnv"
 brew "eza"
@@ -46,9 +46,9 @@ brew "tree"
 brew "uv"
 brew "vim" # >= 9.1
 brew "watch"
-brew "yt-dlp"
 brew "wget"
 brew "yq"
+brew "yt-dlp"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 
