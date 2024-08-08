@@ -1,5 +1,8 @@
 [keyboard]
 bindings = [
+  # tmux leader alias: Ctrl-b
+  { key = "B", mods = "Command", chars = "\u0002" },
+
   # tmux create window: Ctrl-b c
   { key = "T", mods = "Command", chars = "\u0002c" },
 
