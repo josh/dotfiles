@@ -1,0 +1,20 @@
+import = [
+  "~/.config/alacritty/themes/tokyonight_moon.toml",
+  "~/.config/alacritty/keybindings/tmux.toml",
+]
+
+[shell]
+program = "/bin/zsh"
+args = ["--login", "-c", "tmux-detached"]
+
+[window]
+dimensions = { columns = 120, lines = 40 }
+padding = { x = 10, y = 10 }
+decorations = "Buttonless"
+resize_increments = true
+option_as_alt = "Both"
+
+[font]
+normal.family = "MesloLGS Nerd Font Mono"
+
+size = 19
