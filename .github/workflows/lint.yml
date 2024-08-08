@@ -44,3 +44,6 @@ jobs:
 
       - name: shfmt zsh files
         run: shfmt -ln bash -d config/zsh/* test/zsh/*
+
+      - name: taplo toml files
+        run: taplo format --check
