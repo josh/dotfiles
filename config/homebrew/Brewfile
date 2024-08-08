@@ -51,6 +51,7 @@ brew "watch"
 brew "wget"
 brew "yq"
 brew "yt-dlp"
+brew "zoxide"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 
