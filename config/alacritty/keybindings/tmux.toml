@@ -1,33 +1,33 @@
 [keyboard]
 bindings = [
-    # tmux create window: Ctrl-b c
-    { key = "T", mods = "Command", chars = "\u0002c" },
+  # tmux create window: Ctrl-b c
+  { key = "T", mods = "Command", chars = "\u0002c" },
 
-    # tmux close window: Ctrl-b & y
-    { key = "W", mods = "Command", chars = "\u0002&y" },
+  # tmux close window: Ctrl-b & y
+  { key = "W", mods = "Command", chars = "\u0002&y" },
 
-    # tmux split horizontal: Ctrl-b "
-    { key = "D", mods = "Command", chars = "\u0002\"" },
+  # tmux split horizontal: Ctrl-b "
+  { key = "D", mods = "Command", chars = "\u0002\"" },
 
-    # tmux split vertical: Ctrl-b %
-    # { key = "", mods = "Command", chars = "\u0002%" },
+  # tmux split vertical: Ctrl-b %
+  # { key = "", mods = "Command", chars = "\u0002%" },
 
-    # tmux close split: Ctrl-b x
-    { key = "D", mods = "Command|Shift", chars = "\u0002x" },
+  # tmux close split: Ctrl-b x
+  { key = "D", mods = "Command|Shift", chars = "\u0002x" },
 
-    # tmux next window: Ctrl-b n
-    { key = "}", mods = "Command|Shift", chars = "\u0002n" },
-    # tmux previous window: Ctrl-b p
-    { key = "{", mods = "Command|Shift", chars = "\u0002p" },
+  # tmux next window: Ctrl-b n
+  { key = "}", mods = "Command|Shift", chars = "\u0002n" },
+  # tmux previous window: Ctrl-b p
+  { key = "{", mods = "Command|Shift", chars = "\u0002p" },
 
-    # tmux go to window number
-    { key = "Key1", mods = "Command", chars = "\u00021" },
-    { key = "Key2", mods = "Command", chars = "\u00022" },
-    { key = "Key3", mods = "Command", chars = "\u00023" },
-    { key = "Key4", mods = "Command", chars = "\u00024" },
-    { key = "Key5", mods = "Command", chars = "\u00025" },
-    { key = "Key6", mods = "Command", chars = "\u00026" },
-    { key = "Key7", mods = "Command", chars = "\u00027" },
-    { key = "Key8", mods = "Command", chars = "\u00028" },
-    { key = "Key9", mods = "Command", chars = "\u00029" },
+  # tmux go to window number
+  { key = "Key1", mods = "Command", chars = "\u00021" },
+  { key = "Key2", mods = "Command", chars = "\u00022" },
+  { key = "Key3", mods = "Command", chars = "\u00023" },
+  { key = "Key4", mods = "Command", chars = "\u00024" },
+  { key = "Key5", mods = "Command", chars = "\u00025" },
+  { key = "Key6", mods = "Command", chars = "\u00026" },
+  { key = "Key7", mods = "Command", chars = "\u00027" },
+  { key = "Key8", mods = "Command", chars = "\u00028" },
+  { key = "Key9", mods = "Command", chars = "\u00029" },
 ]
