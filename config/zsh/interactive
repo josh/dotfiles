@@ -55,7 +55,7 @@ fi
 
 # zoxide
 if [ -x "$(command -v zoxide)" ]; then
-  eval "$(zoxide init zsh)"
+	eval "$(zoxide init zsh)"
 fi
 
 # direnv
