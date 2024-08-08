@@ -15,6 +15,7 @@ resize_increments = true
 option_as_alt = "Both"
 
 [font]
-normal.family = "MesloLGS Nerd Font Mono"
+# normal.family = "MesloLGS Nerd Font Mono"
+normal.family = "BerkeleyMono Nerd Font Mono"
 
 size = 19
