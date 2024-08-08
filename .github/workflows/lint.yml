@@ -15,6 +15,12 @@ jobs:
       - name: Install shfmt
         run: sudo snap install shfmt
 
+      - name: Install taplo
+        run: |
+          curl -fsSL https://github.com/tamasfe/taplo/releases/latest/download/taplo-full-linux-x86_64.gz | \
+            gzip -d - | \
+            install -m 755 /dev/stdin /usr/local/bin/taplo
+
       - name: ShellCheck files
         run: shellcheck $(local/bin/find-shebang sh .) $(local/bin/find-shebang bash .)
 
