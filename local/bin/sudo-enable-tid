@@ -4,17 +4,17 @@
 set -euo pipefail
 
 pam_tid_enabled() {
-  if [ ! -f /etc/pam.d/sudo_local ]; then
-    return 1
-  elif grep --invert-match '^\s*#' /etc/pam.d/sudo_local | grep --silent 'pam_tid'; then
-    return 0
-  else
-    return 1
-  fi
+	if [ ! -f /etc/pam.d/sudo_local ]; then
+		return 1
+	elif grep --invert-match '^\s*#' /etc/pam.d/sudo_local | grep --silent 'pam_tid'; then
+		return 0
+	else
+		return 1
+	fi
 }
 
 if ! pam_tid_enabled; then
-  set -x
-  sed -e 's/^#auth/auth/' /etc/pam.d/sudo_local.template | sudo tee /etc/pam.d/sudo_local
-  sudo chown root:wheel /etc/pam.d/sudo_local
+	set -x
+	sed -e 's/^#auth/auth/' /etc/pam.d/sudo_local.template | sudo tee /etc/pam.d/sudo_local
+	sudo chown root:wheel /etc/pam.d/sudo_local
 fi
