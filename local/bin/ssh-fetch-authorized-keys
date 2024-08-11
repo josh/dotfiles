@@ -1,0 +1,11 @@
+#!/bin/bash
+# fetches my ssh authorized keys from GitHub
+# usage: ssh-fetch-authorized-keys
+
+set -euo pipefail
+set -x
+
+output="$HOME/.ssh/authorized_keys"
+curl --no-progress-meter --fail https://github.com/josh.keys --output "${output}~"
+chmod 600 "${output}~"
+mv "${output}~" "${output}"
