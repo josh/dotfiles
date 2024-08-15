@@ -16,5 +16,7 @@ return {
         path = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes",
       },
     },
+    -- font rendering is messed up
+    ui = { enable = false },
   },
 }
