@@ -16,6 +16,7 @@ return {
         path = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes",
       },
     },
+    disable_frontmatter = true,
     -- font rendering is messed up
     ui = { enable = false },
   },
