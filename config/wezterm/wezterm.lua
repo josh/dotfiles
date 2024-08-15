@@ -3,6 +3,7 @@ local config = wezterm.config_builder()
 
 config.set_environment_variables = {
 	PATH = "/opt/homebrew/bin:" .. os.getenv("PATH"),
+	THEME = "tokyonight_moon",
 }
 
 -- local appearance = require("appearance")

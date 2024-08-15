@@ -7,6 +7,9 @@ import = [
 program = "/bin/zsh"
 args = ["--login", "-c", "tmux-detached"]
 
+[env]
+THEME = "tokyonight_moon"
+
 [window]
 dimensions = { columns = 120, lines = 40 }
 padding = { x = 10, y = 10 }
