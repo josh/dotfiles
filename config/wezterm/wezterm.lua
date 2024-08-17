@@ -18,6 +18,8 @@ config.window_frame = {
 	font_size = 16,
 }
 
+config.use_fancy_tab_bar = false
+
 config.keys = {
 	{
 		key = ",",
