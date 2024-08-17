@@ -11,7 +11,7 @@ config.set_environment_variables = {
 config.color_scheme = "Tokyo Night Moon"
 
 config.font = wezterm.font({ family = "Berkeley Mono" })
-config.font_size = 16
+config.font_size = 18
 
 config.window_decorations = "RESIZE"
 config.window_frame = {
@@ -20,6 +20,9 @@ config.window_frame = {
 }
 
 config.use_fancy_tab_bar = false
+
+config.initial_cols = 120
+config.initial_rows = 40
 
 config.keys = {
 	{
