@@ -1,5 +1,6 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
+local act = wezterm.action
 
 config.set_environment_variables = {
 	PATH = "/opt/homebrew/bin:" .. os.getenv("PATH"),
@@ -23,10 +24,18 @@ config.use_fancy_tab_bar = false
 config.keys = {
 	{
 		key = ",",
-		mods = "SUPER",
-		action = wezterm.action.SpawnCommandInNewTab({
+		mods = "CMD",
+		action = act.SpawnCommandInNewTab({
 			cwd = wezterm.home_dir,
 			args = { "nvim", wezterm.config_file },
+		}),
+	},
+	{
+		key = "k",
+		mods = "CMD",
+		action = act.Multiple({
+			act.ClearScrollback("ScrollbackAndViewport"),
+			act.SendKey({ key = "L", mods = "CTRL" }),
 		}),
 	},
 }
