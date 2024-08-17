@@ -5,13 +5,14 @@ set -euo pipefail
 models=(
 	"codegemma:7b"
 	"codestral:22b"
-	"gemma2:9b"
 	"gemma2:27b"
-	"llama3.1:8b"
+	"gemma2:9b"
 	"llama3.1:70b"
+	"llama3.1:8b"
 	"mistral:7b"
-	"phi3:mini"
+	"nomic-embed-text:latest"
 	"phi3:medium"
+	"phi3:mini"
 )
 
 _models() {
