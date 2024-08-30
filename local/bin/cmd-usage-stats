@@ -1,0 +1,13 @@
+#!/bin/bash
+# usage: cmd-usage-stats <command>
+
+set -euo pipefail
+
+command=$1
+history_file="$HOME/.zsh_history"
+
+count=$(grep -c ";$command" "$history_file")
+last_timestamp=$(grep ";$command" "$history_file" | tail -n 1 | cut -d ':' -f2)
+last_used=$(date -r "$last_timestamp" +"%b %-d %Y")
+
+echo "$command used $count times, last on $last_used"
