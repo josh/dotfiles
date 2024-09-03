@@ -7,16 +7,20 @@ fi
 alias g='git'
 alias grep='grep --color=auto'
 
-if [[ $THEME == tokyonight* ]]; then
+case "$THEME" in
+tokyonight*)
 	export BAT_THEME="Tokyo Night"
-elif [[ $THEME == catppuccin* ]]; then
-	if [ "$THEME" = "catppuccin_frappe" ]; then
-		export BAT_THEME="Catppuccin Frappe"
-	elif [ "$THEME" = "catppuccin_latte" ]; then
-		export BAT_THEME="Catppuccin Latte"
-	elif [ "$THEME" = "catppuccin_macchiato" ]; then
-		export BAT_THEME="Catppuccin Macchiato"
-	else
-		export BAT_THEME="Catppuccin Mocha"
-	fi
-fi
+	;;
+catppuccin_frappe)
+	export BAT_THEME="Catppuccin Frappe"
+	;;
+catppuccin_latte)
+	export BAT_THEME="Catppuccin Latte"
+	;;
+catppuccin_macchiato)
+	export BAT_THEME="Catppuccin Macchiato"
+	;;
+catppuccin*)
+	export BAT_THEME="Catppuccin Mocha"
+	;;
+esac
