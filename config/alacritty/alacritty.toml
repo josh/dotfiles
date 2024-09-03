@@ -1,5 +1,5 @@
 import = [
-  "~/.config/alacritty/themes/tokyonight_moon.toml",
+  "/opt/homebrew/Cellar/tokyonight-extras/4.8.0/share/tokyonight-extras/alacritty/tokyonight_moon.toml",
   "~/.config/alacritty/keybindings/tmux.toml",
 ]
 
