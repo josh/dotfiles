@@ -41,6 +41,7 @@ if [ -d "/opt/homebrew/var/restic" ]; then
 fi
 if [ -x "$(command -v security)" ]; then
 	export RESTIC_PASSWORD_COMMAND="security find-generic-password -l 'restic' -w"
+	export RESTIC_FROM_PASSWORD_COMMAND="$RESTIC_PASSWORD_COMMAND"
 fi
 
 export XDG_CONFIG_HOME="$HOME/.config"
