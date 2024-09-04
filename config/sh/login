@@ -19,8 +19,10 @@ fi
 
 if [ -n "$ZED_TERM" ]; then
 	export EDITOR="zed --wait"
-elif [ -x "$(command -v bbedit)" ]; then
-	export EDITOR="bbedit --wait --resume"
+# elif [ -x "$(command -v bbedit)" ]; then
+# 	export EDITOR="bbedit --wait --resume"
+elif [ -x "$(command -v nvim)" ]; then
+	export EDITOR="nvim"
 else
 	export EDITOR="vim"
 fi
