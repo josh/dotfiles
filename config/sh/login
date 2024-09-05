@@ -29,10 +29,6 @@ fi
 export PAGER="less -R"
 export LESSHISTFILE="-"
 
-if [ -x "$(command -v neovide)" ]; then
-	export NEOVIDE_FORK=1
-fi
-
 # colors
 export CLICOLOR=1
 export GREP_COLOR='1;32'
