@@ -1,13 +1,13 @@
-keybinds {
-    shared_except "pane" "locked" {
-        unbind "Ctrl p"
-        bind "Alt p" { SwitchToMode "Pane"; }
-    }
-    shared_except "resize" "locked" {
-        unbind "Ctrl n"
-        bind "Alt n" { SwitchToMode "Resize"; }
-    }
-}
+// keybinds {
+//     shared_except "pane" "locked" {
+//         unbind "Ctrl p"
+//         bind "Alt p" { SwitchToMode "Pane"; }
+//     }
+//     shared_except "resize" "locked" {
+//         unbind "Ctrl n"
+//         bind "Alt n" { SwitchToMode "Resize"; }
+//     }
+// }
 
 theme "tokyo-night"
 // Not ready to disable key binding tips
