@@ -1,0 +1,7 @@
+fork = true
+frame = "transparent"
+title-hidden = true
+
+[font]
+normal = ["BerkeleyMono Nerd Font Mono"]
+size = 20
