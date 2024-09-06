@@ -23,4 +23,13 @@ catppuccin_macchiato)
 catppuccin*)
 	export BAT_THEME="Catppuccin Mocha"
 	;;
+rosepine_moon)
+	export BAT_THEME="Rose Pine Moon"
+	;;
+rosepine_dawn)
+	export BAT_THEME="Rose Pine Dawn"
+	;;
+rosepine*)
+	export BAT_THEME="Rose Pine"
+	;;
 esac
