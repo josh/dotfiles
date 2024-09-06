@@ -14,11 +14,13 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local colorscheme = require("config.theme")
+
 require("lazy").setup({
   -- https://lazy.folke.io/configuration
   spec = {
     -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    { "LazyVim/LazyVim", import = "lazyvim.plugins", opts = { colorscheme = colorscheme } },
     -- import/override with your plugins
     { import = "plugins" },
   },
@@ -34,7 +36,7 @@ require("lazy").setup({
   rocks = {
     hererocks = false,
   },
-  install = { colorscheme = { "tokyonight", "habamax" } },
+  install = { colorscheme = { colorscheme, "default" } },
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update
