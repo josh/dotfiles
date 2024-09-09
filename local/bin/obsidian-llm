@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -euo pipefail
+
+NOTES="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes"
+files-to-prompt --cxml "$NOTES" |
+	llm -m claude-3.5-sonnet --system "$1"
