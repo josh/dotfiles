@@ -17,4 +17,8 @@ local mapping = {
   ["tokyonight_storm"] = "tokyonight-storm",
 }
 
+if vim.g.neovide then
+  return "tokyonight-moon"
+end
+
 return mapping[vim.env["THEME"]] or "default"
