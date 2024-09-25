@@ -9,6 +9,7 @@ models=(
 	"gemma2:9b"
 	"llama3.1:70b"
 	"llama3.1:8b"
+	"llama3.2:3b"
 	"mistral:7b"
 	"nomic-embed-text:latest"
 	"phi3:medium"
