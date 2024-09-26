@@ -71,6 +71,7 @@ brew "zsh-syntax-highlighting"
 
 # Cask
 cask "alacritty"
+cask "cursor"
 cask "firefox"
 cask "font-cascadia-code-nf"
 cask "font-cascadia-code"
