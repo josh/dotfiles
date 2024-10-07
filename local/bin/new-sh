@@ -2,8 +2,11 @@
 
 SCRIPT="#!/usr/bin/env bash
 
-set -euo pipefail
-set -x"
+set -o errexit
+set -o nounset
+set -o pipefail
+if [[ \"\${TRACE-0}\" == \"1\" ]]; then set -o xtrace; fi
+"
 
 if [ -n "$1" ]; then
 	echo "$SCRIPT" >"$1"
