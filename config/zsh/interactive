@@ -69,8 +69,7 @@ if [ -x "$(command -v gh)" ] && gh extension list | grep -q gh-copilot; then
 fi
 
 if [ -n "$ITERM_SESSION_ID" ] && [ -d "$HOMEBREW_PREFIX/opt/iterm2-shell-integration" ]; then
-	ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=1
-	source "$HOMEBREW_PREFIX/opt/iterm2-shell-integration/share/iterm2-shell-integration/iterm2_shell_integration.zsh"
+	ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=1 source "$HOMEBREW_PREFIX/opt/iterm2-shell-integration/share/iterm2-shell-integration/iterm2_shell_integration.zsh"
 	export PATH="$HOMEBREW_PREFIX/opt/iterm2-shell-integration/bin:$PATH"
 	it2tip
 fi
