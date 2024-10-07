@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # usage: git-fetch-dir [path...]
 
 set -e

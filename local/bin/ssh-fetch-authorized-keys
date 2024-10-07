@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # fetches my ssh authorized keys from GitHub
 # usage: ssh-fetch-authorized-keys
 

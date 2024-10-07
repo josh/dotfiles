@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # usage: cmd-usage-stats <command>
 
 set -euo pipefail

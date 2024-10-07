@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Usage: find-shebang <sh|bash> <path>
 
 if [[ -z $1 || -z $2 ]]; then

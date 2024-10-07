@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # usage: test-sh bin/some-sh-script
 
 set -euo pipefail

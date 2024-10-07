@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Enable Touch ID for sudo
 
 set -euo pipefail
