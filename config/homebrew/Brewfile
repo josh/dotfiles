@@ -23,6 +23,7 @@ brew "gum"
 brew "josh/tap/alacritty-catppuccin"
 brew "josh/tap/bat-catppuccin"
 brew "josh/tap/bbedit-cli" if File.exist?("/Applications/BBEdit.app/Contents/_MASReceipt/receipt")
+brew "josh/tap/iterm2-shell-integration" if File.exist?("/Applications/iTerm.app")
 brew "josh/tap/itunes-library-export"
 brew "josh/tap/tmtheme-rose-pine"
 brew "josh/tap/tmux-catppuccin"
