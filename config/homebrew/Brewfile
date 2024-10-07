@@ -19,6 +19,7 @@ brew "fzf"
 brew "gh"
 brew "git"
 brew "go"
+brew "gum"
 brew "josh/tap/alacritty-catppuccin"
 brew "josh/tap/bat-catppuccin"
 brew "josh/tap/bbedit-cli" if File.exist?("/Applications/BBEdit.app/Contents/_MASReceipt/receipt")
