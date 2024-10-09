@@ -11,18 +11,31 @@ config.set_environment_variables = {
 config.color_scheme = "Catppuccin Macchiato"
 
 config.font = wezterm.font({ family = "MesloLGM Nerd Font Mono" })
-config.font_size = 18
+config.font_size = 16
 
-config.window_decorations = "RESIZE"
-config.window_frame = {
-	font = wezterm.font({ family = "MesloLGM Nerd Font Mono", weight = "Bold" }),
-	font_size = 16,
-}
+-- config.window_decorations = "RESIZE"
+-- config.window_frame = {
+--     font = wezterm.font({ family = "MesloLGM Nerd Font Mono", weight = "Bold" }),
+--     font_size = 18,
+-- }
 
-config.use_fancy_tab_bar = false
+-- config.use_fancy_tab_bar = false
+config.tab_bar_at_bottom = true
+
+-- TODO: Add to josh/homebrew-tap
+local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
+tabline.setup({
+	options = {
+		theme = "Catppuccin Macchiato",
+	},
+	sections = {
+		tabline_y = { "datetime" },
+	},
+})
+tabline.apply_to_config(config)
 
 config.initial_cols = 120
-config.initial_rows = 40
+config.initial_rows = 35
 
 config.keys = {
 	{
