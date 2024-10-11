@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+if ! route -n get default | grep -q "gateway: 10.0.0.1"; then
+	echo "away"
+	exit 1
+fi
+
+if curl --silent --max-time 1 "http://10.0.0.1/" | grep -q "eero"; then
+	echo "home"
+	exit 0
+else
+	echo "away"
+	exit 1
+fi
