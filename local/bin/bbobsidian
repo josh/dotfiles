@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+open -a BBEdit "$HOME/Library/Application Support/obsidian/Vaults/Notes"
