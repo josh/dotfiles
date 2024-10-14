@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+if [[ "${TRACE-0}" == "1" ]]; then set -o xtrace; fi
+
+gh_api() {
+	gh api \
+		--header "Accept: application/vnd.github+json" \
+		--header "X-GitHub-Api-Version: 2022-11-28" \
+		"$@"
+}
+
+generate_csv() {
+	echo 'type,title,artist,album,trackNumber,releaseDate,addedDate'
+	itunes-library-export --format json | jq --raw-output '
+        .tracks |
+        map(.) |
+        sort_by(.addedDate, .sortArtist, .sortAlbum, .sortTitle, .discNumber, .trackNumber) |
+        map(select(.movie or .tvShow)) |
+        map([(if .movie then "movie" elif .tvShow then "episode" else "???" end), .title, .artist, .album, .trackNumber, .releaseDate, .addedDate])[] | @csv
+    '
+}
+
+blob_sha() {
+	gh_api \
+		--method GET \
+		/repos/josh/trakt-collection/contents/itunes-library.csv \
+		--jq '.sha'
+}
+
+generate_csv | base64 | gh_api \
+	--method PUT \
+	/repos/josh/trakt-collection/contents/itunes-library.csv \
+	--field message="Update itunes-library" \
+	--field sha="$(blob_sha)" \
+	--field content="@-" \
+	--jq '.commit.sha'
