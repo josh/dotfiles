@@ -1,9 +1,10 @@
+[general]
 import = [
   "/opt/homebrew/Cellar/tokyonight-extras/4.8.0/share/tokyonight-extras/alacritty/tokyonight_moon.toml",
   "~/.config/alacritty/keybindings/tmux.toml",
 ]
 
-[shell]
+[terminal.shell]
 program = "/bin/zsh"
 args = ["--login", "-c", "tmux-detached"]
 
