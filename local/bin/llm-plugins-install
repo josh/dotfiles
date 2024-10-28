@@ -9,6 +9,7 @@ llm install --upgrade \
 	llm-claude-3 \
 	llm-cmd \
 	llm-gemini \
+	llm-jq \
 	llm-ollama \
 	llm-perplexity \
 	llm-sentence-transformers
