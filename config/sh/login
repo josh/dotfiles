@@ -58,6 +58,17 @@ if [ -d "$HOME/Library/Caches" ]; then
 	export XDG_CACHE_HOME="$HOME/Library/Caches"
 fi
 
+# Nix
+if [ -d "/nix/var/nix/profiles/default" ]; then
+	NIX_SYSTEM_PROFILE="/nix/var/nix/profiles/default"
+	NIX_USER_PROFILE="$XDG_STATE_HOME/nix/profile"
+	export NIX_PROFILES="$NIX_SYSTEM_PROFILE $NIX_USER_PROFILE"
+	export NIX_SSL_CERT_FILE="$NIX_SYSTEM_PROFILE/etc/ssl/certs/ca-bundle.crt"
+	export PATH="$NIX_USER_PROFILE/bin:$NIX_SYSTEM_PROFILE/bin:$PATH"
+	export XDG_DATA_DIRS="$NIX_USER_PROFILE/share:$NIX_SYSTEM_PROFILE/share"
+	__ETC_PROFILE_NIX_SOURCED=1
+fi
+
 # XDG Base Directory overrides
 # https://wiki.archlinux.org/title/XDG_Base_Directory#Support
 
