@@ -11,9 +11,11 @@ bindings = [
 
   # tmux split horizontal: Ctrl-b "
   { key = "D", mods = "Command", chars = "\u0000\"" },
+  { key = "H", mods = "Option|Shift|Command", chars = "\u0000\"" },
 
   # tmux split vertical: Ctrl-b %
   # { key = "", mods = "Command", chars = "\u0000%" },
+  { key = "V", mods = "Option|Shift|Command", chars = "\u0000%" },
 
   # tmux close split: Ctrl-b x
   { key = "D", mods = "Command|Shift", chars = "\u0000x" },
