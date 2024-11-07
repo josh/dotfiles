@@ -9,7 +9,7 @@ if ! route -n get default | grep -q "gateway: 10.0.0.1"; then
 	exit 1
 fi
 
-if curl --silent --max-time 1 "http://10.0.0.1/" | grep -q "eero"; then
+if curl --silent --max-time 1 "http://10.0.0.1/" >/dev/null; then
 	echo "home"
 	exit 0
 else
