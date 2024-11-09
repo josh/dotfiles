@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+if [[ "${TRACE-0}" == "1" ]]; then set -o xtrace; fi
+
+HOSTNAME="$1"
+shift
+
+USER="${USER:-josh}"
+SECRET_ENV="$(echo "$HOSTNAME" | tr '[:lower:]' '[:upper:]' | tr '-' '_')_PASSWORD"
+PASSWORD="$(secret "$SECRET_ENV")"
+
+URL="vnc://$USER:$PASSWORD@$HOSTNAME?quality=adaptive"
+
+LAN_ADDR="$(tailscale-lan-ip "$HOSTNAME" 2>/dev/null || true)"
+if [[ "$LAN_ADDR" != "" ]]; then
+	echo "Using high quality direct connection" >&2
+	URL="vnc://$USER:$PASSWORD@$LAN_ADDR?quality=high&numVirtualDisplays=1"
+fi
+
+open "$@" "$URL"
