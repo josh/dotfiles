@@ -25,6 +25,7 @@ brew "josh/tap/bat-catppuccin"
 brew "josh/tap/bbedit-cli" if File.exist?("/Applications/BBEdit.app/Contents/_MASReceipt/receipt")
 brew "josh/tap/iterm2-shell-integration" if File.exist?("/Applications/iTerm.app")
 brew "josh/tap/itunes-library-export"
+brew "josh/tap/tailscale-cli" if File.exist?("/Applications/Tailscale.app")
 brew "josh/tap/tmtheme-rose-pine"
 brew "josh/tap/tmux-catppuccin"
 brew "josh/tap/tmux-sensible"
@@ -55,7 +56,6 @@ brew "stylua"
 brew "swift-format"
 brew "swiftformat"
 brew "swiftlint"
-brew "tailscale"
 brew "taplo"
 brew "tmux"
 brew "topgrade"
