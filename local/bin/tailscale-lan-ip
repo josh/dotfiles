@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# usage: tailscale-lan-ip <hostname-or-IP>
+
+set -o errexit
+set -o nounset
+set -o pipefail
+if [[ "${TRACE-0}" == "1" ]]; then set -o xtrace; fi
+
+GATEWAY=$(route -n get default | grep gateway | awk '{print $2}')
+
+# TODO: Hardcoded support for 10.0.0.x subnet
+if [[ "$GATEWAY" == "10.0.0.1" ]]; then
+	if tailscale ping --c 1 --timeout 1s "$1" | grep -Eo '10\.0\.0\.[0-9]+'; then
+		exit 0
+	else
+		echo "Host not reachable from LAN" >&2
+		exit 1
+	fi
+else
+	echo "Unknown gateway: $GATEWAY" >&2
+	exit 1
+fi
