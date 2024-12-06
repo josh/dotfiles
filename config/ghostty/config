@@ -1,0 +1,6 @@
+font-family = "BerkeleyMono Nerd Font Mono"
+font-size = 20
+# theme = "catppuccin-mocha"
+theme = "tokyonight-storm"
+window-height = 40
+window-width = 100
