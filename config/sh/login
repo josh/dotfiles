@@ -38,7 +38,9 @@ if [ -d "$HOME/Library/Mobile Documents/com~apple~CloudDocs" ]; then
 	ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 fi
 
-if [ -d "/opt/homebrew/var/restic" ]; then
+if [ -d "/Volumes/Restic" ]; then
+	export RESTIC_REPOSITORY="/Volumes/Restic"
+elif [ -d "/opt/homebrew/var/restic" ]; then
 	export RESTIC_REPOSITORY="/opt/homebrew/var/restic"
 fi
 if [ -x "$(command -v security)" ]; then

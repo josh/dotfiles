@@ -4,9 +4,9 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-export RESTIC_REPOSITORY="/opt/homebrew/var/restic"
+export RESTIC_REPOSITORY="/Volumes/Restic"
 export RESTIC_PASSWORD_COMMAND='security find-generic-password -l "restic" -w'
-export RESTIC_FROM_REPOSITORY="/opt/homebrew/var/restic"
+export RESTIC_FROM_REPOSITORY="/Volumes/Restic"
 export RESTIC_FROM_PASSWORD_COMMAND="$RESTIC_PASSWORD_COMMAND"
 
 choices() {
