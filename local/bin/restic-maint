@@ -24,6 +24,7 @@ case "$choice" in
 "Copy to USB drive")
 	set -o xtrace
 	restic copy --tag "usb" --repo "/Volumes/Backup"
+	restic check --read-data-subset '10%' --repo "/Volumes/Backup"
 	;;
 "Copy from local to NUC")
 	set -o xtrace
