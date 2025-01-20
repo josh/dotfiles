@@ -7,7 +7,7 @@ jobs:
     strategy:
       matrix:
         shell: [bash, zsh]
-        os: [ubuntu-latest, macos-latest]
+        os: [ubuntu-24.04, macos-15]
 
     runs-on: ${{ matrix.os }}
 
