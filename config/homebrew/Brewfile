@@ -2,7 +2,6 @@
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "josh/tap"
-tap "pkgxdev/made"
 
 # Homebrew
 brew "age-plugin-se"
@@ -37,7 +36,6 @@ brew "md5sha1sum"
 brew "neovim"
 brew "node"
 brew "ollama", restart_service: true
-brew "pkgxdev/made/pkgx"
 brew "prettier"
 brew "python@3.12"
 brew "rclone"
