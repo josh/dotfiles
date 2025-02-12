@@ -2,7 +2,6 @@
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "josh/tap"
-tap "oven-sh/bun"
 tap "pkgxdev/made"
 
 # Homebrew
@@ -40,7 +39,6 @@ brew "md5sha1sum"
 brew "neovim"
 brew "node"
 brew "ollama", restart_service: true
-brew "oven-sh/bun/bun"
 brew "pkgxdev/made/pkgx"
 brew "prettier"
 brew "python@3.12"
