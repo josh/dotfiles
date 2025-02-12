@@ -1,14 +1,13 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run the `open default settings` command
-// from the command palette or from `Zed` application menu.
 {
+  "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
+    },
+    "version": "2"
+  },
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "Catppuccin Latte",
     "dark": "Catppuccin Mocha"
   },
@@ -18,10 +17,18 @@
   "collaboration_panel": {
     "button": false
   },
-  "chat_panel": {
-    "button": false
-  },
   "terminal": {
     "option_as_meta": true
-  }
+  },
+  "languages": {
+    "Nix": {
+      "formatter": {
+        "external": {
+          "command": "nix",
+          "arguments": ["fmt", "--", "--stdin", "{buffer_path}"]
+        }
+      }
+    }
+  },
+  "lsp": {}
 }
