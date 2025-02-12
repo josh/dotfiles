@@ -33,7 +33,6 @@ brew "mas"
 brew "md5sha1sum"
 brew "neovim"
 brew "node"
-brew "ollama", restart_service: true
 brew "prettier"
 brew "python@3.12"
 brew "rclone"
