@@ -10,7 +10,6 @@ llm install --upgrade \
 	llm-cmd \
 	llm-gemini \
 	llm-jq \
-	llm-ollama \
 	llm-perplexity \
 	llm-sentence-transformers
 
