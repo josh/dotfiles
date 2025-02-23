@@ -6,7 +6,7 @@ import = [
 
 [terminal.shell]
 program = "/bin/zsh"
-args = ["--login", "-c", "tmux-detached"]
+args = ["--login", "-c", "tmux-attach"]
 
 [env]
 THEME = "tokyonight_moon"
