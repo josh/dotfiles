@@ -6,30 +6,3 @@ fi
 
 alias g='git'
 alias grep='grep --color=auto'
-
-case "$THEME" in
-tokyonight*)
-	export BAT_THEME="Tokyo Night"
-	;;
-catppuccin_frappe)
-	export BAT_THEME="Catppuccin Frappe"
-	;;
-catppuccin_latte)
-	export BAT_THEME="Catppuccin Latte"
-	;;
-catppuccin_macchiato)
-	export BAT_THEME="Catppuccin Macchiato"
-	;;
-catppuccin*)
-	export BAT_THEME="Catppuccin Mocha"
-	;;
-rosepine_moon)
-	export BAT_THEME="Rose Pine Moon"
-	;;
-rosepine_dawn)
-	export BAT_THEME="Rose Pine Dawn"
-	;;
-rosepine*)
-	export BAT_THEME="Rose Pine"
-	;;
-esac
