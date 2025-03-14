@@ -39,8 +39,8 @@ bindkey -e
 autoload -U select-word-style
 select-word-style bash
 
-if [ -d "$HOMEBREW_PREFIX/share/zsh-autosuggestions" ]; then
-	source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+if [ -d "$HOME/.nix-profile/share/zsh-autosuggestions" ]; then
+	source "$HOME/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 	bindkey '\t\t' autosuggest-accept
 fi
 if [ -d "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting" ]; then
