@@ -1,6 +1,6 @@
 [general]
 import = [
-  "/opt/homebrew/opt/tokyonight-extras/share/tokyonight-extras/alacritty/tokyonight_moon.toml",
+  "/Users/josh/.nix-profile/share/tokyonight/alacritty/tokyonight_moon.toml",
   "~/.config/alacritty/keybindings/tmux.toml",
 ]
 
