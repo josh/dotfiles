@@ -48,9 +48,10 @@ if [ -d "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting" ]; then
 fi
 
 # fzf
-if [ -d "$HOMEBREW_PREFIX/opt/fzf" ]; then
-	source "$HOMEBREW_PREFIX/opt/fzf/shell/completion.zsh"
-	source "$HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh"
+if [ -d "$HOME/.nix-profile/share/fzf" ]; then
+	# source <(fzf --zsh)
+	source "$HOME/.nix-profile/share/fzf/completion.zsh"
+	source "$HOME/.nix-profile/share/fzf/key-bindings.zsh"
 fi
 
 # zoxide
