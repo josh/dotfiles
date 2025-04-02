@@ -10,7 +10,6 @@ brew "neovim"
 brew "node"
 brew "python@3.12"
 brew "topgrade"
-brew "zellij"
 
 # Cask
 cask "alacritty"
