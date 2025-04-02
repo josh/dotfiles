@@ -5,7 +5,6 @@ tap "josh/tap"
 
 # Homebrew
 brew "direnv"
-brew "eza"
 brew "fzf"
 brew "go"
 brew "neovim"
