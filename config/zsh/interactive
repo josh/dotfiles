@@ -43,8 +43,8 @@ if [ -d "$HOME/.nix-profile/share/zsh-autosuggestions" ]; then
 	source "$HOME/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 	bindkey '\t\t' autosuggest-accept
 fi
-if [ -d "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting" ]; then
-	source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+if [ -d "$HOME/.nix-profile/share/zsh-syntax-highlighting" ]; then
+	source "$HOME/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
 # fzf

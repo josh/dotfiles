@@ -13,7 +13,6 @@ brew "topgrade"
 brew "vim" # >= 9.1
 brew "zellij"
 brew "zoxide"
-brew "zsh-syntax-highlighting"
 
 # Cask
 cask "alacritty"
