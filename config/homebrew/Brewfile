@@ -9,7 +9,6 @@ brew "go"
 brew "neovim"
 brew "node"
 brew "python@3.12"
-brew "starship"
 brew "topgrade"
 brew "vim" # >= 9.1
 brew "zellij"
