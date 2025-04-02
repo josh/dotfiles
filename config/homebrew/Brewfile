@@ -12,7 +12,6 @@ brew "python@3.12"
 brew "topgrade"
 brew "vim" # >= 9.1
 brew "zellij"
-brew "zoxide"
 
 # Cask
 cask "alacritty"
