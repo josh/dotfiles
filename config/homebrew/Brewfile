@@ -4,7 +4,6 @@ tap "homebrew/services"
 tap "josh/tap"
 
 # Homebrew
-brew "direnv"
 brew "go"
 brew "neovim"
 brew "node"
