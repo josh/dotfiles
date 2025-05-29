@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-set -euo pipefail
-
-find "$HOME" -maxdepth 1 -name ".*" ! -type l -exec find {} ! -type l \;
