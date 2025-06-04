@@ -1,8 +1,8 @@
 # shellcheck source=/dev/null
 source ~/.config/sh/interactive
 
-if [ -x "$(command -v starship)" ]; then
-	eval "$(starship init zsh)"
+if [ -f "$HOME/.nix-profile/etc/zshrc" ]; then
+	source "$HOME/.nix-profile/etc/zshrc"
 fi
 
 if [ -d "$HOME/.nix-profile/share/zsh/site-functions" ]; then

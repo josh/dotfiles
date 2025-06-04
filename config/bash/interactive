@@ -1,6 +1,10 @@
 # shellcheck source=/dev/null
 source ~/.config/sh/interactive
 
+if [ -f "$HOME/.nix-profile/etc/bashrc" ]; then
+	source "$HOME/.nix-profile/etc/bashrc"
+fi
+
 if [ -d "$XDG_STATE_HOME/bash" ]; then
 	HISTFILE="$XDG_STATE_HOME/bash/history"
 fi
