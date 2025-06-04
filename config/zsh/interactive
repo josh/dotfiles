@@ -59,11 +59,6 @@ if [ -x "$(command -v zoxide)" ]; then
 	eval "$(zoxide init zsh)"
 fi
 
-# direnv
-if [ -x "$(command -v direnv)" ]; then
-	eval "$(direnv hook zsh)"
-fi
-
 if [ -n "$ITERM_SESSION_ID" ] && [ -d "$HOME/.nix-profile/share/iterm2-shell-integration" ]; then
 	ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=1 source "$HOME/.nix-profile/share/iterm2-shell-integration/iterm2_shell_integration.zsh"
 	# TODO: Only add iterm2 tools to $PATH now
