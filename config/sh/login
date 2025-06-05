@@ -70,15 +70,3 @@ elif [ -d "$HOME/.nix-profile" ]; then
 	export PATH="$NIX_USER_PROFILE/bin:$PATH"
 	export XDG_DATA_DIRS="$NIX_USER_PROFILE/share:$XDG_DATA_DIRS"
 fi
-
-# XDG Base Directory overrides
-# https://wiki.archlinux.org/title/XDG_Base_Directory#Support
-
-export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
-export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
-
-export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
-export JUPYTER_PLATFORM_DIRS="1"
-
-export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
