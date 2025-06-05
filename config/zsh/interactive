@@ -34,21 +34,6 @@ bindkey -e
 autoload -U select-word-style
 select-word-style bash
 
-if [ -d "$HOME/.nix-profile/share/zsh-autosuggestions" ]; then
-	source "$HOME/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-	bindkey '\t\t' autosuggest-accept
-fi
-if [ -d "$HOME/.nix-profile/share/zsh-syntax-highlighting" ]; then
-	source "$HOME/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-fi
-
-# fzf
-if [ -d "$HOME/.nix-profile/share/fzf" ]; then
-	# source <(fzf --zsh)
-	source "$HOME/.nix-profile/share/fzf/completion.zsh"
-	source "$HOME/.nix-profile/share/fzf/key-bindings.zsh"
-fi
-
 if [ -n "$ITERM_SESSION_ID" ] && [ -d "$HOME/.nix-profile/share/iterm2-shell-integration" ]; then
 	ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=1 source "$HOME/.nix-profile/share/iterm2-shell-integration/iterm2_shell_integration.zsh"
 	# TODO: Only add iterm2 tools to $PATH now
