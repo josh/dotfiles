@@ -43,9 +43,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
-if [ -d "$DOTFILES" ]; then
-	export XDG_CONFIG_HOME="$DOTFILES/config"
-fi
 if [ -d "$HOME/Library/Caches" ]; then
 	export XDG_CACHE_HOME="$HOME/Library/Caches"
 fi
