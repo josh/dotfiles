@@ -8,11 +8,6 @@ fi
 if [ -d "$HOME/.nix-profile/share/zsh/site-functions" ]; then
 	FPATH="$HOME/.nix-profile/share/zsh/site-functions:$FPATH"
 fi
-if [ -d "$XDG_CACHE_HOME" ]; then
-	autoload -Uz compinit
-	mkdir -p "$XDG_CACHE_HOME/zsh"
-	compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
-fi
 
 HISTSIZE=50000
 # shellcheck disable=SC2034
