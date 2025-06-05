@@ -8,8 +8,3 @@ fi
 if [ -d "$XDG_STATE_HOME/bash" ]; then
 	HISTFILE="$XDG_STATE_HOME/bash/history"
 fi
-
-if [ -e "/usr/local/etc/bash_completion.d/git-completion.bash" ]; then
-	# shellcheck source=/dev/null
-	source /usr/local/etc/bash_completion.d/git-completion.bash
-fi
