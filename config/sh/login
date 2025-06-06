@@ -28,11 +28,6 @@ export LESSHISTFILE="-"
 export CLICOLOR=1
 export GREP_COLOR='1;32'
 
-if [ -d "$HOME/Library/Mobile Documents/com~apple~CloudDocs" ]; then
-	# shellcheck disable=SC2034
-	ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
-fi
-
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
