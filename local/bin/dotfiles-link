@@ -29,7 +29,6 @@ mkdir -p "$HOME/.local"
 dotlink "bash_profile"
 dotlink "bashrc"
 dotlink "local/bin"
-dotlink "ssh"
 dotlink "zprofile"
 dotlink "zshrc"
 
