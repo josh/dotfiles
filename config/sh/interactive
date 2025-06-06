@@ -6,12 +6,3 @@ fi
 
 alias g='git'
 alias grep='grep --color=auto'
-
-# eza
-if [ -x "$(command -v eza)" ]; then
-	alias ls='eza'
-	alias ll='eza --long'
-	alias la='eza --all'
-	alias lt='eza --tree'
-	alias lla='eza --long --all'
-fi
