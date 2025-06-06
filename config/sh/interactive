@@ -1,8 +1,2 @@
-if [ "$USER" = "root" ]; then
-	PS1="# "
-else
-	PS1="$ "
-fi
-
 alias g='git'
 alias grep='grep --color=auto'
