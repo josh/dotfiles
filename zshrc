@@ -1,4 +1,4 @@
-source ~/.config/sh/interactive
+alias grep='grep --color=auto'
 
 if [ -f "$HOME/.nix-profile/etc/zshrc" ]; then
 	source "$HOME/.nix-profile/etc/zshrc"
