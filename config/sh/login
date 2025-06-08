@@ -6,7 +6,6 @@ else
 	export EDITOR="vim"
 fi
 export PAGER="less -R"
-export LESSHISTFILE="-"
 
 # Nix
 if [ -d "/nix/var/nix/profiles/default" ]; then
