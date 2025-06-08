@@ -6,10 +6,6 @@ else
 	echo "WARN: $HOME/.local/state/nix/profiles/profile/etc/zshrc not found" >&2
 fi
 
-if [ -d "$HOME/.local/state/nix/profiles/profile/share/zsh/site-functions" ]; then
-	FPATH="$HOME/.local/state/nix/profiles/profile/share/zsh/site-functions:$FPATH"
-fi
-
 HISTSIZE=50000
 # shellcheck disable=SC2034
 SAVEHIST=50000
