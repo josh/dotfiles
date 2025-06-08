@@ -10,12 +10,12 @@ export PAGER="less -R"
 # Nix
 . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 
-if [ -f "$HOME/.local/state/nix/profile/etc/bash_profile" ]; then
-	source "$HOME/.local/state/nix/profile/etc/bash_profile"
+if [ -f "$HOME/.local/state/nix/profiles/profile/etc/bash_profile" ]; then
+	source "$HOME/.local/state/nix/profiles/profile/etc/bash_profile"
 fi
 
 if shopt -q login_shell; then
-	if [ -f "$HOME/.local/state/nix/profile/etc/bashrc" ]; then
-		source "$HOME/.local/state/nix/profile/etc/bashrc"
+	if [ -f "$HOME/.local/state/nix/profiles/profile/etc/bashrc" ]; then
+		source "$HOME/.local/state/nix/profiles/profile/etc/bashrc"
 	fi
 fi
