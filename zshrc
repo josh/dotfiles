@@ -1,9 +1,9 @@
-if [ -f "$HOME/.nix-profile/etc/zshrc" ]; then
-	source "$HOME/.nix-profile/etc/zshrc"
+if [ -f "$HOME/.local/state/nix/profile/etc/zshrc" ]; then
+	source "$HOME/.local/state/nix/profile/etc/zshrc"
 fi
 
-if [ -d "$HOME/.nix-profile/share/zsh/site-functions" ]; then
-	FPATH="$HOME/.nix-profile/share/zsh/site-functions:$FPATH"
+if [ -d "$HOME/.local/state/nix/profile/share/zsh/site-functions" ]; then
+	FPATH="$HOME/.local/state/nix/profile/share/zsh/site-functions:$FPATH"
 fi
 
 HISTSIZE=50000

@@ -8,20 +8,4 @@ fi
 export PAGER="less -R"
 
 # Nix
-if [ -d "/nix/var/nix/profiles/default" ]; then
-	NIX_SYSTEM_PROFILE="/nix/var/nix/profiles/default"
-	export NIX_PROFILES="$NIX_SYSTEM_PROFILE"
-	export NIX_SSL_CERT_FILE="$NIX_SYSTEM_PROFILE/etc/ssl/certs/ca-bundle.crt"
-	export PATH="$NIX_SYSTEM_PROFILE/bin:$PATH"
-	export XDG_DATA_DIRS="$NIX_SYSTEM_PROFILE/share"
-	__ETC_PROFILE_NIX_SOURCED=1
-fi
-if [ -d "$HOME/.local/state/nix/profile" ]; then
-	NIX_USER_PROFILE="$HOME/.local/state/nix/profile"
-	export NIX_PROFILES="$NIX_PROFILES $NIX_USER_PROFILE"
-	export PATH="$NIX_USER_PROFILE/bin:$PATH"
-elif [ -d "$HOME/.nix-profile" ]; then
-	NIX_USER_PROFILE="$HOME/.nix-profile"
-	export NIX_PROFILES="$NIX_PROFILES $NIX_USER_PROFILE"
-	export PATH="$NIX_USER_PROFILE/bin:$PATH"
-fi
+. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
