@@ -5,7 +5,6 @@ if [ -x "$(command -v nvim)" ]; then
 else
 	export EDITOR="vim"
 fi
-export PAGER="less -R"
 
 # Nix
 . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
