@@ -1,13 +1,5 @@
 echo "DEBUG: zprofile" >&2
 
-# if [ -x "$(command -v bbedit)" ]; then
-# 	export EDITOR="bbedit --wait --resume"
-if [ -x "$(command -v nvim)" ]; then
-	export EDITOR="nvim"
-else
-	export EDITOR="vim"
-fi
-
 # Nix
 . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 
