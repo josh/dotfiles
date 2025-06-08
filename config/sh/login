@@ -8,10 +8,6 @@ fi
 export PAGER="less -R"
 export LESSHISTFILE="-"
 
-# colors
-export CLICOLOR=1
-export GREP_COLOR='1;32'
-
 # Nix
 if [ -d "/nix/var/nix/profiles/default" ]; then
 	NIX_SYSTEM_PROFILE="/nix/var/nix/profiles/default"
